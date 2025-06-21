@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const tours = [
   {
     id: "mandelbluete",
-    title: "Wein-Erlebnistour: Mandelblüte, Meerspinne und Monarchen",
+    title: "Mandelblüte, Meerspinne und Monarchen",
     description:
       "Genieße während der Gimmeldinger Mandelblüte eine interaktive Wein-Erlebnis-Tour mit unseren Mandelblütenhoheiten.",
     availability: "Frühling",
@@ -30,7 +30,7 @@ const tours = [
   {
     id: "bacchus",
     title:
-      "Wein-Erlebnistour: Von Bacchus bis Christophorus - interaktiv und genussvoll",
+      "Von Bacchus bis Christophorus",
     description:
       "Genieße die idyllischen Weinberge der Pfalz und besuche ausgewählte Weingüter im historischen Ortskern von Gimmeldingen.",
     availability: "Frühling - Herbst",
