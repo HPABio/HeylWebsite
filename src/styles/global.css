@@ -1,1 +1,65 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    @apply bg-background text-text font-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-headline;
+  }
+}
+
+@layer components {
+  /* Gradient text utilities */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-accent1 to-text bg-clip-text text-transparent;
+  }
+
+  .text-gradient-plum {
+    @apply bg-gradient-to-r from-soft-beige to-accent2-plum bg-clip-text text-transparent;
+  }
+
+  /* Common button styles */
+  .btn {
+    @apply px-6 py-3 rounded-lg transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent1 text-background hover:bg-accent2-brick;
+  }
+
+  .btn-secondary {
+    @apply btn border-2 border-accent1 text-text hover:bg-soft-beige;
+  }
+
+  /* Card components */
+  .tour-card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300;
+  }
+
+  /* Quote/testimonial styling */
+  .quote {
+    @apply italic font-headline text-accent2-plum;
+  }
+}
+
+@layer utilities {
+  /* Custom spacing utilities */
+  .section-spacing {
+    @apply py-16 md:py-24;
+  }
+
+  /* Custom container padding */
+  .container-padding {
+    @apply px-4 md:px-8 lg:px-16;
+  }
+}
