@@ -23,7 +23,7 @@ const WaterColorReveal = ({
   className = "",
 }: WaterColorRevealProps) => {
   const elementRef = useRef(null);
-  console.log("elementRef:", elementRef.current);
+  // console.log("elementRef:", elementRef.current);
 
   // Animation runs while element is in viewport
   const { scrollYProgress } = useScroll({
@@ -32,10 +32,10 @@ const WaterColorReveal = ({
   });
 
   // Add this to see if the hook is working at all
-  console.log("useScroll hook initialized", { scrollYProgress });
+  // console.log("useScroll hook initialized", { scrollYProgress });
 
   // Also log the element ref
-  console.log("Element ref:", elementRef.current);
+  // console.log("Element ref:", elementRef.current);
 
   // Convert percentage width/height to pixels
   const widthInPx =
@@ -55,10 +55,10 @@ const WaterColorReveal = ({
     [0, Math.max(widthInPx, heightInPx) * 0.47] // Increased to ensure full coverage
   );
 
-  scrollYProgress.on("change", (value: number) => {
-    console.log("scrollYProgress:", value);
-    console.log("circleRadius:", circleRadius.get());
-  });
+  // scrollYProgress.on("change", (value: number) => {
+  //   console.log("scrollYProgress:", value);
+  //   console.log("circleRadius:", circleRadius.get());
+  // });
 
   // For side reveal, use rectangle width
   const rectWidth = useTransform(scrollYProgress, [0, 1], [0, widthInPx]);
@@ -67,7 +67,7 @@ const WaterColorReveal = ({
     <motion.div
       ref={elementRef}
       className={`relative ${className}`}
-      style={{ willChange: "transform" }}
+      style={{ transform: "translateZ(0)" }}
     >
       <svg width={widthInPx} height={heightInPx} className="absolute inset-0">
         <defs>
@@ -107,12 +107,14 @@ const WaterColorReveal = ({
             )}
           </mask>
         </defs>
-        <foreignObject
-          width={widthInPx}
-          height={heightInPx}
-          mask={`url(#${id}-revealMask)`}
-        >
-          <div className="w-full h-full">
+        <foreignObject width={widthInPx} height={heightInPx}>
+          <div
+            className="w-full h-full"
+            style={{
+              mask: `url(#${id}-revealMask)`,
+              WebkitMask: `url(#${id}-revealMask)`,
+            }}
+          >
             <div>{child1}</div>
             <div>{child2}</div>
           </div>
