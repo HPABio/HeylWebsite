@@ -107,27 +107,9 @@ const InteractiveTours = () => {
               <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-600 font-body drop-shadow-sm">
                 {selectedTour.description}
               </p>
-              <div className="mt-8 flex justify-center">
-                <a
-                  href="/book-tour"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold text-lg rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300"
-                >
-                  <svg
-                    className="mr-2 w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    ></path>
-                  </svg>
-                  Diese Tour buchen
-                </a>
-              </div>
+
+
+
             </motion.div>
           </AnimatePresence>
         </div>
@@ -178,6 +160,29 @@ const InteractiveTours = () => {
                 }}
                 exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
               >
+
+              <div className="pt-24 flex justify-start pb-8">
+                <a
+                  href="/book-tour"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold text-lg rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300"
+                >
+                  <svg
+                    className="mr-2 w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    ></path>
+                  </svg>
+                  Diese Tour buchen
+                </a>
+              </div>
+
                 <h2 className="text-3xl font-bold font-bonanova text-gray-900">
                   Über diese Tour
                 </h2>

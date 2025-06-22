@@ -18,7 +18,8 @@ import WaterColorReveal from './WaterColorReveal.tsx';
   <div class="w-full top-0 left-0 h-1/4 absolute bg-gradient-to-b from-white via-white/20 to-transparent z-0"/>
   
   <!-- Section 1: Image Right, Text Left -->
-  <div class="inset-0 z-10 pt-12 ">
+  <div class="inset-0 z-10 pt-12 pointer-events-none">
+    
     <div class="w-full h-full absolute top-0 left-[50%] translate-x-[-10%] min-w-[600px]  z-0 max-w-[1200px] flex justify-center items-center opacity-10">
       <svg id="Final_Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3062.26 4609.72" class="bg-red-500/0 w-[100%] h-[100%] scale-[1.4]"> 
         <defs><style>.cls-1,.cls-2{isolation:isolate;opacity:.5;}.cls-2{fill:#8c6b6b;}.cls-3{stroke-dasharray:32.56 32.56;}.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8{fill:none;stroke:#8c6b6b;stroke-linecap:round;stroke-miterlimit:10;stroke-width:16px;}.cls-4{stroke-dasharray:31.03 31.03;}.cls-5{stroke-dasharray:31.96 31.96;}.cls-6{stroke-dasharray:31.23 31.23;}.cls-8{stroke-dasharray:32.47 32.47;}</style></defs>
@@ -29,23 +30,18 @@ import WaterColorReveal from './WaterColorReveal.tsx';
         <g class="cls-1"><line class="cls-7" x1="2254.26" y1="4501.72" x2="2249.87" y2="4486.34"/><line class="cls-4" x1="2241.35" y1="4456.5" x2="2007.14" y2="3636.06"/><line class="cls-7" x1="2002.88" y1="3621.14" x2="1998.49" y2="3605.76"/></g><path class="cls-2" d="M1586.51,1667.22c-27.71,0-50.25-22.54-50.25-50.25s22.54-50.25,50.25-50.25,50.25,22.54,50.25,50.25-22.54,50.25-50.25,50.25ZM1586.51,1593.1c-13.16,0-23.87,10.71-23.87,23.87s10.71,23.87,23.87,23.87,23.87-10.71,23.87-23.87-10.71-23.87-23.87-23.87Z"/><path class="cls-2" d="M844.51,2657.22c-27.71,0-50.25-22.54-50.25-50.25s22.54-50.25,50.25-50.25,50.25,22.54,50.25,50.25-22.54,50.25-50.25,50.25ZM844.51,2583.1c-13.16,0-23.87,10.71-23.87,23.87s10.71,23.87,23.87,23.87,23.87-10.71,23.87-23.87-10.71-23.87-23.87-23.87Z"/><path class="cls-2" d="M1957.51,3513.22c-27.71,0-50.25-22.54-50.25-50.25s22.54-50.25,50.25-50.25,50.25,22.54,50.25,50.25-22.54,50.25-50.25,50.25ZM1957.51,3439.1c-13.16,0-23.87,10.71-23.87,23.87s10.71,23.87,23.87,23.87,23.87-10.71,23.87-23.87-10.71-23.87-23.87-23.87Z"/><path class="cls-2" d="M806.51,714.22c-27.71,0-50.25-22.54-50.25-50.25s22.54-50.25,50.25-50.25,50.25,22.54,50.25,50.25-22.54,50.25-50.25,50.25ZM806.51,640.1c-13.16,0-23.87,10.71-23.87,23.87s10.71,23.87,23.87,23.87,23.87-10.71,23.87-23.87-10.71-23.87-23.87-23.87Z"/>
       </svg>
     </div>
-    <!-- <h2 class="w-full text-8xl text-stone-700 font-bold my-44 font-bonanova text-nowrap text-center">
-      Alternatives Layout
-  </h2> -->
   
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto ">
       <div class="flex-1 order-2 md:order-1 min-w-[320px] relative">
-       
-
     <h2 class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
       <span class="text-accent1/80 pr-32 text-nowrap">
         Erkunden Sie
       </span>
     </h2>
-    <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700-700 mb-4">
+    <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700/75 mb-4 leading-tight">
       die wunderschöne Gegend rund um Neustadt an der Weinstraße.
     </p>
-    <p class="text-sm text-stone-500/70">
+    <p class="text-sm text-stone-500/60">
       Lassen Sie sich beim Wandern durch die malerische Landschaft der Gegend rund um Neustadt verzaubern, 
       die für ihre Weinberge und deren Erzeugnisse weltweit bekannt ist. Von Hambach, Diedesfeld, 
       und Duttweiler, über Geinsheim, Gimmeldingen, Haardt, bis hin zu Lachen-Speyerdorf, Königsbach, Mußbach,
@@ -66,10 +62,10 @@ import WaterColorReveal from './WaterColorReveal.tsx';
         </WaterColorReveal>
         <p class=" w-fit absolute bottom-[0%] right-[45%] translate-x-[100%] translate-y-[-20%] 
         text-nowrap text-4xl xl:text-5xl font-doulaise font-semibold mb-8 text-stone-200/70 md:text-stone-400/20 lowercase
-        pr-32 pl-2 py-3 z-10">Träume und Schäume vom Rhein</p>
+        pr-32 pl-2 py-3 z-10"><span class="text-stone-100/50 ">Träume</span> und Schäume vom Rhein</p>
         <p class=" w-fit absolute bottom-[0%] right-[45%] translate-x-[100%] translate-y-[0%] 
         text-nowrap text-2xl xl:text-3xl font-doulaise font-semibold mb-8 text-stone-300 md:text-stone-400/15 lowercase
-        pr-32 pl-2 py-3 z-10">werden sie teil von etwas besonderem und großartigem</p>
+        pr-32 pl-2 py-3 z-10"><span class="text-stone-400/90">werden sie teil</span> von etwas besonderem und großartigem</p>
       </div>
     </div>
   
@@ -81,10 +77,10 @@ import WaterColorReveal from './WaterColorReveal.tsx';
             Genießen Sie
           </span>
         </h2>
-        <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700 mb-4">
+        <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700/75 mb-4 leading-tight">
           Weinerzeugnisse aus den Bergen der Region.
         </p>
-        <p class="text-sm text-stone-500/70">
+        <p class="text-sm text-stone-500/60">
           Bekannt für seine Weinberge und seine Weinprodukt wird ihnen hier eine kleine Auswahl an lokal 
           produzierten Weinen angeboten. Und da zu einem guten Wein ein kleiner Happen nicht fehlen sollte,
           gibt es dazu ein paar eigens abgestimmte regionale Snacks, die eine perfekte geschmackliche Ergänzung
@@ -115,7 +111,7 @@ import WaterColorReveal from './WaterColorReveal.tsx';
       pr-32 pl-2 py-3 z-10">abenteuer und erinnerungen
     </p>
         <p class="w-fit absolute top-[80%] left-[0%] translate-x-[-35%] md:translate-y-[90%] 
-      text-nowrap text-xl xl:text-3xl font-doulaise font-semibold mb-8 text-stone-200/70 md:text-stone-400/20 lowercase
+      text-nowrap text-xl xl:text-3xl font-doulaise font-semibold mb-8 text-stone-200/70 md:text-stone-400/20 lowercase leading-tight
       pr-32 pl-2 py-3 z-10">...darum rate ich sei weise, zöger nicht und reise reise.
     </p>
       <div class="flex-1 order-2 md:order-1">
@@ -124,10 +120,10 @@ import WaterColorReveal from './WaterColorReveal.tsx';
             Erleben Sie
           </span>
         </h2>
-        <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700 mb-4">
+        <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700/75 mb-4 leading-tight">
           interaktiv die Geschichte der Gegend über die verschiedenen historischen Epochen hinweg. 
           </p>
-        <p class="text-sm text-stone-500/70">
+        <p class="text-sm text-stone-500/60">
           Ob als passiver Zuschauer oder zentraler Teil des Geschehens, während der interaktiven Tour-Elemente
           haben Sie die Möglichkeit in die lebendige Geschichte der Gegend einzutauchen. Dabei können die aktiven Teilnehmer
           der Tour in die Rolle einer historische Figur schlüpfen und die Geschichte hautnah erleben.
@@ -152,9 +148,9 @@ import WaterColorReveal from './WaterColorReveal.tsx';
             Entdecken Sie
           </span>
         </h2>
-        <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700 mb-4">
+        <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700/75 mb-4 leading-tight">
           das Herz und die Seele der Weinregion rund um weltbekannte Demokratiestadt.
-        <p class="text-sm text-stone-500/70 mb-6">
+        <p class="text-sm text-stone-500/60 mb-6">
           Mit ihrem einzigartigen Charakter und Charme, verzaubert die Region ihre Besucher und bietet 
           Dank des größten Fachwerkhausbestand der Pfalz, von mittelalterlichen Gassen, historischen Marktplätzen, 
           dem Hambacher Schloss, und vielen weiteren historischen Stätten, 
@@ -186,22 +182,22 @@ import WaterColorReveal from './WaterColorReveal.tsx';
             Erfahren Sie
           </span>
         </h2>
-        <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700 mb-4">
+        <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700/75 mb-4 leading-tight">
           was die Region um Neustadt an der Weinstraße so besonders macht.
           </p>
-        <p class="text-sm text-stone-500/70 mb-6">
+        <p class="text-sm text-stone-500/60 mb-6">
           Ob als passiver Zuschauer oder zentraler Teil des Geschehens, während der interaktiven Tour-Elemente
           haben Sie die Möglichkeit in die lebendige Geschichte der Gegend einzutauchen. Dabei können die aktiven Teilnehmer
           der Tour in die Rolle einer historische Figur schlüpfen und die Geschichte hautnah erleben.
         </p>
         
-      <a href="/#tours" class="inline-flex items-center pl-4 pr-8 py-3
+      <a href="/tours" class="inline-flex items-center pl-4 pr-4 py-3
       bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold text-lg rounded-full shadow-lg
        hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300">
-        <svg class="ml-2 w-5 h-5 rotate-90" fill="none" stroke="currentColor" viewBox="3 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-        Zu den Touren
+       Zu den Touren
+       <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="3 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+       </svg>
       </a>
       </div>
       <div class="flex-1 order-1 md:order-2 flex justify-center saturate-[0.6] hover:saturate-[0.8] transition-all duration-300 overflow-visible  group">
