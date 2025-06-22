@@ -4,7 +4,7 @@ import Button from './Button.astro';
 <!-- src/components/Tours.astro -->
 <section id="tours" class="relative py-24 sm:py-32 bg-white overflow-hidden ">
   
-  <div class="absolute inset-0 z-0">
+  <div class="absolute inset-0 z-0 pointer-events-none">
     <img src="/mj-grapes-mosaicGlass.png" alt="Vineyard background" class="w-full h-full object-cover opacity-10 saturate-[0.5]" />
     <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
     <div class="absolute w-full h-[100px] top-0 left-0 bg-gradient-to-b from-white via-white/80 to-transparent "></div>
@@ -14,7 +14,7 @@ import Button from './Button.astro';
     <div class="text-center">
       <h2 class="text-base font-semibold text-accent1 uppercase tracking-wider font-body">historische Orte & erlesener Wein </h2>
       <h2 class="mt-2 text-4xl font-extrabold font-bonanova  sm:text-5xl
-      bg-gray-900 text-transparent bg-clip-text">
+      bg-gray-900/90 text-transparent bg-clip-text">
       🍇 Entdecken Sie die Pfalz 
     </h2>
     <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 font-body">
@@ -34,7 +34,7 @@ import Button from './Button.astro';
 
     
 
-    <div class="mt-20 grid gap-4 md:grid-cols-3 lg:gap-x-8 z-20">
+    <div class="mt-20 grid gap-10 md:gap-4 md:grid-cols-3 lg:gap-x-8 z-20 px-8 sm:px-12 md:px-0 max-w-2xl lg:max-w-none mx-auto">
       <!-- Tour Card 1 -->
       <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{
