@@ -6,7 +6,7 @@ const tours = [
     id: "mandelbluete",
     title: "Mandelblüte, Meerspinne und Monarchen",
     description:
-      "Genieße während der Gimmeldinger Mandelblüte eine interaktive Wein-Erlebnis-Tour mit unseren Mandelblütenhoheiten.",
+      "Genieße während der Gimmeldinger Mandelblüte eine interaktive Weinerlebnistour mit unseren Mandelblütenhoheiten.",
     availability: "Frühling",
     images: {
       card: "/mj-almondFlowerV1.png",
@@ -77,7 +77,7 @@ const InteractiveTours = () => {
   const [selectedTour, setSelectedTour] = useState(tours[0]);
 
   return (
-    <section className="min-h-screen bg-stone-100 text-text -mt-[80px]">
+    <section className="min-h-screen bg-stone-100 text-text">
       <div className="relative w-full h-full bg-stone-100">
         <AnimatePresence>
           <motion.img
