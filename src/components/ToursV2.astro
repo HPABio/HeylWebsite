@@ -34,10 +34,10 @@ import Button from './Button.astro';
 
     
 
-    <div class="mt-20 grid gap-10 md:gap-4 md:grid-cols-3 lg:gap-x-8 z-20 px-8 sm:px-12 md:px-0 max-w-2xl lg:max-w-none mx-auto">
+    <div class="mt-20 grid gap-10 md:gap-12 lg:grid-cols-3 lg:gap-x-8 z-20 px-8 sm:px-12 md:px-0 max-w-2xl lg:max-w-none mx-auto">
       <!-- Tour Card 1 -->
       <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-t-2xl transition-opacity duration-300" style={{
           background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
           backgroundSize: "45%",
           backgroundRepeat: "repeat",
@@ -49,10 +49,10 @@ import Button from './Button.astro';
           <img src="/mj-almondFlower-mosaicGlass.png" alt="Mandelblüte2" class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full h-full
           object-cover opacity-100 group-hover:opacity-0 transition-opacity duration-300 object-[50%_36%]">
           <img src="/mj-almondFlowerV1.png" alt="Mandelblüte" class="w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-300 object-[50%_50%]">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
         </div>
         <div class="p-6">
-          <h3 class="text-2xl font-bold font-bonanova text-text">Mandelblüte, Meerspinne & Monarchen</h3>
+          <h3 class="text-2xl font-bold font-bonanova text-text">Mandelblüte, <br/> Meerspinne & Monarchen</h3>
           <p class="mt-3 text-base text-gray-600 font-body">Erleben Sie die Pfälzer Mandelblüte auf einer einzigartigen Route mit Genuss, Geschichte und Natur.</p>
         </div>
         <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full ">
@@ -64,12 +64,16 @@ import Button from './Button.astro';
            transform hover:scale-105 transition-all duration-300">
             Zur Tour
             </a>
+            <div class="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-accent2-brick group-hover:bg-gray-900/70 group-hover:text-stone-100
+             font-semibold text-sm py-1 px-3 rounded-full shadow-sm">
+              Frühling 
+            </div>
         </div>
       </div>
 
       <!-- Tour Card 2 -->
       <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-t-2xl transition-opacity duration-300" style={{
           background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
           backgroundSize: "45%",
           backgroundRepeat: "repeat",
@@ -79,7 +83,7 @@ import Button from './Button.astro';
         </div>
         <div class="relative w-full h-72 rounded-t-2xl overflow-hidden ">
           <img src="/mj-Bachus-mosaicGlass.png" alt="Bacchus" class="w-full h-full object-cover object-[50%_20%] group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
         </div>
         <div class="p-6 ">
           <h3 class="text-2xl font-bold font-bonanova text-text">Von Bacchus bis Christophorus</h3>
@@ -95,11 +99,14 @@ import Button from './Button.astro';
             Zur Tour
             </a>
         </div>
+        <div class="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-accent2-brick group-hover:bg-gray-900/70 group-hover:text-stone-100 font-semibold text-sm py-1 px-3 rounded-full shadow-sm">
+          Frühling-Herbst 
+        </div>
       </div>
 
       <!-- Tour Card 3 -->
       <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-t-2xl transition-opacity duration-300" style={{
           background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
           backgroundSize: "45%",
           backgroundRepeat: "repeat",
@@ -109,7 +116,7 @@ import Button from './Button.astro';
         </div>
         <div class="relative w-full h-72 rounded-t-2xl overflow-hidden">
           <img src="/mj-GlühweinV1.png" alt="Glühwein" class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
         </div>
         <div class="p-6">
           <h3 class="text-2xl font-bold font-bonanova text-text">Glühwein & Winterzauber</h3>
@@ -124,6 +131,9 @@ import Button from './Button.astro';
            transform hover:scale-105 transition-all duration-300">
             Zur Tour
             </a>
+        </div>
+        <div class="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-accent2-brick group-hover:bg-gray-900/70 group-hover:text-stone-100 font-semibold text-sm py-1 px-3 rounded-full shadow-sm">
+          Winter 
         </div>
       </div>
     </div>

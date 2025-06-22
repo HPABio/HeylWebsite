@@ -1,9 +1,6 @@
 ---
-// src/pages/tours.astro
 import '../styles/global.css';
-import InteractiveTours from '../components/InteractiveTours.tsx';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+const { content } = Astro.props;
 ---
 
 <html lang="de">
@@ -11,13 +8,10 @@ import Footer from '../components/Footer.astro';
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>Unsere Touren</title>
+		<title>{content.title}</title>
 		<link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400..700&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Gloock&family=Indie+Flower&family=Lusitana:wght@400;700&family=Monsieur+La+Doulaise&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<Header />
-		<div class="w-full h-[80px] top-0 left-0 bg-black -translate-y-[80px] -mb-[80px] "></div>
-		<InteractiveTours client:visible />
-		<Footer />
+		<slot />
 	</body>
-</html> 
+</html>

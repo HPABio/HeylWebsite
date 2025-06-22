@@ -1,19 +1,24 @@
-<header class="w-screen h-[70px] flex items-center justify-center
-bg-stone-100/50 backdrop-blur-[5px] shadow-md shadow-stone-400/30 sticky top-0 z-50">
+---
+const { content } = Astro.props;
+const isDarkMode = true;
+---
+
+<header class={`w-screen h-[70px] flex items-center justify-center
+${isDarkMode ? "bg-stone-900/50 text-stone-300/90 backdrop-blur-[5px] shadow-md shadow-stone-900/30 sticky top-0 z-50" : "bg-stone-100/50 backdrop-blur-[5px] shadow-md shadow-stone-400/30 sticky top-0 z-50"}`}>
   <nav class="h-full w-screen flex items-center justify-between py-2 px-6">
-    <a href="/#hero" class="text-2xl font-headline font-bold text-accent1">
+    <a href="/#hero" class="text-2xl font-bold text-accent1">
       <img src=/Heyl-Weintouren-Logo-(noBottle).png alt="Logo"
       class="flex h-12 w-auto object-contain my-auto">
     </a>
-    <ul class="flex space-x-6 font-body text-base my-auto h-full items-center">
+    <ul class="flex space-x-6 font-inter tracking-wider text-lg font-light my-auto h-full items-center">
       <li><a href="/#hero" class="hover:text-accent2-plum transition">Start</a></li>
       <li><a href="#tours" class="hover:text-accent2-plum transition">Auf einen Blick</a></li>
       <li><a href="#about-me" class="hover:text-accent2-plum transition">Über mich</a></li>
       <li><a href="#get-in-touch" class="hover:text-accent2-plum transition">Kontakt</a></li>
       <li><a href="/tours" class="inline-flex items-center px-4 py-2 
-        bg-gradient-to-r from-amber-600 to-orange-600 text-white 
+        bg-gradient-to-r from-amber-600 to-orange-600 text-amber-50/90 hover:text-amber-950
         font-semibold text-sm rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 
-        transition-all duration-300">Touren</a></li>
+        transition-all duration-200">Touren</a></li>
     </ul>
   </nav>
 </header> 

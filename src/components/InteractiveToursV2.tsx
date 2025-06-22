@@ -77,8 +77,13 @@ const InteractiveTours = () => {
   const [selectedTour, setSelectedTour] = useState(tours[0]);
 
   return (
-    <section className="min-h-screen bg-stone-100 text-text -mt-[80px]">
-      <div className="relative w-full h-full bg-stone-100">
+    <section className="min-h-screen bg-white text-text mt-[0px] relative">
+      <div className="relative w-full h-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-green-500">
+          
+
+      <div className="w-full h-[35vh]">
+        <div className="absolute inset-0 flex items-center justify-center">
         <AnimatePresence>
           <motion.img
             key={selectedTour.id + "-bg"}
@@ -87,70 +92,70 @@ const InteractiveTours = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.75, transition: { duration: 0.8 } }}
             exit={{ opacity: 0 }}
-            className={`absolute inset-0 w-full h-[95vh] ${selectedTour.images.bgObjectPosition} object-cover saturate-[1]`}
+            className={`absolute inset-0 w-full h-full ${selectedTour.images.bgObjectPosition} object-cover saturate-[1]`}
           />
         </AnimatePresence>
-          
-          <div className="absolute w-full h-[95vh] bg-gradient-to-b from-black via-black/30 to-transparent "></div>
-          <div className="absolute w-full h-[55vh] bg-gradient-to-b from-black via-black/30 to-transparent "></div>
-          <div className="absolute top-0 w-full h-[70vh] mt-[30vh] bg-gradient-to-t from-stone-100 via-stone-100/5 to-transparent"></div>
-          <div className="absolute top-0 w-full h-[70vh] mt-[30vh] bg-gradient-to-t from-stone-100/90 via-stone-100/90 to-transparent"></div>
+        </div>
+      </div>
 
-
-
-
-        <div className="relative w-full h-full flex flex-col justify-center z-20 ">
-        <div className="relative z-20 w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[5%]">
-          <div className="grid gap-8 lg:grid-cols-3 lg:gap-x-8">
-            {tours.map((tour) => (
-              <motion.div
-                key={tour.id}
-                onClick={() => setSelectedTour(tour)}
-                className={`cursor-pointer group relative overflow-hidden
-                  rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 ${
-                  selectedTour.id === tour.id
-                    ? "outline-offset-[12px] ring-offset-0 ring-2 ring-soft-beige outline-[2px] outline-soft-beige/30 outline-none border-[2.5px] border-stone-100"
-                    : "border-[2.5px] border-soft-beige/20"
-                }`}
-                whileHover={{ scale: 1.03 }}
-              >
-                <div className="relative w-full h-72 overflow-hidden rounded-2xl">
-                  <img
-                    src={tour.images.card}
-                    alt={tour.title}
-                    className={`w-full h-full ${tour.images.objectPosition} object-cover group-hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden`}
-                  />
-                  <div className="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-amber-900/90 font-semibold text-sm py-1 px-3 rounded-full shadow-sm">
-                    {tour.availability}
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <h3 className="absolute bottom-4 left-4 text-2xl font-bold font-bonanova text-soft-sand">
-                    {tour.title}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
+      <div className="absolute w-full h-full top-0 left-0 "></div>
+          {/* TITLE AND DESCRIPTION */}
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedTour.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
               exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
-              className="text-center mt-[12%]">
+              className="text-center relative"
+            >
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bonanova font-bold text-gray-900 drop-shadow-lg">
                 {selectedTour.title}
               </h1>
-              <p className="mt-4 max-w-3xl mx-auto text-xl md:text-2xl text-gray-800/90 font-body drop-shadow-sm">
+              <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-600 font-body drop-shadow-sm">
                 {selectedTour.description}
               </p>
             </motion.div>
           </AnimatePresence>
 
 
-          <div className="h-full mt-6 md:mt-12 max-w-3xl mx-auto pb-44" >
+          <div className="absolute inset-0 top-0 left-0 w-full h-full flex items-start justify-center">
+          <div className="grid gap-8 lg:grid-cols-3 lg:gap-x-8  min-w-[500px] w-2/3  ">
+            {tours.map((tour) => (
+              <motion.div
+                key={tour.id}
+                onClick={() => setSelectedTour(tour)}
+                className={`cursor-pointer group relative bg-red-300 overflow-hidden
+                  rounded-b-2xl  shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 ${
+                  selectedTour.id === tour.id
+                    ? "ring-4 ring-accent1 ring-offset-4 "
+                    : ""
+                }`}
+                whileHover={{ scale: 1.03 }}
+              >
+                <div className="relative w-full h-72 overflow-hidden rounded-b-2xl ">
+                  <img
+                    src={tour.images.card}
+                    alt={tour.title}
+                    className={`w-full h-full ${tour.images.objectPosition} object-cover group-hover:scale-105 transition-transform duration-300 rounded-b-2xl overflow-hidden`}
+                  />
+                  <div className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-accent2-brick font-semibold text-sm py-1 px-3 rounded-full shadow-sm">
+                    {tour.availability}
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <h3 className="absolute bottom-4 left-4 text-2xl font-bold font-bonanova text-white">
+                    {tour.title}
+                  </h3>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          </div>
+
+
+
+
+
+          <div className="mt-16 md:mt-24 max-w-3xl mx-auto bg-red-500">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedTour.id + "-desc"}
@@ -197,8 +202,6 @@ const InteractiveTours = () => {
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
-      </div>
         </div>
       </div>
 
