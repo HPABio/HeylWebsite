@@ -1,25 +1,183 @@
 ---
-const { content } = Astro.props;
-const isDarkMode = false;
+const { isDarkMode = false } = Astro.props;
 ---
 
-<header class={`w-screen h-[70px] flex items-center justify-center
-${isDarkMode ? "bg-transparent text-stone-300/90 backdrop-blur-[5px] shadow-md shadow-stone-900/30 sticky top-0 z-50" : "bg-soft-sand/30 text-stone-600 backdrop-blur-[5px] shadow-md shadow-stone-400/30 sticky top-0 z-50"}`}>
+<header
+  class:list={[
+    "w-screen h-[70px] flex items-center justify-center sticky top-0 z-50",
+    isDarkMode
+      ? "bg-transparent text-stone-300/90 backdrop-blur-[5px] shadow-md shadow-stone-900/30"
+      : "bg-soft-sand/30 text-stone-600 backdrop-blur-[5px] shadow-md shadow-stone-400/30",
+  ]}
+>
   <nav class="h-full w-screen flex items-center justify-between py-2 px-6">
-    <a href="/#hero" class="text-2xl font-bold text-accent1">
-      <img src={`${isDarkMode ? "/Heyl-Weintouren-Logo-(noBottle)-light.svg" : "/Heyl-Weintouren-Logo-(noBottle)-dark.png"}`} alt="Logo"
-      class="flex h-12 w-auto object-contain my-auto">
+    <a href="/#hero" class="text-2xl font-bold text-accent1 z-50">
+      <img
+        src={`${isDarkMode ? "/Heyl-Weintouren-Logo-(noBottle)-light.svg" : "/Heyl-Weintouren-Logo-(noBottle)-dark.png"}`}
+        alt="Logo"
+        class="flex h-12 w-auto object-contain my-auto"
+      />
     </a>
-    <ul class="flex space-x-6 font-inter tracking-wider text-lg font-light my-auto h-full items-center">
-      <li><a href="/#hero" class="hover:text-orange-700/80 hover:font-bold transition">Start</a></li>
-      <li><a href="#tours" class="hover:text-orange-700/80 hover:font-bold transition">Auf einen Blick</a></li>
-      <li><a href="#about-me" class="hover:text-orange-700/80 hover:font-bold transition">Über mich</a></li>
-      <li><a href="#get-in-touch" class="hover:text-orange-700/80 hover:font-bold transition">Kontakt</a></li>
-      <li><a href="/tours" class="inline-flex items-center px-4 py-2 
-        bg-gradient-to-r from-amber-600 to-orange-600 text-amber-50/90 hover:text-amber-950
-        font-semibold text-sm rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 
-        transition-all duration-200">Touren</a></li>
+    <ul
+      class="hidden sm:flex space-x-6 font-inter tracking-wider text-xs sm:text-lg font-light my-auto h-full items-center"
+    >
+      <li>
+        <a
+          href="/#hero"
+          class="hover:text-orange-700/80 hover:font-bold transition"
+          >Start</a
+        >
+      </li>
+      <li>
+        <a
+          href="#tours"
+          class="hover:text-orange-700/80 hover:font-bold transition"
+          >Auf einen Blick</a
+        >
+      </li>
+      <li>
+        <a
+          href="#about-me"
+          class="hover:text-orange-700/80 hover:font-bold transition"
+          >Über mich</a
+        >
+      </li>
+      <li>
+        <a
+          href="#get-in-touch"
+          class="hover:text-orange-700/80 hover:font-bold transition"
+          >Kontakt</a
+        >
+      </li>
+      <li>
+        <a
+          href="/tours"
+          class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-amber-50/90 hover:text-amber-950 font-semibold text-xs sm:text-sm rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-200"
+          >Touren</a
+        >
+      </li>
     </ul>
+    <div class="sm:hidden flex items-center">
+      <button id="menu-btn" class="hamburger z-50 focus:outline-none">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+    </div>
   </nav>
-</header> 
+
+  <!-- Mobile Menu -->
+  <div
+    id="menu"
+    class="fixed h-fit w-full inset-0 z-40 flex flex-col items-center justify-center bg-soft-sand/95 opacity-0 pointer-events-none 
+    transition-all duration-300 ease-in-out transform -translate-y-full
+    py-12"
+  >
+    <ul class="flex flex-col items-center space-y-8">
+      <li>
+        <a href="/#hero" class="mobile-nav-link text-3xl font-bonanova"
+          >Start</a
+        >
+      </li>
+      <li>
+        <a href="#tours" class="mobile-nav-link text-3xl font-bonanova"
+          >Auf einen Blick</a
+        >
+      </li>
+      <li>
+        <a href="#about-me" class="mobile-nav-link text-3xl font-bonanova"
+          >Über mich</a
+        >
+      </li>
+      <li>
+        <a href="#get-in-touch" class="mobile-nav-link text-3xl font-bonanova"
+          >Kontakt</a
+        >
+      </li>
+      <li>
+        <a
+          href="/tours"
+          class="mt-8 inline-flex items-center px-8 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-amber-50/90 hover:text-amber-950 font-semibold text-xl rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-200"
+          >Touren</a
+        >
+      </li>
+    </ul>
+  </div>
+</header>
+
+<style>
+  .hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+  }
+
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #4b3a2b; /* Using text color from your config */
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
+
+  .hamburger-bottom {
+    transform: translateY(14px);
+  }
+
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+  }
+
+  .open .hamburger-middle {
+    display: none;
+  }
+
+  .open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  }
+  .mobile-nav-link {
+    @apply text-text/80 hover:text-accent1 transition-colors duration-300;
+  }
+</style>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+
+  const toggleMenu = () => {
+    menuBtn.classList.toggle("open");
+    const isOpen = menuBtn.classList.contains("open");
+    if (isOpen) {
+      menu.classList.remove("opacity-0", "pointer-events-none", "-translate-y-full");
+      menu.classList.add("opacity-100", "pointer-events-auto", "translate-y-0");
+    } else {
+      menu.classList.remove("opacity-100", "pointer-events-auto", "translate-y-0");
+      menu.classList.add("opacity-0", "pointer-events-none", "-translate-y-full");
+    }
+    document.body.classList.toggle("overflow-hidden");
+  };
+
+  menuBtn.addEventListener("click", toggleMenu);
+
+  // Close menu when a link is clicked
+  const navLinks = menu.querySelectorAll("a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (!menu.classList.contains("pointer-events-none")) {
+        toggleMenu();
+      }
+    });
+  });
+</script>
 

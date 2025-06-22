@@ -58,7 +58,7 @@ const tours = [
   },
   {
     id: "gluehwein",
-    title: "Glühwein & Winterzauber",
+    title: "Glühwein - Geheimnisvolles Gimmeldingen",
     description:
       "Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.",
     availability: "Winter",

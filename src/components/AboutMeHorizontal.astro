@@ -1,0 +1,121 @@
+---
+const { className } = Astro.props;
+---
+
+<section id="about-me" class={`relative bg-white py-24 sm:py-32 ${className} `}>
+  <div class="absolute inset-0 z-0 opacity-1" style={{
+    background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
+    backgroundSize: "280px",
+    backgroundRepeat: "repeat",
+
+  }}></div>
+  <div class="absolute h-[50%] w-full top-0 left-0 bg-gradient-to-b from-white via-white/55 to-transparent z-0"></div>
+
+  <div class="w-full relative z-10 max-w-2xl lg:max-w-5xl xl:max-w-6xl  mx-auto">
+    <div class="w-full md:grid md:grid-cols-2 md:items-center md:gap-x-6">
+      
+      <!-- Row 1, Col 1: Image -->
+      <div class="flex justify-center items-end w-full h-full md:row-start-1 md:col-start-2 md:row-span-2">
+        <div class="relative rounded-2xl md:shadow-lg overflow-hidden aspect-[6/7] max-h-[500px] ">
+          <img src="/BrigittaHeylPortrait2.png" alt="Portrait von Brigitta Heyl" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+        </div>
+      </div>
+
+      <!-- Row 1, Col 2: Intro Text -->
+      <div class="max-w-sm mx-auto md:row-start-1 md:col-start-1 md:max-w-none">
+        <div class="text-center  mt-12 md:mt-0">
+          <div class="text-center">
+            <h2 class="my-4 text-4xl font-extrabold font-bonanova sm:text-5xl bg-gray-900 text-transparent bg-clip-text">
+              🍇 
+            </h2>
+            <h2 class="text-base font-semibold text-accent1 uppercase tracking-wider font-body">ihre Gastgeberin stellt sich vor </h2>
+            <h2 class="text-4xl font-extrabold font-bonanova leading-none sm:text-5xl -mt-2 bg-gray-900 text-transparent bg-clip-text">
+              Hallo und herzlich willkommen!
+            </h2>
+          </div>
+          <div class="mt-12 space-y-4 text-lg text-gray-600 font-body mix-blend-color-burn flex flex-col justify-center">
+            <p class="text-left sm:text-center px-4">
+              Meine Name ist <span class=" font-bold text-xl">Brigitta Heyl</span> und als begeisterte Wahlpfälzerin liebe ich die Pfalz und meinen Wohnort Gimmeldingen. Seit 2023 bin ich <span class="font-bold text-accent1/80">zertifizierte Kultur- und Weinbotschafterin</span> und freue mich, Ihnen die Schönheit und Vielfalt unserer Region näher zu bringen.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 (Full Width) -->
+      <div class="max-w-sm md:max-w-2xl md:mx-auto mt-12 md:my-24 
+      md:col-start-1 md:row-start-3 md:col-span-2 md:row-span-1 ">
+        <div class=" text-lg text-gray-600 font-body mix-blend-color-burn flex flex-col justify-center items-center">
+          <h2 class="text-[44px] sm:text-5xl md:text-7xl font-normal text-red-950/70 lowercase font-doulaise ">
+            mittendrin statt nur dabei
+          </h2>
+          <div class="w-screen md:w-full">
+            <h3 class="w-full -mt-8 sm:-mt-12 md:-mt-[52px] text-center 
+            text-[88px] sm:text-[120px] md:text-[100px] font-extrabold font-bonanova tracking-tighter text-accent1/80 leading-snug ">
+              Die Pfalz
+            </h3>
+          </div>
+          <h2 class="font-bonanova font-extrabold text-text/40 text-3xl sm:text-[40px] md:text-[37px] leading-none -mt-8 sm:-mt-10 md:-mt-10">und ihre Geschichte</h2>
+          <h2 class="font-bonanova font-extrabold text-text/40 text-3xl sm:text-[40px] md:text-[37px] leading-none -mt-2 sm:-mt-3 md:-mt-3">interaktiv erleben</h2>
+        </div>
+      </div>
+
+      <!-- Row 3, Col 1: Text Block -->
+      <div class="max-w-sm md:max-w-2xl  md:mx-auto 
+      md:col-start-1 md:col-span-1 md:row-start-2 md:mt-12">
+        <div class="flex flex-col justify-center relative mt-12 md:mt-0 space-y-4 md:space-y-0 text-lg px-4 text-gray-600 font-body mix-blend-color-burn">
+          <p class="text-left sm:text-center md:text-left">
+            Je nach Jahreszeit biete ich verschiedene ca 4-stündige Wein-Erlebnistouren/Weinbergs-Wanderungen an, die Sie durch unsere idyllischen Weinberge, zu den schönsten Aussichtspunkten oder durch den charmanten Ortskern von Gimmeldingen führen. An mehreren Stationen verkosten wir die Weine der umliegenden Weingüter mit hausgemachten Pfälzer Snacks – ein genussvolles Food-Pairing, das die Aromen perfekt zur Geltung bringt. Bei einigen Touren besuchen wir auch mehrere Weingüter direkt im historischen Ortskern. 
+          </p>
+        </div>
+      </div>
+
+      
+      <div class="flex flex-col justify-start items-start relative max-w-sm md:max-w-xl md:my-auto 
+      md:col-start-2 md:col-span-1 md:row-start-4 md:row-span-1 h-full space-y-2
+       text-lg lg:text-[25px] py-12 px-4 text-gray-600 font-body mix-blend-color-burn">
+      <p class="text-left sm:text-center md:text-center md:leading-tight">
+        "Bei jeder Tour erhalten Sie spannende Informationen zu Weinen und Weingütern, zum Weinbau, seiner Zukunft und zur Gimmeldinger Mandelblüte."
+      </p>
+      <p class="bg-stone-500/30 text-accent1/5 bg-clip-text text-4xl text-center py-4 w-full">🌸</p>
+      <p class="text-left sm:text-center md:text-left text-lg pt-10 md:pt-0 leading-snug">
+        Freuen Sie sich dabei auf spannende interaktive Erlebnisse, bei denen wir gemeinsam Geschichte lebendig werden lassen. Lassen Sie sich von meiner Begeisterung für die Pfalz anstecken und erleben Sie unvergessliche Momente in einer der schönsten Weinregionen Deutschlands.
+      </p>
+      </div>
+
+      <div class="flex justify-center items-center md:row-start-4 md:col-start-1 md:row-span-1
+      px-4 h-full">
+        <div class="relative rounded-2xl md:shadow-lg overflow-hidden aspect-[7/6]">
+          <img src="/onSitePhotos/250621_Bacchus_bis_Christophorus_bei_Steigelmanns.JPG" alt="Portrait von Brigitta Heyl" 
+          class="w-full h-full object-cover ">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        </div>
+      </div>
+      
+      <div class="max-w-sm md:max-w-lg mx-auto md:col-start-1 md:col-span-2 md:row-start-5 md:row-span-1 
+      py-24 mt-32">
+      <p class="bg-stone-500/30 text-transparent bg-clip-text text-6xl text-center pb-4">🍷</p>
+      <p class="font-light text-gray-700 pb-4 text-center leading-snug md:text-3xl">
+        "Ich freue mich darauf, Sie auf eine meiner Touren mitzunehmen – schreiben Sie mir eine Mail oder rufen Sie einfach an!"
+        <div class="w-fit h-fit flex justify-center items-center mx-auto relative mt-12">
+          <img src="/wineRing.png" alt="Vineyard background" class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-60%] 
+          w-full object-cover opacity-85 -rotate-[75deg] scale-110" />
+          <img src="/Heyl-Weintouren-Logo-(noBottle).svg" alt="Vineyard background" class="relative
+          w-[200px] aspect-square object-cover opacity-85" />
+      </div>
+        </p>
+      </div>
+      
+      <div class="w-fit h-fit justify-center items-center mx-auto relative hidden
+          md:col-start-1 md:col-span-1 md:row-start-5 md:row-span-1 md:mt-32 ">
+          <img src="/wineRing.png" alt="Vineyard background" class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-60%] 
+          w-full object-cover opacity-85 -rotate-[75deg] scale-110" />
+          <img src="/Heyl-Weintouren-Logo-(noBottle).svg" alt="Vineyard background" class="relative
+          w-[300px] aspect-square object-cover opacity-85" />
+      </div>
+    </div>
+    
+    
+  </div>
+</section> 

@@ -4,32 +4,39 @@ import Button from './Button.astro';
 <!-- src/components/Tours.astro -->
 <section id="tours" class="relative py-24 sm:py-32 bg-white overflow-hidden ">
   
-  <div class="absolute inset-0 z-0 pointer-events-none">
-    <img src="/mj-grapes-mosaicGlass.png" alt="Vineyard background" class="w-full h-full object-cover opacity-10 saturate-[0.5]" />
+  <div class="absolute  inset-0 z-0 pointer-events-none">
+    <img src="/mj-grapes-mosaicGlass.png" alt="Vineyard background" class="w-full h-full object-cover object-[50%_5%] scale-110 opacity-10 saturate-[0.5]" />
     <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
     <div class="absolute w-full h-[100px] top-0 left-0 bg-gradient-to-b from-white via-white/80 to-transparent "></div>
   </div>
   
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:hidden">
     <div class="text-center">
-      <h2 class="text-base font-semibold text-accent1 uppercase tracking-wider font-body">historische Orte & erlesener Wein </h2>
-      <h2 class="mt-2 text-4xl font-extrabold font-bonanova  sm:text-5xl
+      <h2 class="text-4xl font-extrabold font-bonanova  sm:text-5xl
       bg-gray-900/90 text-transparent bg-clip-text">
-      🍇 Entdecken Sie die Pfalz 
+      🍇
+    </h2>
+      <h2 class="mt-2 text-base font-semibold text-accent1 uppercase tracking-wider font-body">historische Orte & erlesener Wein </h2>
+      <h2 class="-mt-1 text-4xl font-extrabold font-bonanova  sm:text-5xl
+      bg-gray-900/90 text-transparent bg-clip-text leading-none">
+      Entdecken Sie die <span class="text-7xl sm:text-5xl leading-none">Pfalz</span> 
     </h2>
     <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 font-body">
       Jede Tour ein einzigartiges Erlebnis, das die Schönheit der Region, ihre Geschichte und natürlich ihre exzellenten Weine in den Mittelpunkt stellt.
     </p>
-    <!-- <div class="flex justify-center relative  w-full h-fit min-h-[50px] z-10 my-12 ">
-      <a href="/tours" class="inline-flex items-center px-8 py-4 
-      bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold text-lg rounded-full shadow-lg
-      hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300">
-      Zu den Touren
-      <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="3 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-      </svg>
-      </a>
-    </div> -->
+    </div>
+    </div>
+  
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hidden sm:block">
+    <div class="text-center">
+      <h2 class="text-base font-semibold text-accent1 uppercase tracking-wider font-body">historische Orte & erlesener Wein </h2>
+      <h2 class="mt-2 text-4xl font-extrabold font-bonanova  sm:text-5xl
+      bg-gray-900/90 text-transparent bg-clip-text">
+      🍇 Entdecken Sie die <span class="text-6xl sm:text-5xl">Pfalz</span> 
+    </h2>
+    <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 font-body">
+      Jede Tour ein einzigartiges Erlebnis, das die Schönheit der Region, ihre Geschichte und natürlich ihre exzellenten Weine in den Mittelpunkt stellt.
+    </p>
     </div>
 
     
@@ -119,7 +126,7 @@ import Button from './Button.astro';
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
         </div>
         <div class="p-6">
-          <h3 class="text-2xl font-bold font-bonanova text-text">Glühwein & Winterzauber</h3>
+          <h3 class="text-2xl font-bold font-bonanova text-text">Glühwein - Geheimnisvolles Gimmeldingen</h3>
           <p class="mt-3 text-base text-gray-600 font-body">Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.</p>
         </div>
         <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full ">
