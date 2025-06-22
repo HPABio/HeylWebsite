@@ -23,19 +23,19 @@ const WaterColorReveal = ({
   className = "",
 }: WaterColorRevealProps) => {
   const elementRef = useRef(null);
-  // console.log("elementRef:", elementRef.current);
+  console.log("elementRef:", elementRef.current);
 
   // Animation runs while element is in viewport
   const { scrollYProgress } = useScroll({
     target: elementRef,
-    offset: ["center end", "center start"],
+    offset: ["start center", "end start"],
   });
 
   // Add this to see if the hook is working at all
-  // console.log("useScroll hook initialized", { scrollYProgress });
+  console.log("useScroll hook initialized", { scrollYProgress });
 
   // Also log the element ref
-  // console.log("Element ref:", elementRef.current);
+  console.log("Element ref:", elementRef.current);
 
   // Convert percentage width/height to pixels
   const widthInPx =
@@ -55,16 +55,10 @@ const WaterColorReveal = ({
     [0, Math.max(widthInPx, heightInPx) * 0.47] // Increased to ensure full coverage
   );
 
-  const haloFrequency = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0.01, 0.05]
-  );
-
-  // scrollYProgress.on("change", (value: number) => {
-  //   console.log("scrollYProgress:", value);
-  //   console.log("circleRadius:", circleRadius.get());
-  // });
+  scrollYProgress.on("change", (value: number) => {
+    console.log("scrollYProgress:", value);
+    console.log("circleRadius:", circleRadius.get());
+  });
 
   // For side reveal, use rectangle width
   const rectWidth = useTransform(scrollYProgress, [0, 1], [0, widthInPx]);
@@ -77,11 +71,40 @@ const WaterColorReveal = ({
     >
       <svg width={widthInPx} height={heightInPx} className="absolute inset-0">
         <defs>
-          <filter id="sandy">
-            <feTurbulence
+          <filter id="sandy2">
+            <motion.feTurbulence
               type="fractalNoise"
-              baseFrequency="0.03"
-              numOctaves="13"
+              animate={{
+                baseFrequency: [0.01, 0.02, 0.01],
+                transition: {
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear"
+                }
+              }}
+              numOctaves={13}
+              result="noise"
+            />
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="noise"
+              scale="60"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            />
+          </filter>
+          <filter id="sandy3">
+            <motion.feTurbulence
+              type="fractalNoise"
+              animate={{
+                baseFrequency: [0.02, 0.01, 0.02],
+                transition: {
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear"
+                }
+              }}
+              numOctaves={13}
               result="noise"
             />
             <feDisplacementMap
@@ -99,7 +122,15 @@ const WaterColorReveal = ({
                 cy="50%"
                 fill="white"
                 r={circleRadius}
-                filter="url(#sandy)"
+                filter="url(#sandy2)"
+                animate={{
+                  rotate: [0, 360],
+                  transition: {
+                    duration: 30,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }
+                }}
               />
             ) : (
               <motion.rect
@@ -107,7 +138,27 @@ const WaterColorReveal = ({
                 y="0"
                 height={heightInPx}
                 fill="white"
-                filter="url(#sandy)"
+                filter="url(#sandy2)"
+                style={{ width: rectWidth }}
+              />
+            )}
+          </mask>
+          <mask id={`${id}-revealMask2`}>
+            {revealFromCenter ? (
+              <motion.circle
+                cx="50%"
+                cy="50%"
+                fill="white"
+                r={circleRadius}
+                filter="url(#sandy3)"
+              />
+            ) : (
+              <motion.rect
+                x="0"
+                y="0"
+                height={heightInPx}
+                fill="white"
+                filter="url(#sandy3)"
                 style={{ width: rectWidth }}
               />
             )}
@@ -115,19 +166,38 @@ const WaterColorReveal = ({
         </defs>
         <foreignObject width={widthInPx} height={heightInPx}>
           <div
-            className="w-full h-full"
-            style={{
-              mask: `url(#${id}-revealMask)`,
-              WebkitMask: `url(#${id}-revealMask)`,
-            }}
-          >
+            className="w-full h-full">
             <div>{child1}</div>
             <div>{child2}</div>
-            <motion.div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[100%] h-[100%] scale-50"
+            <motion.div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[100%] h-[100%]"
             style={{
               mask: `url(#${id}-revealMask)`,
               WebkitMask: `url(#${id}-revealMask)`,
               background: "radial-gradient(circle, rgba(0,0,0,0) 62%, rgba(0,0,0,1) 42%)",
+            }}
+            animate={{
+              opacity: [0.5, 0, 0.5],
+              transition: {
+                duration: 10,
+                repeat: Infinity,
+                ease: "linear"
+              }
+            }}
+            />
+            <motion.div className="absolute top-[0%] left-[0%] translate-x-[-50%] translate-y-[-50%] w-[100%] h-[100%] "
+            style={{
+              mask: `url(#${id}-revealMask2)`,
+              WebkitMask: `url(#${id}-revealMask2)`,
+              background: "radial-gradient(circle, rgba(0,0,0,0) 62%, rgba(0,0,0,1) 42%)",
+              rotate: "180deg"
+            }}
+            animate={{
+              opacity: [0, 0.7, 0],
+              transition: {
+                duration: 10,
+                repeat: Infinity,
+                ease: "linear"
+              }
             }}
             />
           </div>
