@@ -3,29 +3,23 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const post1 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=mandelbluete-meerspinne-und-monarchen');
 const post2 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=Von-Bacchus-bis-Christophorus');
-
-
+const post3 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=gluehwein-geheimnisvolles-gimmeldingen');
 
 const post1Json = await post1.json();
+const post2Json = await post2.json();
+const post3Json = await post3.json();
+
 let rawHtml1 = post1Json[0].content.rendered;
+let rawHtml2 = post2Json[0].content.rendered;
+let rawHtml3 = post3Json[0].content.rendered;
+
+
 // Split by "\n\n\n\n"
 let parts = rawHtml1.split('\n\n\n\n');
-
-const post2Json = await post2.json();
-let rawHtml2 = post2Json[0].content.rendered;
-// Split by "\n\n\n\n"
 let parts2 = rawHtml2.split('\n\n\n\n');
-
-// const slices = parts.match(/>.*?</gs) || [];
-// const subtitle1 = slices[0]
+let parts3 = rawHtml3.split('\n\n\n\n');
 
 
-
-/* const paragraphMatches1 = rawHtml1.match(/<p>.*?<\/p>/gs) || [];
-
-const subtitle1 = paragraphMatches1[0].replace(/<[^>]*>?/g, '') || "";
-const main1 = paragraphMatches1.slice(1, -1).join("").replace(/<[^>]*>?/g, '') || "";
-const appendix1 = paragraphMatches1.at(-1).replace(/<[^>]*>?/g, '') || ""; */
 
 const tours = [
   {
@@ -57,7 +51,7 @@ const tours = [
       bgObjectPosition: "object-[50%_50%]",
     },
     longDescription: `
-    ${parts[1]}
+    ${parts2[1]}
     </br>
     ${parts2.slice(2, 8).join('\n\n\n\n')}
     </br>
@@ -66,9 +60,9 @@ const tours = [
   },
   {
     id: "gluehwein",
-    title: "Glühwein - Geheimnisvolles Gimmeldingen",
+    title: `${post3Json[0].title.rendered}`,
     description:
-      "Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.",
+    `${parts2[0]}`,
     availability: "Winter",
     images: {
       card: "/mj-GlühweinV1.png",
@@ -77,7 +71,7 @@ const tours = [
       bgObjectPosition: "object-center",
     },
     longDescription:
-      "Wenn die Tage kürzer werden und die Landschaft in ein winterliches Kleid gehüllt ist, entfaltet die Pfalz einen ganz besonderen Charme. Bei unserer Glühwein-Tour wärmen wir uns mit hausgemachtem Glühwein, lauschen spannenden Geschichten am knisternden Feuer und genießen die gemütliche Atmosphäre. Ein unvergessliches Wintererlebnis, das Herz und Seele wärmt.",
+      ` ${parts3[1]}`,
   },
 ];
 
