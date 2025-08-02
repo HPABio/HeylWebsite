@@ -8,19 +8,30 @@ const post2Json = await post2.json();
 
 
 const post1Json = await post1.json();
-const rawHtml1 = post1Json[0].content.rendered;
-const paragraphMatches1 = rawHtml1.match(/<p>.*?<\/p>/gs) || [];
+let rawHtml1 = post1Json[0].content.rendered;
+// Split by "\n\n\n\n"
+let parts = rawHtml1.split('\n\n\n\n');
 
-const subtitle1 = paragraphMatches1[0].replace(/<[^>]*>?/g, '') || "";
+const slices = parts.match(/>.*?</gs) || [];
+const subtitle1 = slices[1]
+
+
+
+
+
+const paragraphMatches1 = rawHtml1.match(/>.*?</gs) || [];
+const subtitleMatches1 = rawHtml1.match(/<h2>.*?<\/h2>/gs) || [];
+
+// const subtitle1 = subtitleMatches1[0].replace(/<[^>]*>?/g, '') || "";
 const main1 = paragraphMatches1.slice(1, -1).join("").replace(/<[^>]*>?/g, '') || "";
 const appendix1 = paragraphMatches1.at(-1).replace(/<[^>]*>?/g, '') || "";
 
 const tours = [
   {
     id: "mandelbluete",
-    title: "Mandelblüte, Meerspinne und Monarchen",
+    title: `${post1Json[0].title.rendered}`,
     description:
-      "Genieße während der Gimmeldinger Mandelblüte eine interaktive Wein-Erlebnis-Tour mit unseren Mandelblütenhoheiten.",
+    ``,
     availability: "Frühling",
     images: {
       card: "/mj-almondFlowerV1.png",
@@ -29,16 +40,7 @@ const tours = [
       bgObjectPosition: "object-[50%_36%]",
     },
     longDescription: `
-      <p class="mb-4">Erlebe mit Freunden, Kollegen und Familie eine unterhaltsame Weinerlebnistour durch die rosa blühenden Weinberge von Gimmeldingen. Geführt von einer zertifizierten Kultur- und Weinbotschafterin erwartet Dich eine spannende Mischung aus Natur, Genuss und kurzweiligen historischen Episoden - perfekt für alle Sinne! Das erwartet dich:</p>
-      <ul class="list-disc pl-5 space-y-2 mb-4">
-        <li>🌸 Genieße einen rosa Begrüßungs-Secco mit einem Pfälzer Snack und einer herrlichen Aussicht!</li>
-        <li>🥾 Erkunde auf der 4 km langen Weinbergs-Wanderung die schönsten Plätze und Mandelbäume in Gimmeldingen</li>
-        <li>🍷 Lass Dich unterwegs von weiteren 4 exzellenten Weinen lokaler Weingüter mit abgestimmten Mandel-Snacks verwöhnen</li>
-        <li>✨ Genieße vor Ort einen besonderen Riesling aus der historischen Meerspinn-Lage</li>
-        <li>📖 Erfahre, warum das Mandelblütenfest in Gimmeldingen stattfindet, was Mandeln mit der Meerspinne gemeinsam haben und warum die Bayern das Oktoberfest den Pfälzern verdanken</li>
-        <li>🎁 Zum Abschluss wartet eine süße, mandelige Überraschung auf Dich</li>
-      </ul>
-      <p>Diese Tour ist mehr als nur eine Führung – sie verbindet, inspiriert und macht Spaß: Ob als Team-Aktivität oder gemütlicher Tag mit Deinen Liebsten – diese Tour verbindet Genuss mit Natur, lässt Geschichte erlebbar werden und zeigt Dir Gimmeldingen von seiner schönsten Seite.</p>
+
     `,
   },
   {
