@@ -1,5 +1,27 @@
 ---
 import WaterColorReveal from './WaterColorReveal.tsx';  
+const res = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts');
+const posts = await res.json();
+
+const post1 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=ergruenden-sie');
+const post2 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=geniessen-sie');
+const post3 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=entdecken-sie');
+const post4 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=tauchen-sie');
+const post5 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=erleben-sie-2');
+
+
+const post1Json = await post1.json();
+const post2Json = await post2.json();
+const post3Json = await post3.json();
+const post4Json = await post4.json();
+
+
+
+console.log(post1Json);
+console.log(post2Json);
+console.log(post3Json);
+console.log(post4Json);
+
 ---
 
 <!-- src/components/TestSection.astro -->
@@ -26,22 +48,35 @@ import WaterColorReveal from './WaterColorReveal.tsx';
       pr-32 pl-2 py-3 z-10">...darum rate ich sei weise, zöger nicht und reise reise.
     </p>
       <div class="flex-1 order-2 md:order-1">
-        <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
+
+        {post1Json && (() => {
+          const rawHtml1 = post1Json[0].content.rendered;
+          const paragraphMatches1 = rawHtml1.match(/<p>.*?<\/p>/gs) || [];
+        
+          const subtitle1 = paragraphMatches1[0].replace(/<[^>]*>?/g, '') || "";
+          const main1 = paragraphMatches1.slice(1, -1).join("").replace(/<[^>]*>?/g, '') || "";
+          const appendix1 = paragraphMatches1.at(-1).replace(/<[^>]*>?/g, '') || "";
+        
+          return (
+            <>
+              <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
           <span class="text-accent1/50 pr-32 text-nowrap">
-            Erleben Sie
+            {post1Json[0].title.rendered}
           </span>
         </h2>
         <p class="text-lg xl:text-xl text-stone-700/75 mb-4 xl:leading-none">
-          die Geschichte von Neustadt an der Weinstraße und Gimmeldingen interaktiv. 
+          {subtitle1}
           </p>
         <p class="text-sm text-stone-500/60">
-          Ob als passiver Zuschauer oder zentraler Teil des Geschehens, während der interaktiven Tour-Elemente
-          haben Sie die Möglichkeit in die lebendige Geschichte der Gegend einzutauchen. Dabei können die aktiven Teilnehmer
-          der Tour in die Rolle einer historische Figur schlüpfen und die Geschichte hautnah erleben.
+          {main1}
         </p>
         <h2 class="text-5xl xl:text-7xl font-normal text-text/30 mb-6 font-bonanova tracking-tight text-nowrap">
-          3<span class="text-4xl"> bis </span>4 Stunden
+          {appendix1}
         </h2>
+            </>
+          );
+        })()}
+        
       </div>
       <div class="flex-1 order-1 md:order-2 flex justify-center saturate-[0.45] hover:saturate-[1] transition-all duration-300
       mt-12 lg:mt-0">
@@ -77,23 +112,35 @@ import WaterColorReveal from './WaterColorReveal.tsx';
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto
     mt-12 lg:mt-0">
       <div class="flex-1 order-2 md:order-2 pr-12">
-        <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 -ml-1 font-bonanova tracking-tight text-nowrap">
-          <span class="text-accent1/50 lg:pr-32 text-nowrap">
-            Genießen Sie
+       
+        {post2Json && (() => {
+          const rawHtml2 = post2Json[0].content.rendered;
+          const paragraphMatches2 = rawHtml2.match(/<p>.*?<\/p>/gs) || [];
+        
+          const subtitle2 = paragraphMatches2[0].replace(/<[^>]*>?/g, '') || "";
+          const main2 = paragraphMatches2.slice(1, -1).join("").replace(/<[^>]*>?/g, '') || "";
+          const appendix2 = paragraphMatches2.at(-1).replace(/<[^>]*>?/g, '') || "";
+        
+          return (
+            <>
+              <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
+          <span class="text-accent1/50 pr-32 text-nowrap">
+            {post2Json[0].title.rendered}
           </span>
         </h2>
         <p class="text-lg xl:text-xl text-stone-700/75 mb-4 xl:leading-none">
-          Weinerzeugnisse aus den Bergen der Region.
+          {subtitle2}
+          </p>
+        <p class="text-sm text-stone-500/60">
+          {main2}
         </p>
-        <p class="text-sm text-stone-500/60 lg:pr-10 xl:pr-0">
-          Bekannt für seine Weinberge und seine Weinprodukt wird ihnen hier eine kleine Auswahl an lokal 
-          produzierten Weinen angeboten. Und da zu einem guten Wein ein kleiner Happen nicht fehlen sollte,
-          gibt es dazu ein paar eigens abgestimmte regionale Snacks, die eine perfekte geschmackliche Ergänzung
-          darstellen. 
-        </p>
-        <h2 class="text-5xl xl:text-7xl font-normal  text-text/30 mb-6 font-bonanova tracking-tight text-nowrap">
-          4<span class="text-4xl"> bis </span>5 Weine
+        <h2 class="text-5xl xl:text-7xl font-normal text-text/30 mb-6 font-bonanova tracking-tight text-nowrap">
+          {appendix2}
         </h2>
+            </>
+          );
+        })()}
+
       </div>
       <div class="flex-1 order-1 md:order-1 flex justify-center saturate-[0.6] hover:saturate-[0.8] transition-all duration-300">
         <WaterColorReveal client:visible id="V2section-2-sm" width={360} height={360} 
@@ -119,27 +166,34 @@ import WaterColorReveal from './WaterColorReveal.tsx';
     <!-- Section 3: Image Right, Text Left -->
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto z-10 ">
       <div class="flex-1 order-2 md:order-1 min-w-[320px] relative">
-    <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
-      <span class=" text-accent1/50 pr-32 text-nowrap">
-        Entdecken Sie
-      </span>
-    </h2>
-    <p class="text-lg xl:text-xl text-stone-700/75 mb-4 xl:leading-none">
-      die wunderschöne Gegend rund um Neustadt an der Weinstraße.
-    </p>
-    <p class="text-sm text-stone-500/60">
-      Lassen Sie sich beim Wandern durch die malerische Landschaft der Gegend rund um Neustadt verzaubern, 
-      die für ihre Weinberge und deren Erzeugnisse weltweit bekannt ist. Von Hambach, Diedesfeld, 
-      und Duttweiler, über Geinsheim, Gimmeldingen, Haardt, bis hin zu Lachen-Speyerdorf, Königsbach, Mußbach,
-      die Region um Neustadt an der Weinstraße sprüht vor Geschichte und Tradition.
-    </p>
-    <h2 class="text-5xl xl:text-7xl font-normal text-text/30  mb-6 font-bonanova tracking-tight text-nowrap relative">
-      <span class="text-6xl font-extrabold inline-block lg:absolute xl:top-[20%] left-[0%] lg:translate-x-[-110%]">
-        ~
-      </span>
-      <span class="text-8xl text-text/25">4   </span>
-      Kilometer
-    </h2>
+   {post3Json && (() => {
+          const rawHtml3 = post3Json[0].content.rendered;
+          const paragraphMatches3 = rawHtml3.match(/<p>.*?<\/p>/gs) || [];
+        
+          const subtitle3 = paragraphMatches3[0].replace(/<[^>]*>?/g, '') || "";
+          const main3 = paragraphMatches3.slice(1, -1).join("").replace(/<[^>]*>?/g, '') || "";
+          const appendix3 = paragraphMatches3.at(-1).replace(/<[^>]*>?/g, '') || "";
+        
+          return (
+            <>
+              <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
+          <span class="text-accent1/50 pr-32 text-nowrap">
+            {post3Json[0].title.rendered}
+          </span>
+        </h2>
+        <p class="text-lg xl:text-xl text-stone-700/75 mb-4 xl:leading-none">
+          {subtitle3}
+          </p>
+        <p class="text-sm text-stone-500/60">
+          {main3}
+        </p>
+        <h2 class="text-5xl xl:text-7xl font-normal text-text/30 mb-6 font-bonanova tracking-tight text-nowrap">
+          {appendix3}
+        </h2>
+            </>
+          );
+        })()}
+  
       </div>
       
       <div class="flex-1 order-1 md:order-2 flex justify-center items-center relative saturate-[0.4] hover:saturate-[1] transition-all duration-300">
@@ -165,23 +219,35 @@ import WaterColorReveal from './WaterColorReveal.tsx';
     <!-- Section 4: Image Left, Text Right -->
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto">
       <div class="flex-1 order-2 md:order-2">
-        <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
-          <span class="text-accent1/50 lg:pr-32 text-nowrap">
-            Ergründen Sie
+        
+        {post4Json && (() => {
+          const rawHtml4 = post4Json[0].content.rendered;
+          const paragraphMatches4 = rawHtml4.match(/<p>.*?<\/p>/gs) || [];
+        
+          const subtitle4 = paragraphMatches4[0].replace(/<[^>]*>?/g, '') || "";
+          const main4 = paragraphMatches4.slice(1, -1).join("").replace(/<[^>]*>?/g, '') || "";
+          const appendix4 = paragraphMatches4.at(-1).replace(/<[^>]*>?/g, '') || "";
+        
+          return (
+            <>
+              <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
+          <span class="text-accent1/50 pr-32 text-nowrap">
+            {post4Json[0].title.rendered}
           </span>
         </h2>
         <p class="text-lg xl:text-xl text-stone-700/75 mb-4 xl:leading-none">
-          mit Gleichgesinnten die Seele der Neustädter Weinregion.
-        <p class="text-sm text-stone-500/60 mb-2 lg:pr-10 xl:pr-0">
-          Mit ihrem einzigartigen Charakter und Charme, verzaubert die Region ihre Besucher und bietet 
-          Dank des größten Fachwerkhausbestand der Pfalz, von mittelalterlichen Gassen, historischen Marktplätzen, 
-          dem Hambacher Schloss, und vielen weiteren historischen Stätten, 
-          ein breites Angebot an Aktivitäten und Sehenswürdigkeiten.
+          {subtitle4}
+          </p>
+        <p class="text-sm text-stone-500/60">
+          {main4}
         </p>
         <h2 class="text-5xl xl:text-7xl font-normal text-text/30 mb-6 font-bonanova tracking-tight text-nowrap">
-          <span class="text-4xl">bis zu </span> 30 Personen
-        </h2> 
+          {appendix4}
         </h2>
+            </>
+          );
+        })()}
+
       </div>
       <div class="relative flex-1 order-1 md:order-1 flex justify-center saturate-[0.6] hover:saturate-[0.8] transition-all duration-300
       mt-12 lg:mt-0">
@@ -252,12 +318,12 @@ import WaterColorReveal from './WaterColorReveal.tsx';
         <WaterColorReveal client:visible id="V2section-5-sm" width={400} height={400} 
         className="block lg:hidden h-[400px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible group">
           <img slot="child1" src="/mj-sunsetBuilding.png" alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500 overflow-visible" />
-          <img slot="child2" src="/yetAnotherVineYard.png" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-5" width={600} height={600}
          className="hidden lg:block h-[600px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible group">
           <img slot="child1" src="/mj-sunsetBuilding.png" alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500 overflow-visible" />
-          <img slot="child2" src="/yetAnotherVineYard.png" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </WaterColorReveal>
         <p class="w-fit absolute bottom-[0%] left-[0%] translate-x-[-50%] md:translate-x-[-0%] sm:translate-y-[0%] translate-y-[120%]
       text-nowrap text-4xl xl:text-5xl font-doulaise font-semibold mb-8 text-stone-300/40 
