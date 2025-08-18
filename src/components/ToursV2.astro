@@ -50,7 +50,7 @@ import Button from '@/components/Button.astro';
 
     
 
-    <div class="mt-20 grid gap-10 md:gap-12 lg:grid-cols-3 lg:gap-x-8 z-20 px-8 sm:px-12 md:px-0 max-w-2xl lg:max-w-none mx-auto">
+    <div class="mt-20 grid gap-10 md:gap-12 lg:grid-cols-2 lg:gap-x-8 z-20 px-8 sm:px-12 md:px-0 max-w-2xl lg:max-w-none mx-auto">
       <!-- Tour Card 1 -->
       <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-t-2xl transition-opacity duration-300" style={{
@@ -135,7 +135,7 @@ import Button from '@/components/Button.astro';
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
         </div>
         <div class="p-6">
-          <h3 class="text-2xl font-bold font-bonanova text-text">Glühwein - Geheimnisvolles Gimmeldingen</h3>
+          <h3 class="text-2xl font-bold font-bonanova text-text">Glühweintour - Geheimnisvolles Gimmeldingen</h3>
           <p class="mt-3 text-base text-gray-600 font-body">Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.</p>
         </div>
         <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full ">
@@ -152,6 +152,43 @@ import Button from '@/components/Button.astro';
           Winter 
         </div>
       </div>
+
+
+       <!-- Tour Card 4 -->
+       <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-t-2xl transition-opacity duration-300" style={{
+          background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
+          backgroundSize: "45%",
+          backgroundRepeat: "repeat",
+          mixBlendMode: "difference",
+        }}
+        >
+        </div>
+        <div class="relative w-full h-72 rounded-t-2xl overflow-hidden">
+          <img src="/compressed-mj-wallWithGrapes.png" alt="Glühwein" class="w-full h-full object-cover object-[50%_45%] scale-[1.5] group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold font-bonanova text-text">Magische Momente am Mussbach</h3>
+          <p class="mt-3 text-base text-gray-600 font-body">Hier könntest du dir was kurzes mit "Nachhaltige Weinwanderung" überlegen. </p>
+        </div>
+        <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full ">
+          <a href="/tours" class="inline-flex items-center px-8 py-2 translate-y-[50%]
+            bg-gradient-to-r from-stone-200/80 via-stone-200 to-stone-200/70 text-stone-50
+             hover:from-amber-600 hover:to-orange-600
+             group-hover:from-amber-600 group-hover:to-orange-600
+              font-semibold text-lg rounded-full shadow-lg
+           transform hover:scale-105 transition-all duration-300">
+            Zur Tour
+            </a>
+        </div>
+        <div class="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-accent2-brick group-hover:bg-gray-900/70 group-hover:text-stone-100 font-semibold text-sm py-1 px-3 rounded-full shadow-sm">
+          Winter 
+        </div>
+      </div>
+
+
+
     </div>
   </div>
   <div class="text-center w-full h-full relative z-10 mt-44">
