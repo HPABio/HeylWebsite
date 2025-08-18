@@ -1,5 +1,6 @@
 ---
 const { isDarkMode = false } = Astro.props;
+const { isHome = false } = Astro.props;
 ---
 
 <header
@@ -23,7 +24,7 @@ const { isDarkMode = false } = Astro.props;
     >
       <li>
         <a
-          href="/#hero"
+          href={isHome ? "/#hero" : "/"}
           class="hover:text-orange-700/80 hover:font-bold transition"
           >Start</a
         >
