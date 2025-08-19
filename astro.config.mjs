@@ -10,9 +10,9 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   vite: {
     resolve: {
-      alias: {
+      /* alias: {
         "@": path.resolve(path.dirname(fileURLToPath(import.meta.url)), "src"),
-      },
+      }, */
     },
   },
 });
