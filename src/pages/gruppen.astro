@@ -1,0 +1,284 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+---
+
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>Gruppen - Heyl Weinerlebnistouren</title>
+		<link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400..700&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Gloock&family=Indie+Flower&family=Lusitana:wght@400;700&family=Monsieur+La+Doulaise&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<Header />
+		<main class="min-h-screen bg-gradient-to-b from-white to-gray-50">
+			<!-- Hero Section -->
+			<div class="relative bg-gradient-to-r from-orange-50 to-amber-50 py-20">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="text-center">
+						<h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Gruppen-Erlebnisse</h1>
+						<p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+							Entdecken Sie die Pfalz gemeinsam - maßgeschneiderte Wein-Erlebnistouren für Gruppen jeder Größe
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Group Types Overview -->
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+					<!-- Small Groups -->
+					<div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+						<div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">Kleingruppen</h3>
+						<p class="text-gray-600 mb-6">2-14 Personen</p>
+						<p class="text-gray-700 mb-6">Perfekt für Familien, Freunde oder kleine Reisegruppen. Erleben Sie unsere öffentlichen Wein-Erlebnistouren in entspannter Atmosphäre.</p>
+						<div class="bg-orange-50 rounded-lg p-4">
+							<p class="text-sm text-orange-800 font-semibold">Öffentliche Touren verfügbar</p>
+						</div>
+					</div>
+
+					<!-- Travel Groups -->
+					<div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+						<div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">Reisegruppen</h3>
+						<p class="text-gray-600 mb-6">Bis 50+ Personen</p>
+						<p class="text-gray-700 mb-6">Individuelle Führungen für Reisebusse und größere Gruppen. Thematische Touren nach Ihren Wünschen und Zeitplan.</p>
+						<div class="bg-orange-50 rounded-lg p-4">
+							<p class="text-sm text-orange-800 font-semibold">1,5-2 Stunden Dauer</p>
+						</div>
+					</div>
+
+					<!-- Corporate Events -->
+					<div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+						<div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">Firmen-Events</h3>
+						<p class="text-gray-600 mb-6">12-28 Personen</p>
+						<p class="text-gray-700 mb-6">Maßgeschneiderte Team-Events und Firmenausflüge. Kombinieren Sie Wein-Erlebnisse mit Teambuilding-Aktivitäten.</p>
+						<div class="bg-orange-50 rounded-lg p-4">
+							<p class="text-sm text-orange-800 font-semibold">Individuelle Konzepte</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Detailed Sections -->
+				<div class="space-y-20">
+					<!-- Small Groups Section -->
+					<section class="bg-white rounded-2xl shadow-lg overflow-hidden">
+						<div class="grid grid-cols-1 lg:grid-cols-2">
+							<div class="p-8 lg:p-12">
+								<h2 class="text-3xl font-bold text-gray-900 mb-6">Kleingruppen-Erlebnisse</h2>
+								<p class="text-lg text-gray-600 mb-8">
+									Kleingruppen von 2-14 Personen können sich gerne für unsere öffentlichen Wein-Erlebnistouren anmelden. 
+									Erleben Sie die Pfalz in entspannter, persönlicher Atmosphäre.
+								</p>
+								<div class="space-y-4 mb-8">
+									<div class="flex items-start space-x-3">
+										<svg class="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+										</svg>
+										<div>
+											<h4 class="font-semibold text-gray-900">Öffentliche Touren</h4>
+											<p class="text-gray-600">Regelmäßige Termine, offen für alle Interessierten</p>
+										</div>
+									</div>
+									<div class="flex items-start space-x-3">
+										<svg class="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+										</svg>
+										<div>
+											<h4 class="font-semibold text-gray-900">Persönliche Betreuung</h4>
+											<p class="text-gray-600">Intensive Betreuung in kleiner Runde</p>
+										</div>
+									</div>
+									<div class="flex items-start space-x-3">
+										<svg class="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+										</svg>
+										<div>
+											<h4 class="font-semibold text-gray-900">Flexible Termine</h4>
+											<p class="text-gray-600">Verschiedene Termine zur Auswahl</p>
+										</div>
+									</div>
+								</div>
+								<a href="/kontakt" class="inline-flex items-center px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors">
+									Jetzt anmelden
+									<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+									</svg>
+								</a>
+							</div>
+							<div class="bg-gradient-to-br from-orange-100 to-amber-100 p-8 lg:p-12 flex items-center justify-center">
+								<div class="text-center">
+									<div class="w-24 h-24 bg-orange-200 rounded-full flex items-center justify-center mx-auto mb-6">
+										<svg class="w-12 h-12 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+										</svg>
+									</div>
+									<h3 class="text-2xl font-bold text-gray-900 mb-4">2-14 Personen</h3>
+									<p class="text-gray-600">Perfekt für Familien und Freunde</p>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Travel Groups Section -->
+					<section class="bg-white rounded-2xl shadow-lg overflow-hidden">
+						<div class="grid grid-cols-1 lg:grid-cols-2">
+							<div class="bg-gradient-to-br from-amber-100 to-orange-100 p-8 lg:p-12 flex items-center justify-center order-2 lg:order-1">
+								<div class="text-center">
+									<div class="w-24 h-24 bg-amber-200 rounded-full flex items-center justify-center mx-auto mb-6">
+										<svg class="w-12 h-12 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+										</svg>
+									</div>
+									<h3 class="text-2xl font-bold text-gray-900 mb-4">Bis 50+ Personen</h3>
+									<p class="text-gray-600">Ideal für Reisebusse und große Gruppen</p>
+								</div>
+							</div>
+							<div class="p-8 lg:p-12 order-1 lg:order-2">
+								<h2 class="text-3xl font-bold text-gray-900 mb-6">Reisegruppen & Reisebusse</h2>
+								<p class="text-lg text-gray-600 mb-8">
+									Reisegruppen und Reisebusse können sich gerne bei mir melden, um eine kürzere individuelle Führung 
+									(1,5-2 Stunden) zu einem bestimmten Thema zu machen.
+								</p>
+								<div class="space-y-4 mb-8">
+									<div class="flex items-start space-x-3">
+										<svg class="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+										</svg>
+										<div>
+											<h4 class="font-semibold text-gray-900">Thematische Führungen</h4>
+											<p class="text-gray-600">Mandelblüte, Weinberglagen, Dorfführung, Mühlen</p>
+										</div>
+									</div>
+									<div class="flex items-start space-x-3">
+										<svg class="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+										</svg>
+										<div>
+											<h4 class="font-semibold text-gray-900">Individuelle Planung</h4>
+											<p class="text-gray-600">Anpassung an Ihre Zeitpläne und Interessen</p>
+										</div>
+									</div>
+									<div class="flex items-start space-x-3">
+										<svg class="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+										</svg>
+										<div>
+											<h4 class="font-semibold text-gray-900">Optimierte Dauer</h4>
+											<p class="text-gray-600">1,5-2 Stunden für perfekte Integration</p>
+										</div>
+									</div>
+								</div>
+								<a href="/kontakt" class="inline-flex items-center px-6 py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors">
+									Anfrage senden
+									<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</section>
+
+					<!-- Corporate Events Section -->
+					<section class="bg-white rounded-2xl shadow-lg overflow-hidden">
+						<div class="grid grid-cols-1 lg:grid-cols-2">
+							<div class="p-8 lg:p-12">
+								<h2 class="text-3xl font-bold text-gray-900 mb-6">Firmen-Events & Team-Building</h2>
+								<p class="text-lg text-gray-600 mb-8">
+									Firmen können sich gerne bei mir melden, um ein individuelles Team-Event auf Basis der 
+									Wein-Erlebnistouren zu erstellen. Perfekt für Teambuilding und Firmenausflüge.
+								</p>
+								<div class="space-y-4 mb-8">
+									<div class="flex items-start space-x-3">
+										<svg class="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+										</svg>
+										<div>
+											<h4 class="font-semibold text-gray-900">Maßgeschneiderte Konzepte</h4>
+											<p class="text-gray-600">Individuelle Planung nach Ihren Bedürfnissen</p>
+										</div>
+									</div>
+									<div class="flex items-start space-x-3">
+										<svg class="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+										</svg>
+										<div>
+											<h4 class="font-semibold text-gray-900">Teambuilding-Aktivitäten</h4>
+											<p class="text-gray-600">Kombination aus Wein-Erlebnis und Team-Aktivitäten</p>
+										</div>
+									</div>
+									<div class="flex items-start space-x-3">
+										<svg class="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+										</svg>
+										<div>
+											<h4 class="font-semibold text-gray-900">Professionelle Betreuung</h4>
+											<p class="text-gray-600">Erfahrene Führung für erfolgreiche Events</p>
+										</div>
+									</div>
+								</div>
+								<a href="/kontakt" class="inline-flex items-center px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors">
+									Event planen
+									<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+									</svg>
+								</a>
+							</div>
+							<div class="bg-gradient-to-br from-orange-100 to-amber-100 p-8 lg:p-12 flex items-center justify-center">
+								<div class="text-center">
+									<div class="w-24 h-24 bg-orange-200 rounded-full flex items-center justify-center mx-auto mb-6">
+										<svg class="w-12 h-12 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+										</svg>
+									</div>
+									<h3 class="text-2xl font-bold text-gray-900 mb-4">12-28 Personen</h3>
+									<p class="text-gray-600">Optimal für Firmen-Events</p>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<!-- CTA Section -->
+				<div class="mt-20 bg-gradient-to-r from-orange-600 to-amber-600 rounded-2xl p-8 lg:p-12 text-center text-white">
+					<h2 class="text-3xl lg:text-4xl font-bold mb-6">Bereit für Ihr Gruppen-Erlebnis?</h2>
+					<p class="text-xl mb-8 text-orange-100 max-w-3xl mx-auto">
+						Kontaktieren Sie mich für eine individuelle Beratung und maßgeschneiderte Angebote für Ihre Gruppe.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center">
+						<a href="/kontakt" class="inline-flex items-center px-8 py-4 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+							Kontakt aufnehmen
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+							</svg>
+						</a>
+						<a href="tel:+49123456789" class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-orange-600 transition-colors">
+							Telefon: +49 123 456789
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a2 2 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
