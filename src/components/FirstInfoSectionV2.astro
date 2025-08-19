@@ -278,7 +278,8 @@ const post4Json = await post4.json();
 
     <!-- Section 5: Image Right, Text Left -->
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto">
-      <div class="flex-1 order-2 md:order-1">
+
+      <div class="flex-1 order-2 md:order-1 justify-start items-start">
         <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
           <span class="text-accent1/50 pr-32 text-nowrap hidden">
             Erfahren Sie Mehr
@@ -292,49 +293,48 @@ const post4Json = await post4.json();
           </h2>
         <p class="text-lg xl:text-xl text-stone-700/75 mb-4 xl:leading-none">
           Dann klicken Sie hier um direkt zu den Touren zu gelangen.
-          </p>
-        
-        <!-- <h2 class="text-3xl sm:text-5xl 2xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
-          <span class="text-accent1/80 pr-32 text-nowrap">
-            Erfahren Sie
-          </span>
-        </h2>
-        <p class="text-lg xl:text-xl 2xl:text-2xl text-stone-700/75 mb-4 leading-tight">
-          was die Region um Neustadt an der Weinstraße so besonders macht.
-          </p>
-        <p class="text-sm text-stone-500/60 mb-6">
-          Ob als passiver Zuschauer oder zentraler Teil des Geschehens, während der interaktiven Tour-Elemente
-          haben Sie die Möglichkeit in die lebendige Geschichte der Gegend einzutauchen. Dabei können die aktiven Teilnehmer
-          der Tour in die Rolle einer historische Figur schlüpfen und die Geschichte hautnah erleben.
-        </p> -->
-        
+          </p>        
       <a href="/tours" class="inline-flex items-center pl-4 pr-4 py-3
       bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold text-lg rounded-full shadow-lg
        hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300">
-       Zu den Touren
+       Hier Buchen
        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="3 0 24 24">
          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
        </svg>
       </a>
       </div>
-      <div class="flex-1 order-1 md:order-2 flex justify-center saturate-[0.45] hover:saturate-[0.8] transition-all duration-300 overflow-visible">
-        <WaterColorReveal client:visible id="V2section-5-sm" width={400} height={400} 
-        className="block lg:hidden h-[400px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible group">
-          <img slot="child1" src="/mj-sunsetBuilding.png" alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500 overflow-visible" />
-          <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+
+      <div class="flex-1 order-1 md:order-2 flex justify-center overflow-visible relative lg:h-[500px] h-[400px] ">
+        <div class="border-2 border-red-500/0 absolute top-0 left-0 translate-x-[-25%] translate-y-[-30%] md:translate-x-[-33%] md:translate-y-[-25%] lg:translate-x-[-23%] lg:translate-y-[3%]  xl:translate-y-[-20%] xl:translate-x-[-23%]">        
+        <WaterColorReveal client:visible id="V2section-5-md" width={1400} height={1400}
+         className="hidden sm:block lg:hidden h-[900px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible  translate-x-[-250%] translate-y-[10%]">
+          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[35deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[40deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+          <!-- <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
         </WaterColorReveal>
-        <WaterColorReveal client:visible id="V2section-5" width={600} height={600}
-         className="hidden lg:block h-[600px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible group">
-          <img slot="child1" src="/mj-sunsetBuilding.png" alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500 overflow-visible" />
-          <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <WaterColorReveal client:visible id="V2section-5-lg" width={700} height={700}
+         className="hidden lg:block xl:hidden h-[700px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible  translate-x-[-250%] translate-y-[10%]">
+          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[30deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[25deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+          <!-- <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
         </WaterColorReveal>
+        <WaterColorReveal client:visible id="V2section-5-xl" width={800} height={800}
+         className="hidden xl:block h-[800px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible  translate-x-[-250%] translate-y-[10%]">
+          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[30deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[25deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+          <!-- <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
+        </WaterColorReveal>
+        
         <p class="w-fit absolute bottom-[0%] left-[0%] translate-x-[-50%] md:translate-x-[-0%] sm:translate-y-[0%] translate-y-[120%]
       text-nowrap text-4xl xl:text-5xl font-doulaise font-semibold mb-8 text-stone-300/40 
       md:bg-gradient-to-r from-stone-400/70 via-stone-200/10 to-stone-200/40 bg-clip-text md:text-transparent
       lowercase  group-hover:opacity-0 transition-opacity duration-1000
       pr-2 pl-2 py-3 z-10">Tradition und Geschichte</p>
+        </div>
       </div>
-      </div>
+
+    </div>
 
     </div>
     
