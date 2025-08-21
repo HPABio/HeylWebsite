@@ -22,6 +22,7 @@ import InteractiveToursV2 from '@/components/InteractiveToursV2.tsx';
 import InteractiveTours from '@/components/InteractiveTours.tsx';
 import AboutMeVertical from '@/components/AboutMeVertical.astro';
 import TestBed from '@/pages/testBed.astro';
+import OpenerSection from '@/components/OpenerSection.astro';
 ---
 
 <html lang="de">
@@ -33,14 +34,15 @@ import TestBed from '@/pages/testBed.astro';
 		<link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400..700&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Gloock&family=Indie+Flower&family=Lusitana:wght@400;700&family=Monsieur+La+Doulaise&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<!-- <ScreenSizeDEVTOOL /> -->
+		<ScreenSizeDEVTOOL />
 		<Header />
 		<main>
 			<Hero />		
-			<ToursV2 />
+			<OpenerSection />
 			<!-- <FirstInfoSection /> -->
 			<FirstInfoSectionV2 />
 			<!-- <Tours /> -->
+			<ToursV2 />
 			<AboutMeVertical className="block md:hidden" />
 			<AboutMeHorizontal className="hidden md:block" />
 			<!-- <InteractiveTours /> -->

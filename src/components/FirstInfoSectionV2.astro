@@ -15,7 +15,37 @@ const post2Json = await post2.json();
 const post3Json = await post3.json();
 const post4Json = await post4.json();
 
-
+// Reviews data
+const reviews = [
+  {
+    text: "Frau Heyl hat mit ihrer freundlichen Art und ihrem fundiertem Wissen, die ganze Gruppe begeistert. Vielen Dank !! Wir kommen wieder !!",
+    date: "8.11.2024"
+  },
+  {
+    text: "Die Tour war kurzweilig und lustig mit vielen Anekdoten.",
+    date: "9.11.2024"
+  },
+  {
+    text: "Die Snacks waren sehr kreativ und haben super zum Thema und zu den Weinen gepasst. Es war sehr schön, dass es auch alkoholfreien Wein gab.",
+    date: "12.11.2024"
+  },
+  {
+    text: "Frau Heyl, hat es geschafft Geschichte lebendig werden zu lassen. Sie bindet gekonnt Ihr Gäste in die Führung mit ein. Es hat uns sehr viel Spaß gemacht.",
+    date: "29.10.24"
+  },
+  {
+    text: "Ein sehr schönes Konzept die Historie durch verteilte Rollen bei den Teilnehmern näher zu bringen. Leckere selbstgemachte Häppchen. Tolle Engagierte Tour-Führerin mit Esprit und Humor!",
+    date: "7.10.2024"
+  },
+  {
+    text: "Ich habe sehr viel positive Rückmeldungen aus der Gruppe, mit der wir da waren, bekommen. Die Tour war sehr lebhaft und selbst unsere eingefleischten Pfälzer, die aus der Region kommen und diese Region eigentlich gut kennen, haben viel Interessantes und Neues gehört und gelernt. Die Tour kam megagut in unserer Gruppe an.",
+    date: "13.5.2025"
+  },
+  {
+    text: "Die Tour war mit sehr viel Liebe zum Detail vorbereitet – man hat gespürt, wie viel Herzblut in der Gestaltung steckt. Die Auswahl der Weine war wirklich hervorragend, jeder Tropfen ein Genuss! Auch die kleinen Snacks waren köstlich und schön angerichtet. Besonders beeindruckt hat mich der Ausblick – die Naturkulisse war traumhaft und hat für einige unvergessliche Momente gesorgt.",
+    date: "13.5.2025"
+  }
+];
 
 // console.log(post1Json);
 // console.log(post2Json);
@@ -27,8 +57,12 @@ const post4Json = await post4.json();
 <!-- src/components/TestSection.astro -->
 <!-- Purpose: Alternating image/text sections with watercolor reveal effect tied to scroll progress -->
 
-<section class="w-full flex flex-col gap-24 bg-white px-12 relative pb-[250px] overflow-x-clip">
-  <div class="inset-0 absolute bg-gradient-to-b from-white to-transparent z-0 pointer-events-none"
+<section class="w-full flex flex-col gap-24 bg-white px-12 relative pb-[250px] md:pb-0 overflow-x-clip">
+  <div class="absolute top-0 left-[50%] translate-x-[-60%] translate-y-[-50%] h-[900px] w-full flex justify-center items-center z-10  mix-blend-multiply">
+    <img src="/ChatGPTAsset.png" alt="Section 4" class="object-contain scale-x-[-1] contrast-200 rotate-[35deg] absolute w-full h-full top-[0%] left-[50%] translate-x-[-50%] translate-y-[0%] saturate-[0.5] opacity-5"  />
+  </div>
+
+  <div class="inset-0 absolute z-0 pointer-events-none border-2 border-red-500"
   style={{
     backgroundImage: `url(/GimmeldingenMap.jpg)`,
     backgroundSize: 'cover',
@@ -281,18 +315,12 @@ const post4Json = await post4.json();
 
       <div class="flex-1 order-2 md:order-1 justify-start items-start">
         <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
-          <span class="text-accent1/50 pr-32 text-nowrap hidden">
-            Erfahren Sie Mehr
-          </span>
-          <span class="text-accent1/50 pr-32 text-nowra hidden">
-            Seien Sie Dabei
-          </span>
           <span class="text-accent1/50 pr-32 text-nowrap">
-            Sind Sie Dabei?
+            Seien Sie Dabei!
           </span>
           </h2>
         <p class="text-lg xl:text-xl text-stone-700/75 mb-4 xl:leading-none">
-          Dann klicken Sie hier um direkt zu den Touren zu gelangen.
+          Klicken Sie hier um direkt zu den Touren zu gelangen.
           </p>        
       <a href="/tours" class="inline-flex items-center pl-4 pr-4 py-3
       bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold text-lg rounded-full shadow-lg
@@ -302,10 +330,10 @@ const post4Json = await post4.json();
          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
        </svg>
       </a>
-      </div>
+    </div>
+  
 
-
-      <div class="flex-1 order-1 md:order-2 flex justify-center overflow-visible relative lg:h-[500px] h-[400px] ">
+      <div class="flex-1 order-1 md:order-2 flex justify-center overflow-visible relative lg:h-[500px] h-[400px]">
         <div class="border-2 border-red-500/0 absolute top-0 left-0 translate-x-[-25%] translate-y-[-30%] md:translate-x-[-33%] md:translate-y-[-25%] lg:translate-x-[-23%] lg:translate-y-[3%]  xl:translate-y-[-20%] xl:translate-x-[-23%]">        
         <WaterColorReveal client:visible id="V2section-5-md" width={1400} height={1400}
          className="hidden sm:block lg:hidden h-[900px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible  translate-x-[-250%] translate-y-[10%]">
@@ -336,7 +364,76 @@ const post4Json = await post4.json();
 
     </div>
 
+
+    <!-- Quotes Section -->
+    <div class="w-screen md:max-w-6xl mx-auto absolute bottom-0 left-0 z-10 mt-24 pt-24 bg-gradient-to-t from-white via-white to-transparent
+     md:w-full md:relative md:mb-12 md:mt-24 md:bg-none h-[550px]">
+      <!-- Desktop Quotes -->
+      <div class="text-center mb-12 hidden md:block">
+        <h2 class="text-5xl xl:text-6xl font-bold font-bonanova tracking-tight">
+          <span class="text-accent1">Was unsere Gäste sagen</span>
+        </h2>
+        <p class="text-xl xl:text-xl text-stone-600/80 font-medium">
+          Authentische Erfahrungen von unseren Weinliebhabern
+        </p>
+      </div>
+      
+      <div class="relative h-[300px] md:h-[250px] flex items-center justify-center max-w-xl mx-auto ">
+        <div id="quotes-container" class="relative w-full max-w-4xl mx-auto px-8">
+          {reviews.map((review, index) => (
+            <div 
+              id={`quote-${index}`}
+              class={`absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-1000 ease-in-out ${
+                index === 0 ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <div class="relative">
+                <svg class="absolute -top-8 -left-8 w-12 h-12 text-accent1/30 transform -rotate-12" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+                <blockquote class="text-lg md:text-xl xl:text-2xl text-stone-700 leading-relaxed font-medium italic px-8 py-4">
+                  "{review.text}"
+                </blockquote>
+                <svg class="absolute -bottom-8 -right-8 w-12 h-12 text-accent1/30 transform rotate-12" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+              </div>
+              <p class="text-sm md:text-base text-stone-500 mt-6 font-medium">
+                — {review.date}
+              </p>
+            </div>
+          ))}
+        </div>
+        
+        <!-- Quote indicators -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {reviews.map((_, index) => (
+            <button 
+              id={`indicator-${index}`}
+              class={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === 0 ? 'bg-accent1/70 scale-110' : 'bg-stone-300 hover:bg-stone-400'
+              }`}
+              onclick={`showQuote(${index})`}
+            ></button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Mobile Quotes -->
+      <div class="text-center mb-12 block md:hidden ">
+        <h2 class="text-4xl xl:text-6xl font-bold font-bonanova tracking-tight">
+          <span class="text-accent1">Was unsere Gäste sagen</span>
+        </h2>
+        <p class="text-lg xl:text-xl text-stone-600/80 font-medium">
+          Authentische Erfahrungen unserer Weinliebhaber
+        </p>
+      </div>
     </div>
+  
+
+
+    <div class="h-[320px] md:h-[1000px] lg:h-[900px] relative md:absolute md:bottom-0 md:left-0 w-screen mx-auto
+    bg-gradient-to-t from-white via-white/95 to-transparent"/>
     
     <!-- <div class="flex justify-center absolute bottom-0 left-[50%] translate-x-[-50%] w-full h-fit min-h-[50px] z-10
     bg-gradient-to-t from-white via-white/55 to-transparent ">
@@ -349,7 +446,66 @@ const post4Json = await post4.json();
         Zu den Touren
       </a>
     </div> -->
+    <script define:vars={{ reviews }}>
+      let currentQuoteIndex = 0;
+      const totalQuotes = reviews.length;
+      let autoPlayInterval;
 
+      function showQuote(index) {
+        // Hide current quote
+        const currentQuote = document.getElementById(`quote-${currentQuoteIndex}`);
+        const currentIndicator = document.getElementById(`indicator-${currentQuoteIndex}`);
+        
+        if (currentQuote) {
+          currentQuote.style.opacity = '0';
+          currentQuote.style.transform = 'translateY(20px)';
+        }
+        if (currentIndicator) {
+          currentIndicator.classList.remove('bg-accent1/70', 'scale-110');
+          currentIndicator.classList.add('bg-stone-300');
+        }
 
+        // Show new quote
+        const newQuote = document.getElementById(`quote-${index}`);
+        const newIndicator = document.getElementById(`indicator-${index}`);
+        
+        if (newQuote) {
+          newQuote.style.opacity = '1';
+          newQuote.style.transform = 'translateY(0)';
+        }
+        if (newIndicator) {
+          newIndicator.classList.add('bg-accent1/70', 'scale-110');
+          newIndicator.classList.remove('bg-stone-300');
+        }
 
+        currentQuoteIndex = index;
+      }
+
+      function nextQuote() {
+        const nextIndex = (currentQuoteIndex + 1) % totalQuotes;
+        showQuote(nextIndex);
+      }
+
+      function startAutoPlay() {
+        autoPlayInterval = setInterval(nextQuote, 5000); // Change quote every 5 seconds
+      }
+
+      function stopAutoPlay() {
+        if (autoPlayInterval) {
+          clearInterval(autoPlayInterval);
+        }
+      }
+
+      // Initialize
+      document.addEventListener('DOMContentLoaded', function() {
+        startAutoPlay();
+        
+        // Pause auto-play when hovering over quotes
+        const quotesContainer = document.getElementById('quotes-container');
+        if (quotesContainer) {
+          quotesContainer.addEventListener('mouseenter', stopAutoPlay);
+          quotesContainer.addEventListener('mouseleave', startAutoPlay);
+        }
+      });
+    </script>
 </section>
