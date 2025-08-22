@@ -66,78 +66,63 @@ import Button from '@/components/Button.astro';
 
 
   <!-- Tours Cards -->
-    <div class="mt-20 grid gap-1 md:gap-2 xl:gap-3 2xl:gap-4 grid-cols-1 sm:grid-cols-4 my-12 px-14 md:px-32 max-w-5xl mx-auto">
+    <div class="mt-20 grid gap-y-10 sm:gap-1 md:gap-2 xl:gap-3 2xl:gap-4 grid-cols-1 sm:grid-cols-4 my-12 px-14 max-w-5xl mx-auto">
 
       <!-- Tour Card 1 -->
       <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-t-2xl transition-opacity duration-300" style={{
-          background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
-          backgroundSize: "45%",
-          backgroundRepeat: "repeat",
-          mixBlendMode: "difference",
-        }}
-        >
-        </div>
-        <div class="relative w-full h-[20vh] md:h-[26] lg:h-72 rounded-t-2xl overflow-hidden">
-          <img src="/mj-almondFlower-mosaicGlass.png" alt="Mandelblüte2" class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full h-full
-          object-cover opacity-100 group-hover:opacity-0 transition-opacity duration-300 object-[50%_36%]">
-          <img src="/mj-almondFlowerV1.png" alt="Mandelblüte" class="w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-300 object-[50%_50%]">
+        <div class="relative w-full h-[22vh] md:min-h-52 md:h-[26vh] lg:h-72 rounded-t-2xl overflow-hidden">
+          <img src="/mj-almondFlower-mosaicGlass.png" alt="Mandelblüte" class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-300">
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
         </div>
-        <div class="p-6">
-          <h3 class="sm:text-[0.65rem] sm:leading-tight text-xl md:text-lg lg:text-xl font-semibold font-bonanova text-text">Mandelblüte, <br/> Meerspinne & Monarchen</h3>
-          <p class="hidden md:block mt-3 text-sm md:text-xs lg:text-sm text-gray-600 font-body">Erleben Sie die Pfälzer Mandelblüte auf einer einzigartigen Route mit Genuss, Geschichte und Natur.</p>
+        <div class="w-full md:p-4 relative group-hover:text-wrap group-hover:absolute group-hover:bottom-0 group-hover:bg-black/80 group-hover:z-0 rounded-b-2xl">
+          <h3 class="sm:text-[0.65rem] sm:leading-tight text-xl md:text-sm lg:text-xl font-semibold font-bonanova md:text-text group-hover:text-accent1 
+          group-hover:leading-none md:leading-tight sm:-mt-[43px] sm:mb-7 md:mt-0 text-stone-300 sm:pl-2
+          text-wrap">Mandelblüte, <br/> Meerspinne & Monarchen</h3>
+          <p class="hidden group-hover:block mb-12 h-full mt-3 text-sm md:text-xs lg:text-sm text-gray-300 font-bonanova">Erleben Sie die Pfälzer Mandelblüte auf einer einzigartigen Route mit Genuss, Geschichte und Natur.</p>
         </div>
-        <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full ">
-          <a href="/tours?tour=mandelbluete" class="inline-flex md:hidden items-center px-4 py-1.5 translate-y-[50%] text-stone-50
-             bg-gradient-to-r from-amber-600 to-orange-600
-             group-hover:from-amber-600 group-hover:to-orange-600
-              font-semibold text-sm rounded-full shadow-lg
-           transform hover:scale-105 transition-all duration-300">
-            Zur Tour
-            </a>
-          <a href="/tours?tour=mandelbluete" class="hidden md:inline-flex items-center px-4 py-1.5 translate-y-[50%]
-            bg-gradient-to-r from-stone-200/80 via-stone-200 to-stone-200/70 text-stone-50
-             hover:from-amber-600 hover:to-orange-600
-             group-hover:from-amber-600 group-hover:to-orange-600
-              font-semibold text-sm rounded-full shadow-lg
-           transform hover:scale-105 transition-all duration-300">
-            Zur Tour
-            </a>
-            <div class="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-amber-900/90 group-hover:bg-gray-900/70 group-hover:text-stone-100
-             font-semibold sm:text-[0.5rem] md:text-sm py-1 px-3 rounded-full shadow-sm">
-              Frühling 
-            </div>
-        </div>
-      </div>
-
-       <!-- Tour Card 2 -->
-       <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-t-2xl transition-opacity duration-300" style={{
-          background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
-          backgroundSize: "45%",
-          backgroundRepeat: "repeat",
-          mixBlendMode: "difference",
-        }}
-        >
-        </div>
-        <div class="relative w-full h-[26vh] lg:h-72 rounded-t-2xl overflow-hidden">
-          <img src="/Wassermühle-im-Wald.png" alt="Glühwein" class="h-full object-[50%_45%] scale-[1] group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
-        </div>
-        <div class="p-6">
-          <h3 class="sm:text-[0.65rem] sm:leading-tight text-xl md:text-lg lg:text-xl font-semibold font-bonanova text-text">Magische Momente am Mussbach</h3>
-          <p class="hidden md:block mt-3 text-sm md:text-xs lg:text-sm text-gray-600 font-body">Hier könntest du dir was kurzes mit "Nachhaltige Weinwanderung" überlegen. </p>
-        </div>
-        <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full ">
-          <a href="/tours?tour=mussbach" class="inline-flex md:hidden items-center px-4 py-1.5 translate-y-[50%] text-stone-50
+        <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full group-hover:z-30 ">
+          <a href="/tours?tour=gluehwein" class="inline-flex md:hidden items-center px-4 py-1.5 translate-y-[50%] text-stone-300
           bg-gradient-to-r from-amber-600 to-orange-600
           group-hover:from-amber-600 group-hover:to-orange-600
            font-semibold text-sm rounded-full shadow-lg
         transform hover:scale-105 transition-all duration-300">
          Zur Tour
          </a>
-       <a href="/tours?tour=mussbach" class="hidden md:inline-flex items-center px-4 py-1.5 translate-y-[50%]
+       <a href="/tours?tour=gluehwein" class="hidden md:inline-flex items-center px-4 py-2 translate-y-[50%]
+         bg-gradient-to-r from-stone-200/80 via-stone-200 to-stone-200/70 text-stone-50
+          hover:from-amber-600 hover:to-orange-600
+          group-hover:from-amber-600 group-hover:to-orange-600
+           font-semibold text-sm rounded-full shadow-lg
+        transform hover:scale-105 transition-all duration-300">
+         Zur Tour
+         </a>
+        </div>
+        <div class="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-amber-900/90 group-hover:bg-gray-900/70 group-hover:text-stone-100 font-semibold sm:text-[0.5rem] md:text-sm py-1 px-3 rounded-full shadow-sm">
+          Frühling 
+        </div>
+      </div>
+
+       <!-- Tour Card 2 -->
+      <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+        <div class="relative w-full h-[22vh] md:min-h-52 md:h-[26vh] lg:h-72 rounded-t-2xl overflow-hidden">
+          <img src="/Wassermühle-im-Wald.png" alt="Mussbach" class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
+        </div>
+        <div class="w-full md:p-4 relative group-hover:text-wrap group-hover:absolute group-hover:bottom-0 group-hover:bg-black/80 group-hover:z-0 rounded-b-2xl">
+          <h3 class="sm:text-[0.65rem] sm:leading-tight text-xl md:text-sm lg:text-xl font-semibold font-bonanova md:text-text group-hover:text-accent1 
+          group-hover:leading-none md:leading-tight sm:-mt-[30px] sm:mb-7 md:mt-0 text-stone-300 sm:pl-2
+          text-wrap">Magische Momente am Mussbach</h3>
+          <p class="hidden group-hover:block mb-12 h-full mt-3 text-sm md:text-xs lg:text-sm text-gray-300 font-bonanova">Wenn die Tage kürzer werden und die Landschaft in ein winterliches Kleid gehüllt ist, entfaltet die Pfalz einen ganz besonderen Charme. </p>
+        </div>
+        <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full group-hover:z-30 ">
+          <a href="/tours?tour=gluehwein" class="inline-flex md:hidden items-center px-4 py-1.5 translate-y-[50%] text-stone-300
+          bg-gradient-to-r from-amber-600 to-orange-600
+          group-hover:from-amber-600 group-hover:to-orange-600
+           font-semibold text-sm rounded-full shadow-lg
+        transform hover:scale-105 transition-all duration-300">
+         Zur Tour
+         </a>
+       <a href="/tours?tour=gluehwein" class="hidden md:inline-flex items-center px-4 py-2 translate-y-[50%]
          bg-gradient-to-r from-stone-200/80 via-stone-200 to-stone-200/70 text-stone-50
           hover:from-amber-600 hover:to-orange-600
           group-hover:from-amber-600 group-hover:to-orange-600
@@ -152,66 +137,54 @@ import Button from '@/components/Button.astro';
       </div>
 
     <!-- Tour Card 3 -->
-      <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-t-2xl transition-opacity duration-300" style={{
-          background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
-          backgroundSize: "45%",
-          backgroundRepeat: "repeat",
-          mixBlendMode: "difference",
-        }}
-        >
-        </div>
-        <div class="relative w-full h-[26vh] lg:h-72 rounded-t-2xl overflow-hidden ">
-          <img src="/mj-Bachus-mosaicGlass.png" alt="Bacchus" class="w-full h-full object-cover object-[50%_20%] group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
-        </div>
-        <div class="p-6 ">
-          <h3 class="sm:text-[0.65rem] sm:leading-tight text-xl md:text-lg lg:text-xl font-semibold font-bonanova text-text">Von Bacchus bis Christophorus</h3>
-          <p class="hidden md:block mt-3 text-sm md:text-xs lg:text-sm text-gray-600 font-body">Eine Tour auf den Spuren der Weinkultur und regionaler Legenden – für Genießer und Entdecker.</p>
-        </div>
-        <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full ">
-          <a href="/tours?tour=bacchus" class="inline-flex md:hidden items-center px-4 py-1.5 translate-y-[50%] text-stone-50
-          bg-gradient-to-r from-amber-600 to-orange-600
-          group-hover:from-amber-600 group-hover:to-orange-600
-           font-semibold text-sm rounded-full shadow-lg
-        transform hover:scale-105 transition-all duration-300">
-         Zur Tour
-         </a>
-       <a href="/tours?tour=bacchus" class="hidden md:inline-flex items-center px-4 py-1.5 translate-y-[50%]
-         bg-gradient-to-r from-stone-200/80 via-stone-200 to-stone-200/70 text-stone-50
-          hover:from-amber-600 hover:to-orange-600
-          group-hover:from-amber-600 group-hover:to-orange-600
-           font-semibold text-sm rounded-full shadow-lg
-        transform hover:scale-105 transition-all duration-300">
-         Zur Tour
-         </a>
-        </div>
-        <div class="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-amber-900/90 group-hover:bg-gray-900/70 group-hover:text-stone-100 font-semibold sm:text-[0.5rem] md:text-sm py-1 px-3 rounded-full shadow-sm">
-          Frühling-Herbst 
-        </div>
+    <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+      <div class="relative w-full h-[22vh] md:min-h-52 md:h-[26vh] lg:h-72 rounded-t-2xl overflow-hidden">
+        <img src="/mj-Bachus-mosaicGlass.png" alt="Bachus" class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
       </div>
+      <div class="w-full md:p-4 relative group-hover:text-wrap group-hover:absolute group-hover:bottom-0 group-hover:bg-black/80 group-hover:z-0 rounded-b-2xl">
+        <h3 class="sm:text-[0.65rem] sm:leading-tight text-xl md:text-sm lg:text-xl font-semibold font-bonanova md:text-text group-hover:text-accent1 
+      group-hover:leading-none md:leading-tight sm:-mt-[30px] sm:mb-7 md:mt-0 text-stone-300 sm:pl-2
+        text-wrap">Von Bacchus bis Christophorus</h3>
+        <p class="hidden group-hover:block mb-12 h-full mt-3 text-sm md:text-xs lg:text-sm text-gray-300 font-bonanova">Eine Tour auf den Spuren der Weinkultur und regionaler Legenden – für Genießer und Entdecker.</p>
+      </div>
+      <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full group-hover:z-30 ">
+        <a href="/tours?tour=gluehwein" class="inline-flex md:hidden items-center px-4 py-1.5 translate-y-[50%] text-stone-300
+        bg-gradient-to-r from-amber-600 to-orange-600
+        group-hover:from-amber-600 group-hover:to-orange-600
+         font-semibold text-sm rounded-full shadow-lg
+      transform hover:scale-105 transition-all duration-300">
+       Zur Tour
+       </a>
+     <a href="/tours?tour=gluehwein" class="hidden md:inline-flex items-center px-4 py-2 translate-y-[50%]
+       bg-gradient-to-r from-stone-200/80 via-stone-200 to-stone-200/70 text-stone-50
+        hover:from-amber-600 hover:to-orange-600
+        group-hover:from-amber-600 group-hover:to-orange-600
+         font-semibold text-sm rounded-full shadow-lg
+      transform hover:scale-105 transition-all duration-300">
+       Zur Tour
+       </a>
+      </div>
+      <div class="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-amber-900/90 group-hover:bg-gray-900/70 group-hover:text-stone-100 font-semibold sm:text-[0.5rem] md:text-sm py-1 px-3 rounded-full shadow-sm">
+        Frühling-Herbst 
+      </div>
+    </div>
 
 
   <!-- Tour Card 4 -->
       <div class="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-t-2xl transition-opacity duration-300" style={{
-          background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
-          backgroundSize: "45%",
-          backgroundRepeat: "repeat",
-          mixBlendMode: "difference",
-        }}
-        >
-        </div>
-        <div class="relative w-full h-[26vh] lg:h-72 rounded-t-2xl overflow-hidden">
+        <div class="relative w-full h-[22vh] md:min-h-52 md:h-[26vh] lg:h-72 rounded-t-2xl overflow-hidden">
           <img src="/mj-GlühweinV1.png" alt="Glühwein" class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-300">
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 group-hover:from-black/70 to-transparent rounded-t-2xl"></div>
         </div>
-        <div class="p-6">
-          <h3 class="sm:text-[0.65rem] sm:leading-tight text-xl md:text-lg lg:text-xl font-semibold font-bonanova text-text text-wrap">Glühweintour - Geheimnisvolles Gimmeldingen</h3>
-          <p class="hidden md:block mt-3 text-sm md:text-xs lg:text-sm text-gray-600 font-body">Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.</p>
+        <div class="w-full md:p-4 relative group-hover:text-wrap group-hover:absolute group-hover:bottom-0 group-hover:bg-black/80 group-hover:z-0 rounded-b-2xl">
+          <h3 class="sm:text-[0.65rem] sm:leading-tight text-xl md:text-sm lg:text-xl font-semibold font-bonanova md:text-text group-hover:text-accent1 
+          group-hover:leading-none md:leading-tight sm:-mt-[30px] sm:mb-7 md:mt-0 text-stone-300 sm:pl-2
+          text-wrap"><span class="group-hover:block hidden">Glühweintour - </span>Geheimnisvolles Gimmeldingen</h3>
+          <p class="hidden group-hover:block mb-12 h-full mt-3 text-sm md:text-xs lg:text-sm text-gray-300 font-bonanova">Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.</p>
         </div>
-        <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full ">
-          <a href="/tours?tour=gluehwein" class="inline-flex md:hidden items-center px-4 py-1.5 translate-y-[50%] text-stone-50
+        <div class="flex justify-center items-end absolute bottom-0 left-0 w-full h-full group-hover:z-30 ">
+          <a href="/tours?tour=gluehwein" class="inline-flex md:hidden items-center px-4 py-1.5 translate-y-[50%] text-stone-300
           bg-gradient-to-r from-amber-600 to-orange-600
           group-hover:from-amber-600 group-hover:to-orange-600
            font-semibold text-sm rounded-full shadow-lg

@@ -5,6 +5,8 @@ import Header from '@/components/Header.astro';
 import TestSection from '@/components/TestSection.astro';
 import HaloEffect from '@/components/HaloEffect.tsx';
 import Footer from '@/components/Footer.astro';
+import ToursV2 from '@/components/ToursV2.astro';
+import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
 ---
 
 <html lang="de">
@@ -17,6 +19,8 @@ import Footer from '@/components/Footer.astro';
 	</head>
 	<body>
 		<Header isHome={false} />
+		<ScreenSizeDEVTOOL />
+		<ToursV2 isHome={false} />
 		<main class="w-full h-[400vh] pt-[500px]">
 		</main>
 		<Footer />
