@@ -1,0 +1,16 @@
+# Gmail Configuration for Contact Form
+# Copy this content to a new file called .env in your project root
+
+# Your Gmail address
+GMAIL_USER=your-email@gmail.com
+
+# Gmail App Password (NOT your regular Gmail password)
+# To generate an App Password:
+# 1. Go to your Google Account settings
+# 2. Enable 2-Factor Authentication if not already enabled
+# 3. Go to Security > App passwords
+# 4. Generate a new app password for "Mail"
+GMAIL_APP_PASSWORD=your-app-password-here
+
+# Optional: Change the recipient email address
+# RECIPIENT_EMAIL=hendrikcooper@gmx.de
