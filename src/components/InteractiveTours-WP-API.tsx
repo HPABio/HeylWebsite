@@ -157,9 +157,9 @@ const InteractiveTours = () => {
         <div className="absolute top-0 w-full h-[70vh] mt-[30vh] bg-gradient-to-t from-stone-100 via-stone-100/5 to-transparent"></div>
         <div className="absolute top-0 w-full h-[70vh] mt-[30vh] bg-gradient-to-t from-stone-100/90 via-stone-100/90 to-transparent"></div>
 
-        <div className="relative w-full h-full flex flex-col justify-center z-20 ">
+        <div className="relative w-full h-full flex flex-col justify-center z-20">
           <div className="relative z-20 w-full">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[5%]">
+            <div className="max-w-[85%] 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
               {/* Title and Description */}
               <AnimatePresence mode="wait">
                 <motion.div
@@ -167,13 +167,13 @@ const InteractiveTours = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
                   exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
-                  className="text-center mt-[12%]"
+                  className="text-center pt-[10vh]"
                 >
-                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bonanova font-bold text-gray-200 drop-shadow-lg">
+                  <h1 className="text-3xl md:text-4xl 2xl:text-7xl font-bonanova font-bold text-gray-200 drop-shadow-lg">
                     {selectedTour.title}
                   </h1>
                   <p
-                    className="mt-4 max-w-3xl mx-auto text-xl md:text-2xl text-gray-100 font-body drop-shadow-sm"
+                    className="mt-4 max-w-xl 2xl:max-w-2xl mx-auto text-xl md:text-lg la xl:text-lg md:leading-none lg:leading-tight xl:leading-none 2xl:leading-none 2xl:text-2xl text-gray-100 font-body drop-shadow-sm"
                     dangerouslySetInnerHTML={{
                       __html: selectedTour.description,
                     }}
@@ -198,7 +198,7 @@ const InteractiveTours = () => {
                                   }`}
                     whileHover={{ scale: 1.03 }}
                   >
-                    <div className="relative w-full h-48 md:h-64 lg:h-72 overflow-hidden rounded-2xl">
+                    <div className="relative w-full h-[26vh] lg:h-72 overflow-hidden rounded-2xl">
                       <img
                         src={tour.images.card}
                         alt={tour.title}
