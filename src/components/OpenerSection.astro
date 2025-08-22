@@ -19,8 +19,19 @@ import WaterColorReveal from '@/components/WaterColorReveal.tsx';
   <div class="hidden lg:block max-w-sm md:max-w-2xl md:mx-auto mt-12 md:my-24 translate-x-[12%] relative">
     <div class="w-[400px] h-[400px] absolute top-0 left-0 px-6 z-0 translate-y-[-20%] translate-x-[-45%]">
       <WaterColorReveal client:visible id="Opener-location-link-lg" width={300} height={300} 
-      className="h-[40vh] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
-      <img slot="child1" src="/GimmeldingenMap.jpg" alt="Section 4" class="absolute object-contain scale-[1.5] brightness-[70%] contrast-[2] rotate-45 bottom-[0%] left-[0%] translate-x-[-10%] translate-y-[-20%] rounded-xl shadow-lg "  /> 
+      className="h-[40vh] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] ">
+      <div slot="child2" class="w-[400px] h-[400px] relative flex items-center justify-center ">
+        <a href="http://www.gimmeldingen.de/unser-ort/portrait.html" class="relative w-fit h-fit mb-44 mr-12">
+          <p class="w-full h-full text-stone-700 
+          backdrop-blur-sm bg-gradient-to-r from-stone-100/45 via-stone-200/30 to-stone-100/30
+          text-sm md:text-[clamp(0.85rem,1.5vw,1.2rem)] font-bonanova font-light
+          border-[1.5px] border-soft-beige/20 rounded-3xl px-2">
+          <span class="text-transparent bg-clip-text bg-stone-700 ">📍</span>
+          Gimmeldingen
+            </p>
+        </a>
+      </div>
+      <img slot="child1" src="/GimmeldingenMap.jpg" alt="Section 4" class="absolute object-contain scale-[1.5] brightness-[70%] contrast-[2] rotate-45 bottom-[0%] left-[0%] translate-x-[-10%] translate-y-[-20%] rounded-xl shadow-lg "  />
     </WaterColorReveal>
     </div>
     <div class=" text-lg text-gray-600 font-body  flex flex-col justify-center items-center">
@@ -44,6 +55,17 @@ import WaterColorReveal from '@/components/WaterColorReveal.tsx';
     <div class="w-[400px] h-[400px] absolute top-0 left-0 px-6 z-0 translate-y-[-10%] translate-x-[-35%]">
       <WaterColorReveal client:visible id="Opener-location-link-md" width={250} height={250} 
       className="h-[45vh] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
+      <div slot="child2" class="w-[400px] h-[400px] relative flex items-center justify-start ">
+        <a href="http://www.gimmeldingen.de/unser-ort/portrait.html" class="relative w-fit h-fit mb-12 ml-16">
+          <p class="w-full h-full text-stone-700 
+          backdrop-blur-sm bg-gradient-to-r from-stone-100/45 via-stone-200/30 to-stone-100/30
+          text-sm md:text-[clamp(0.85rem,1.5vw,1.2rem)] font-bonanova font-light
+          border-[1.5px] border-soft-beige/20 rounded-3xl px-2">
+          <span class="text-transparent bg-clip-text bg-stone-700 ">📍</span>
+          Gimmeldingen
+            </p>
+        </a>
+      </div>
       <img slot="child1" src="/GimmeldingenMap.jpg" alt="Section 4" class="absolute object-contain scale-[1.5] brightness-[70%] contrast-[2] rotate-45 bottom-[0%] left-[0%] translate-x-[-10%] translate-y-[-20%] rounded-xl shadow-lg "  /> 
     </WaterColorReveal>
     </div>
@@ -81,6 +103,17 @@ import WaterColorReveal from '@/components/WaterColorReveal.tsx';
     <div class="w-full h-[200px] flex justify-center items-start rotate-0 pt-8">
       <WaterColorReveal client:visible id="Opener-location-link-sm" width={200} height={200} 
       className="h-[80vh] w-[200px] drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] absolute bottom-0 right-0">
+      <div slot="child2" class="w-[400px] h-[400px] relative flex items-center justify-start ">
+        <a href="http://www.gimmeldingen.de/unser-ort/portrait.html" class="relative w-fit h-fit mb-44 ml-8">
+          <p class="w-full h-full text-stone-700 
+          backdrop-blur-sm bg-gradient-to-r from-stone-100/45 via-stone-200/30 to-stone-100/30
+          text-sm md:text-[clamp(0.85rem,1.5vw,1.2rem)] font-bonanova font-light
+          border-[1.5px] border-soft-beige/20 rounded-3xl px-2">
+          <span class="text-transparent bg-clip-text bg-stone-700 ">📍</span>
+          Gimmeldingen
+            </p>
+        </a>
+      </div>
       <img slot="child1" src="/GimmeldingenMap.jpg" alt="Section 4" class="absolute object-contain scale-[1.5] brightness-[70%] contrast-[2] bottom-[0%] left-[0] translate-x-[0%] translate-y-[-20%] rounded-xl shadow-lg "  /> 
     </WaterColorReveal>
     </div>
@@ -89,8 +122,8 @@ import WaterColorReveal from '@/components/WaterColorReveal.tsx';
 
     <div class="relative z-10 max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto px-8 sm:px-1 lg:px-8 mt-24 md:mt-44">
       <!-- First Text Block -->
-      <div class="text-lg md:text-2xl text-gray-600 font-body  mx-auto">
-        <p class="text-left z-20 leading-tight md:leading-snug">
+      <div class="text-lg md:text-xl  text-gray-600 font-body  px-4 mx-auto">
+        <p class="text-left z-20 leading-tight md:leading-tight">
           Lassen Sie sich von meiner Begeisterung für die Pfalz anstecken und erleben Sie unvergessliche Momente in einer der schönsten Weinregionen Deutschlands. Freuen Sie sich auf ein spannendes Erlebnis, bei dem wir gemeinsam Geschichte lebendig werden lassen. 
         </p>
       </div>

@@ -5,7 +5,7 @@ import AboutMeHorizontal from '@/components/AboutMeHorizontal.astro';
 import GetInTouch from '@/components/GetInTouch.astro';
 ---
 
-<section id="about-me" class={`relative w-screen px-10 sm:px-0 bg-white ${className} `}>
+<section id="about-me" class={`relative w-screen  mx-auto bg-white pb-28 ${className} `}>
   <div class="absolute inset-0 z-0 opacity-1" style={{
     background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
     backgroundSize: "15%",
@@ -13,7 +13,6 @@ import GetInTouch from '@/components/GetInTouch.astro';
   }}></div>
 
   <AboutMeVertical className="block lg:hidden pt-24 sm:pt-32" />
-  <AboutMeHorizontal className="hidden lg:block pt-24 sm:pt-32" />
-  <GetInTouch className="md:col-start-1 md:col-span-2 md:row-start-5 md:row-span-1 mx-auto max-w-sm md:max-w-xl xl:max-w-2xl" />
-
+  <AboutMeHorizontal className="hidden lg:block pt-24 sm:pt-32 z-10" />
+  <GetInTouch className="md:col-start-1 md:col-span-2 md:row-start-5 md:row-span-1 mx-auto max-w-sm md:max-w-xl xl:max-w-2xl mt-12 md:mit-0 lg:-mt-18 z-0" />
 </section> 
