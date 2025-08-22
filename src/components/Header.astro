@@ -31,6 +31,13 @@ const { isHome = false } = Astro.props;
       </li>
       <li>
         <a
+          href="/tours"
+          class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-amber-50/90 hover:text-amber-950 font-semibold text-xs sm:text-sm rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-200"
+          >Touren</a
+        >
+      </li>
+      <li>
+        <a
           href="/gruppen"
           class="hover:text-orange-700/80 hover:font-bold transition"
           >Gruppen</a
@@ -38,25 +45,19 @@ const { isHome = false } = Astro.props;
       </li>
       <li>
         <a
-          href="#about-me"
+          href={isHome ? "#about-me" : "/"}
           class="hover:text-orange-700/80 hover:font-bold transition"
           >Über mich</a
         >
       </li>
       <li>
         <a
-          href="#get-in-touch"
+          href="/kontakt"
           class="hover:text-orange-700/80 hover:font-bold transition"
           >Kontakt</a
         >
       </li>
-      <li>
-        <a
-          href="/tours"
-          class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-amber-50/90 hover:text-amber-950 font-semibold text-xs sm:text-sm rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-200"
-          >Buchen</a
-        >
-      </li>
+      
     </ul>
     <div class="sm:hidden flex items-center">
       <button id="menu-btn" class="hamburger z-50 focus:outline-none">
@@ -81,17 +82,12 @@ const { isHome = false } = Astro.props;
         >
       </li>
       <li>
-        <a href="#tours" class="mobile-nav-link text-3xl font-bonanova"
-          >Touren</a
-        >
-      </li>
-      <li>
-        <a href="#about-me" class="mobile-nav-link text-3xl font-bonanova"
+        <a href={isHome ? "#about-me" : "/#about-me"} class="mobile-nav-link text-3xl font-bonanova"
           >Über mich</a
         >
       </li>
       <li>
-        <a href="#get-in-touch" class="mobile-nav-link text-3xl font-bonanova"
+        <a href={isHome ? "#get-in-touch" : "/#get-in-touch"} class="mobile-nav-link text-3xl font-bonanova"
           >Kontakt</a
         >
       </li>
@@ -184,6 +180,30 @@ const { isHome = false } = Astro.props;
         toggleMenu();
       }
     });
+  });
+
+  // Handle smooth scrolling with header offset
+  const handleAnchorClick = (e) => {
+    const href = e.target.getAttribute('href');
+    if (href && href.includes('#')) {
+      e.preventDefault();
+      const targetId = href.split('#')[1];
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const headerHeight = 70; // Height of the fixed header
+        const targetPosition = targetElement.offsetTop - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
+  // Add click handlers to all anchor links in the header
+  const allNavLinks = document.querySelectorAll('header a[href*="#"]');
+  allNavLinks.forEach(link => {
+    link.addEventListener('click', handleAnchorClick);
   });
 </script>
 
