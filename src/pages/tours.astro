@@ -9,6 +9,8 @@ import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
 
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+
+// Note: Tour parameter is now read directly in the React component
 ---
 
 <html lang="de">
@@ -24,7 +26,7 @@ import Footer from '@/components/Footer.astro';
 		<div class="fixed w-full h-[80px]  bg-black -translate-y-[80px] "></div>
 		<div class="fixed w-full h-[80px]  bg-gradient-to-br from-stone-300/25 via-stone-900/40 to-transparent -translate-y-[80px] "></div>
 	    <ScreenSizeDEVTOOL />
-		<InteractiveToursWP client:visible />
+		<InteractiveToursWP client:load />
 		<Footer />
 	</body>
 </html> 
