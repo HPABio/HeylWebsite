@@ -5,6 +5,7 @@ import InteractiveTours from '@/components/InteractiveTours.tsx';
 import InteractiveToursV2 from '@/components/InteractiveToursV2.tsx';
 import InteractiveToursV3 from '@/components/InteractiveToursV3.tsx';
 import InteractiveToursWP from '@/components/InteractiveTours-WP-API.tsx';
+import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
 
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
@@ -22,6 +23,7 @@ import Footer from '@/components/Footer.astro';
 		<Header isDarkMode={true} />
 		<div class="fixed w-full h-[80px]  bg-black -translate-y-[80px] "></div>
 		<div class="fixed w-full h-[80px]  bg-gradient-to-br from-stone-300/25 via-stone-900/40 to-transparent -translate-y-[80px] "></div>
+	    <ScreenSizeDEVTOOL />
 		<InteractiveToursWP client:visible />
 		<Footer />
 	</body>
