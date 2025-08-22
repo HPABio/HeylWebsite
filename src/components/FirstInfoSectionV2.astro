@@ -62,7 +62,7 @@ const reviews = [
     <img src="/ChatGPTAsset.png" alt="Section 4" class="object-contain scale-x-[-1] contrast-200 rotate-[35deg] absolute w-full h-full top-[0%] left-[50%] translate-x-[-50%] translate-y-[0%] saturate-[0.5] opacity-5"  />
   </div>
 
-  <div class="inset-0 absolute z-0 pointer-events-none border-2 border-red-500"
+  <div class="inset-0 absolute z-0 pointer-events-none "
   style={{
     backgroundImage: `url(/GimmeldingenMap.jpg)`,
     backgroundSize: 'cover',
@@ -81,7 +81,7 @@ const reviews = [
       text-nowrap text-xl xl:text-3xl font-doulaise font-semibold mb-8 text-stone-200/70 md:text-stone-400/20 lowercase leading-tight
       pr-32 pl-2 py-3 z-10">...darum rate ich sei weise, zöger nicht und reise reise.
     </p>
-      <div class="flex-1 order-2 md:order-1">
+      <div class="flex-1 order-2 md:order-1 w-[300px] sm:w-full sm:min-w-[320px]">
 
         {post1Json && (() => {
           const rawHtml1 = post1Json[0].content.rendered;
@@ -104,7 +104,7 @@ const reviews = [
         <p class="text-sm text-stone-500/60">
           {main1}
         </p>
-        <h2 class="text-5xl xl:text-7xl font-normal text-text/30 mb-6 font-bonanova tracking-tight text-nowrap">
+        <h2 class="text-5xl xl:text-7xl font-normal text-text/30 mb-6 font-bonanova tracking-tight text-nowrap -ml-2 sm:ml-0">
           {appendix1}
         </h2>
             </>
@@ -115,8 +115,13 @@ const reviews = [
       <!-- Section 1: Image Right, Text Left (Two glasses) -->
       <div class="flex-1 order-1 md:order-2 flex justify-center saturate-[0.6] hover:saturate-[1] transition-all duration-300
       mt-12 lg:mt-0">
+      <WaterColorReveal client:visible id="V2section-4-xs" width={300} height={300} 
+      className="block sm:hidden h-[300px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group">
+        <img slot="child1" src="/compressed-mj-wineToasting-mosaicGlass.png" alt="Section 4" class="absolute w-[95%] h-[100%] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-48%] group-hover:opacity-0 rounded-xl shadow-lg transition-opacity duration-500"  />
+        <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8068.jpg" alt="Section 1 Hover" class="absolute object-cover object-[100%_90%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      </WaterColorReveal>
       <WaterColorReveal client:visible id="V2section-4-sm" width={360} height={360} 
-      className="block lg:hidden h-[360px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group">
+      className="hidden sm:block lg:hidden h-[360px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group">
         <img slot="child1" src="/compressed-mj-wineToasting-mosaicGlass.png" alt="Section 4" class="absolute w-[95%] h-[100%] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-48%] group-hover:opacity-0 rounded-xl shadow-lg transition-opacity duration-500"  />
         <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8068.jpg" alt="Section 1 Hover" class="absolute object-cover object-[100%_90%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </WaterColorReveal>
@@ -146,7 +151,7 @@ const reviews = [
     <!-- Section 2: Image Left, Text Right -->
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto
     mt-12 lg:mt-0">
-      <div class="flex-1 order-2 md:order-2 pr-12">
+      <div class="flex-1 order-2 md:order-2 pr-12 w-[300px] sm:w-full sm:min-w-[320px]">
        
         {post2Json && (() => {
           const rawHtml2 = post2Json[0].content.rendered;
@@ -179,8 +184,13 @@ const reviews = [
       </div>
       <!-- Section 2: Image Left, Text Right (Wine Bottle) -->
       <div class="flex-1 order-1 md:order-1 flex justify-center saturate-[0.6] hover:saturate-[0.8] transition-all duration-300">
+        <WaterColorReveal client:visible id="V2section-2-xs" width={300} height={300} 
+        className="block sm:hidden h-[300px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group">
+          <img slot="child1" src="/compressed-wineBottle-mosaic-wall.png" alt="Section 4" class="absolute object-cover w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500"  />
+          <img slot="child2" src="/interactiveHistory.png" alt="Section 1 Hover" class="absolute object-cover object-[0%_0%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-2-sm" width={360} height={360} 
-        className="block lg:hidden h-[360px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group:">
+        className="hidden sm:block lg:hidden h-[360px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group:">
           <img slot="child1" src="/compressed-wineBottle-mosaic-wall.png" alt="Section 4" class="absolute object-cover w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500"  />
           <img slot="child2" src="/interactiveHistory.png" alt="Section 1 Hover" class="absolute object-cover object-[0%_0%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </WaterColorReveal>
@@ -200,8 +210,8 @@ const reviews = [
     </div>
   
     <!-- Section 3: Image Right, Text Left -->
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto z-10 ">
-      <div class="flex-1 order-2 md:order-1 min-w-[320px] relative">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto z-10">
+      <div class="flex-1 order-2 md:order-1 w-[300px] sm:w-full sm:min-w-[320px] relative">
    {post3Json && (() => {
           const rawHtml3 = post3Json[0].content.rendered;
           const paragraphMatches3 = rawHtml3.match(/<p>.*?<\/p>/gs) || [];
@@ -212,9 +222,9 @@ const reviews = [
         
           return (
             <>
-              <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
+              <h2 class=" text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
           <span class="text-accent1/50 pr-32 text-nowrap">
-            {post3Json[0].title.rendered}
+           {post3Json[0].title.rendered}
           </span>
         </h2>
         <p class="text-lg xl:text-xl text-stone-700/75 mb-4 xl:leading-none">
@@ -233,8 +243,13 @@ const reviews = [
       </div>
       <!-- Section 3: Image Right, Text Left (Vineyard) -->
       <div class="flex-1 order-1 md:order-2 flex justify-center items-center relative saturate-[0.4] hover:saturate-[1] transition-all duration-300">
+        <WaterColorReveal client:visible id="V2section-1-xs" width={300} height={300}
+        className="block sm:hidden h-[300px] aspect-square absolute md:top-[50%] md:translate-y-[-25%] drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group">
+          <img slot="child1" src="/compressed-mj-vineYard-ColorPencilSketch.png" alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" />
+          <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8056.jpg" alt="Section 1 Hover" class="absolute object-cover object-[50%_40%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-1-sm" width={360} height={360}
-        className="block lg:hidden h-[360px] aspect-square absolute md:top-[50%] md:translate-y-[-25%] drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group">
+        className="hidden sm:block lg:hidden h-[360px] aspect-square absolute md:top-[50%] md:translate-y-[-25%] drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group">
           <img slot="child1" src="/compressed-mj-vineYard-ColorPencilSketch.png" alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" />
           <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8056.jpg" alt="Section 1 Hover" class="absolute object-cover object-[50%_40%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </WaterColorReveal>
@@ -254,7 +269,7 @@ const reviews = [
   
     <!-- Section 4: Image Left, Text Right -->
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto">
-      <div class="flex-1 order-2 md:order-2">
+      <div class="flex-1 order-2 md:order-2 w-[300px] sm:w-full sm:min-w-[320px]">
         
         {post4Json && (() => {
           const rawHtml4 = post4Json[0].content.rendered;
@@ -288,8 +303,13 @@ const reviews = [
       <!-- Section 4: Image Left, Text Right (Old Book) -->
       <div class="relative flex-1 order-1 md:order-1 flex justify-center saturate-[0.6] hover:saturate-[0.8] transition-all duration-300
       mt-12 lg:mt-0">
+      <WaterColorReveal client:visible id="V2section-3-xs" width={300} height={300} 
+      className="block sm:hidden h-[300px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group">
+        <img slot="child1" src="/compressed-mj-oldBook-mosaicGlass.png" alt="Section 3" class="absolute object-cover object-[50%_90%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" /> 
+        <img slot="child2" src="/compressed-mj-vineYard-V1.png" alt="Section 1 Hover" class="absolute object-cover object-[50%_90%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      </WaterColorReveal>
       <WaterColorReveal client:visible id="V2section-3-sm" width={360} height={360} 
-      className="block lg:hidden h-[360px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group">
+      className="hidden sm:block lg:hidden h-[360px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] group">
         <img slot="child1" src="/compressed-mj-oldBook-mosaicGlass.png" alt="Section 3" class="absolute object-cover object-[50%_90%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" /> 
         <img slot="child2" src="/compressed-mj-vineYard-V1.png" alt="Section 1 Hover" class="absolute object-cover object-[50%_90%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </WaterColorReveal>
@@ -311,16 +331,16 @@ const reviews = [
     </div>
 
     <!-- Section 5: Image Right, Text Left -->
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:ml-24 items-start sm:items-center justify-between gap-4 xl:gap-12 w-full max-w-6xl mx-auto">
 
-      <div class="flex-1 order-2 md:order-1 justify-start items-start">
-        <h2 class="text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
-          <span class="text-accent1/50 pr-32 text-nowrap">
+      <div class="flex-1 order-2 md:order-1 justify-start items-start mt-52 translate-x-[-10%]">
+        <h2 class="max-w-4 sm:max-w-2xl text-3xl sm:text-5xl xl:text-6xl font-bold mb-2 font-bonanova tracking-tight text-nowrap">
+          <span class="text-accent1/50 sm:text-accent1 md:text-accent1/50 pr-32 text-nowrap"> 
             Seien Sie Dabei!
           </span>
           </h2>
         <p class="text-lg xl:text-xl text-stone-700/75 mb-4 xl:leading-none">
-          Klicken Sie hier um direkt zu den Touren zu gelangen.
+          Klicken Sie hier um direkt zu den<br class="sm:hidden"/> <span class="text-stone-700/75 sm:text-stone-200 md:text-stone-700/75"> Touren zu gelangen.</span>
           </p>        
       <a href="/tours" class="inline-flex items-center pl-4 pr-4 py-3
       bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold text-lg rounded-full shadow-lg
@@ -334,7 +354,13 @@ const reviews = [
   
 
       <div class="flex-1 order-1 md:order-2 flex justify-center overflow-visible relative lg:h-[500px] h-[400px]">
-        <div class="border-2 border-red-500/0 absolute top-0 left-0 translate-x-[-25%] translate-y-[-30%] md:translate-x-[-33%] md:translate-y-[-25%] lg:translate-x-[-23%] lg:translate-y-[3%]  xl:translate-y-[-20%] xl:translate-x-[-23%]">        
+        <div class="border-2 border-red-500/0 absolute top-0 left-0 translate-x-[5%] translate-y-[-70%] sm:translate-x-[-23%] sm:translate-y-[-30%] md:translate-x-[-33%] md:translate-y-[-25%] lg:translate-x-[-23%] lg:translate-y-[3%]  xl:translate-y-[-20%] xl:translate-x-[-23%]">        
+        <WaterColorReveal client:visible id="V2section-5-sm" width={1000} height={1000}
+         className="block sm:hidden h-[400px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible  translate-x-[-250%] translate-y-[10%]">
+          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[35deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[40deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+          <!-- <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
+        </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-5-md" width={1400} height={1400}
          className="hidden sm:block lg:hidden h-[900px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible  translate-x-[-250%] translate-y-[10%]">
           <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[35deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
@@ -366,7 +392,7 @@ const reviews = [
 
 
     <!-- Quotes Section -->
-    <div class="w-screen md:max-w-6xl mx-auto absolute bottom-0 left-0 z-10 mt-24 pt-24 bg-gradient-to-t from-white via-white to-transparent
+    <div class="w-screen px-8 sm:px-0 md:max-w-6xl mx-auto absolute bottom-0 left-0 z-10 mt-24 pt-24 bg-gradient-to-t from-white via-white to-transparent
      md:w-full md:relative md:mb-12 md:mt-24 md:bg-none h-[550px]">
       <!-- Desktop Quotes -->
       <div class="text-center mb-12 hidden md:block">

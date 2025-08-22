@@ -7,8 +7,8 @@ import footerLinks from '/public/information/footer-links.md';
 style="background-image: url('/GimmeldingenMap.jpg'); background-size: cover; background-position: center;">
 <div class="inset-0 bg-gradient-to-b from-slate-100 via-slate-200/70 to-transparent ">
   <!-- Main Footer Content -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-32 md:gap-x-8 gap-y-14 px-14 lg:px-0">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+    <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-x-32 md:gap-x-8 gap-y-14 px-14 lg:px-0">
       
       <!-- Company Info -->
       <div class="lg:col-span-1 flex flex-col justify-end lg:justify-between items-start ">
@@ -41,34 +41,35 @@ style="background-image: url('/GimmeldingenMap.jpg'); background-size: cover; ba
       </div>
 
       <!-- Navigation Links -->
-      <div class="lg:col-span-1 pt-0 sm:pt-4 md:pt-0 ml-14">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">Navigation</h3>
-        <ul class="lg:space-y-1 space-y-0">
-          <li><a href="/" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Startseite</a></li>
-          <li><a href="/kontakt" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Kontakt</a></li>
-          <li><a href="/impressum" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Impressum</a></li>
-          <li><a href="/datenschutz" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Datenschutz</a></li>
-          <li><a href="/newsletter" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Newsletter</a></li>
-          <li><a href="/barrierefreiheit" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Erklärung zur Barrierefreiheit</a></li>
+      <div class="lg:col-span-1 pt-0 sm:pt-4 md:pt-0 sm:ml-14 sm:mt-0 mt-10">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-4">Navigation</h3>
+        <ul class="lg:space-y-1 space-y-0 text-xs leading-snug sm:leading-tight sm:text-sm">
+          <li><a href="/" class="text-gray-600 hover:text-gray-900 transition-colors">Startseite</a></li>
+          <li><a href="/tours" class="text-gray-600 hover:text-gray-900 transition-colors">Buchen</a></li>
+          <li><a href="/kontakt" class="text-gray-600 hover:text-gray-900 transition-colors">Kontakt</a></li>
+          <li><a href="/weingueter" class="text-gray-600 hover:text-gray-900 transition-colors">Weingüter</a></li>
+          <li><a href="/impressum" class="text-gray-600 hover:text-gray-900 transition-colors">Impressum</a></li>
+          <li><a href="/datenschutz" class="text-gray-600 hover:text-gray-900 transition-colors">Datenschutz</a></li>
+          <li><a href="/newsletter" class="hidden text-gray-600 hover:text-gray-900 transition-colors">Newsletter</a></li>
+          <li><a href="/barrierefreiheit" class="hidden text-gray-600 hover:text-gray-900 transition-colors">Erklärung zur Barrierefreiheit</a></li>
         </ul>
       </div>
 
       <!-- Collaborators -->
-      <div class="lg:col-span-1">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">Partner</h3>
-        <ul class="lg:space-y-1 space-y-0">
-          <li><a href="/weingueter" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Weingüter</a></li>
-          <li><a href="https://www.neustadt.eu/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Tourist-Info Neustadt</a></li>
-          <li><a href="http://www.gimmeldingen.de/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Gimmeldingen</a></li>
-          <li><a href="https://www.kultur-und-weinbotschafter.de/pfalz" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Kultur-und Weinbotschafter Pfalz</a></li>
-          <li><a href="https://www.mandelbluete-pfalz.de/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Pfälzer Mandelblüte</a></li>
-          <li><a href="https://www.pfalz.de/de" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Zum Wohl die Pfalz</a></li>
+      <div class="lg:col-span-1 sm:mt-0 mt-10">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-4">Partner</h3>
+        <ul class="lg:space-y-1 space-y-0 text-xs leading-snug sm:leading-tight sm:text-sm">
+          <li><a href="https://www.neustadt.eu/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors">Tourist-Info Neustadt</a></li>
+          <li><a href="http://www.gimmeldingen.de/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors">Gimmeldingen</a></li>
+          <li><a href="https://www.kultur-und-weinbotschafter.de/pfalz" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors">Kultur-und Weinbotschafter Pfalz</a></li>
+          <li><a href="https://www.mandelbluete-pfalz.de/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors">Pfälzer Mandelblüte</a></li>
+          <li><a href="https://www.pfalz.de/de" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors">Zum Wohl die Pfalz</a></li>
         </ul>
       </div>
     </div>
-    <div class="border-b border-gray-300 h-1 w-[70%] mx-auto my-8"/>
+    <div class="border-b border-gray-300 h-1 w-[70%] mx-auto mt-4 sm:mt-0 sm:my-8"/>
     <!-- Bottom Section -->
-    <div class="pt-8">
+    <div class="pt-8 px-10">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <p class="text-sm text-gray-500 mb-4 md:mb-0">
           &copy; 2024 Brigitta Heyl – Geführte Wein-Erlebnistouren. Alle Rechte vorbehalten.
@@ -76,7 +77,7 @@ style="background-image: url('/GimmeldingenMap.jpg'); background-size: cover; ba
         <div class="flex space-x-6">
           <a href="/impressum" class="text-sm text-gray-500 hover:text-gray-700 transition-colors">Impressum</a>
           <a href="/datenschutz" class="text-sm text-gray-500 hover:text-gray-700 transition-colors">Datenschutz</a>
-          <a href="/barrierefreiheit" class="text-sm text-gray-500 hover:text-gray-700 transition-colors">Barrierefreiheit</a>
+          <a href="/barrierefreiheit" class="hidden text-sm text-gray-500 hover:text-gray-700 transition-colors">Barrierefreiheit</a>
         </div>
       </div>
     </div>
