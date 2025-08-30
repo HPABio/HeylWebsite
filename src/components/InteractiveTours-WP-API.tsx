@@ -183,22 +183,22 @@ const InteractiveTours = () => {
 
               {/* Tours Grid - thumbnail selection */}
               <div
-                className="grid gap-1 md:gap-2 xl:gap-3 2xl:gap-4 grid-cols-1 sm:grid-cols-4 my-12 px-14 md:px-32
+                className="grid gap-1 md:gap-2 lg:gap-4 xl:gap-5 2xl:gap-6 grid-cols-4 sm:grid-cols-4 my-12
                           max-w-5xl mx-auto"
               >
                 {tours.map((tour) => (
                   <motion.div
                     key={tour.id}
                     onClick={() => setSelectedTour(tour)}
-                    className={`cursor-pointer group relative overflow-hidden
+                    className={`cursor-pointer group relative overflow-hidden aspect-[1/1] sm:aspect-[2/3]
                                   rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 ${
                                     selectedTour.id === tour.id
                                       ? "outline-offset-[12px] ring-offset-0 ring-2 ring-soft-beige outline-[2px] outline-soft-beige/30 outline-none border-[2.5px] border-stone-100 z-30"
-                                      : "border-[2.5px] border-soft-beige/20 brightness-[0.3]"
+                                      : "border-[2.5px] border-soft-beige/20 brightness-[0.6] saturate-[0.7]"
                                   }`}
                     whileHover={{ scale: 1.03 }}
                   >
-                    <div className="relative w-full h-[26vh] lg:h-72 overflow-hidden rounded-2xl">
+                    <div className="relative w-full h-full overflow-hidden rounded-2xl">
                       <img
                         src={tour.images.card}
                         alt={tour.title}
@@ -206,14 +206,14 @@ const InteractiveTours = () => {
                       />
                       <div
                         className="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-amber-900/90 font-semibold 
-                                  sm:text-[0.5rem] md:text-sm py-1 px-3 rounded-full shadow-sm"
+                                  sm:text-[0.5rem] md:text-xs py-1 px-3 rounded-full shadow-sm"
                       >
                         {tour.availability}
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                       <h3
                         className="absolute bottom-4 left-4 
-                                  sm:text-[0.65rem] sm:leading-tight text-xl font-semibold font-bonanova text-soft-sand"
+                                  sm:text-[0.65rem] sm:leading-tight md:text-sm lg:text-lg font-semibold font-bonanova text-soft-sand"
                       >
                         {tour.title}
                       </h3>
@@ -221,21 +221,7 @@ const InteractiveTours = () => {
                   </motion.div>
                 ))}
               </div>
-
-              {/* Detailed Description Section */}
-              <div className="h-full mt-6 md:mt-12 max-w-3xl mx-auto pb-44">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={selectedTour.id + "-desc"}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      transition: { delay: 0.2, duration: 0.5 },
-                    }}
-                    exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
-                  >
-                    <div className="pt-24 flex justify-start pb-8">
+              <div className="pt-4 flex justify-start max-w-3xl mx-auto pb-8">
                       <a
                         href="/book-tour"
                         className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold text-lg rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300"
@@ -253,10 +239,25 @@ const InteractiveTours = () => {
                             d="M17 8l4 4m0 0l-4 4m4-4H3"
                           ></path>
                         </svg>
-                        Diese Tour buchen
+                        TOUR BUCHEN
                       </a>
                     </div>
 
+
+              {/* Detailed Description Section */}
+              <div className="h-full mt-6 md:mt-12 max-w-3xl mx-auto pb-44">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={selectedTour.id + "-desc"}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      transition: { delay: 0.2, duration: 0.5 },
+                    }}
+                    exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
+                  >
+                   
                     <h2 className="text-3xl font-bold font-bonanova text-gray-900">
                       Über diese Tour
                     </h2>
@@ -273,6 +274,7 @@ const InteractiveTours = () => {
           </div>
         </div>
       </div>
+      
     </section>
   );
 };
