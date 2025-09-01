@@ -48,10 +48,9 @@ const reviews = [
 <section id="quotes-element" class={`w-full flex justify-center items-center ${className} `}>
   
     <!-- Quotes Section -->
-    <div class="w-screen px-8 sm:px-0 md:max-w-6xl z-10
-     md:w-full md:relative md:mb-12 md:mt-24 md:bg-none h-[550px]">
+    <div class="px-8 sm:px-0 max-w-6xl z-10 w-full relative md:mb-12 md:mt-24 h-[300px] md:h-[450px]">
       <!-- Desktop Quotes -->
-      <div class="text-center mb-12 hidden md:block">
+      <div class="hidden text-center mb-12 md:block">
         <h2 class="text-5xl xl:text-6xl font-bold font-bonanova tracking-tight">
           <span class="text-accent1">Was unsere Gäste sagen</span>
         </h2>
@@ -60,11 +59,11 @@ const reviews = [
         </p>
       </div>
       
-      <div class="relative h-[300px] md:h-[250px] flex items-center justify-center max-w-xs sm:max-w-xl mx-auto ">
+      <div class="relative h-[250px] flex items-center justify-center max-w-xs sm:max-w-xl mx-auto ">
         <!-- Left Arrow -->
         <button 
           id="prev-quote"
-          class="absolute left-4 sm:-left-[5%]  z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transition-all duration-300 hover:scale-110 group"
+          class="absolute hidden md:block left-4 sm:-left-[5%]  z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transition-all duration-300 hover:scale-110 group"
           onclick="previousQuote()"
         >
           <svg class="w-5 h-5 text-stone-600 group-hover:text-accent1 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +74,7 @@ const reviews = [
         <!-- Right Arrow -->
         <button 
           id="next-quote"
-          class="absolute right-4 sm:-right-[5%] z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transition-all duration-300 hover:scale-110 group"
+          class="absolute hidden md:block right-4 sm:-right-[5%] z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transition-all duration-300 hover:scale-110 group"
           onclick="nextQuote()"
         >
           <svg class="w-5 h-5 text-stone-600 group-hover:text-accent1 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,7 +109,7 @@ const reviews = [
         </div>
         
         <!-- Quote indicators -->
-        <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <div class="absolute hidden md:block -top-8 left-1/2 transform -translate-x-1/2 space-x-2">
           {reviews.map((_, index) => (
             <button 
               id={`indicator-${index}`}
@@ -124,11 +123,11 @@ const reviews = [
       </div>
 
       <!-- Mobile Quotes -->
-      <div class="text-center mb-16 block md:hidden ">
-        <h2 class="text-2xl sm:text-3xl font-bold font-bonanova tracking-tight">
+      <div class="text-center md:hidden flex flex-col items-center justify-center mt-14 sm:mt-0">
+        <h2 class="text-2xl sm:text-3xl font-bold font-bonanova tracking-tight text-nowrap">
           <span class="text-accent1">Was unsere Gäste sagen</span>
         </h2>
-        <p class="max-w-44 sm:max-w-60  mx-auto text-sm sm:text-base text-stone-600/80 font-medium leading-tight mt-2">
+        <p class="max-w-60 sm:max-w-72 mx-auto text-sm sm:text-base text-stone-600/80 font-medium leading-tight mt-2">
           Authentische Erfahrungen unserer Weinliebhaber
         </p>
       </div>
@@ -136,7 +135,7 @@ const reviews = [
   
 
 
-    <div class="h-[320px] md:h-[1000px] lg:h-[900px] relative md:absolute md:bottom-0 md:left-0 w-screen mx-auto
+    <div class="h-[320px] md:h-[1000px] lg:h-[900px]  absolute md:bottom-0 md:left-0 w-screen mx-auto
     bg-gradient-to-t from-white via-white/95 to-transparent"/>
     
     <script define:vars={{ reviews }}>

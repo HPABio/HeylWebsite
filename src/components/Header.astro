@@ -39,14 +39,14 @@ const { isHome = false } = Astro.props;
       <li>
         <a
           href="/gruppen"
-          class="hover:text-orange-700/80 hover:font-bold transition"
+          class={isHome ? "hover:text-orange-700/80 hover:font-bold transition" : "hover:text-orange-700/80 hover:font-bold transition -mr-7"}
           >Gruppen</a
         >
       </li>
       <li>
         <a
-          href={isHome ? "#about-me" : "/"}
-          class="hover:text-orange-700/80 hover:font-bold transition"
+          href="#about-me"
+          class={isHome ? "hover:text-orange-700/80 hover:font-bold transition" : "hidden"}
           >Über mich</a
         >
       </li>

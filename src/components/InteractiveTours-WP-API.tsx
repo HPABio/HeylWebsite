@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -223,7 +225,7 @@ const InteractiveTours = () => {
               </div>
               <div className="pt-4 flex justify-start max-w-3xl mx-auto pb-8">
                       <a
-                        href="/book-tour"
+                        href="https://eveeno.com/de/event-cal/34263?style=grid"
                         className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold text-lg rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300"
                       >
                         <svg
