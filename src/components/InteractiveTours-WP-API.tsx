@@ -281,7 +281,7 @@ const InteractiveTours = () => {
                       Über diese Tour
                     </h2>
                     <div
-                      className="mt-4 text-lg text-gray-600 font-body leading-relaxed"
+                      className="mt-4 text-xs sm:text-sm md:text-lg text-gray-600 font-body leading-relaxed"
                       dangerouslySetInnerHTML={{
                         __html: selectedTour.longDescription,
                       }}
