@@ -15,14 +15,18 @@ import Footer from '@/components/Footer.astro';
 	<body>
 		<Header isHome={false} />
 		<main class="min-h-screen bg-gradient-to-b from-white to-gray-50">
-			<!-- Hero Section -->
-			<div class="relative bg-gradient-to-r from-orange-50 to-amber-50 py-16">
-				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div class="text-center">
-						<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Kontakt</h1>
-						<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-							Lassen Sie uns gemeinsam Ihre perfekte Wein-Erlebnistour planen. Ich freue mich darauf, von Ihnen zu hören!
-						</p>
+			<!-- Banner Section -->
+			<div class="relative w-full h-[30vw] min-h-[250px] max-h-[300px]"
+			style={{backgroundImage: "url('/compressed-mj-vineYard-ColorPencilSketch.png')", backgroundSize: "cover", backgroundPosition: "100% 50%",}}>
+				<div class="w-full h-full flex items-center justify-center
+				bg-gradient-to-t from-black/80 via-black/60 to-transparent">
+					<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center flex flex-col items-center justify-center">
+							<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-100 mb-6">Kontakt</h1>
+							<p class=" text-sm sm:text-base md:text-xl lg:text-2xl sm:max-w-md md:max-w-xl  text-accent1 max-w-4xl mx-auto leading-relaxed">
+								Lassen Sie uns gemeinsam Ihre perfekte Wein-Erlebnistour planen. Ich freue mich darauf, von Ihnen zu hören!
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
