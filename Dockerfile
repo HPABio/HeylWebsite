@@ -1,13 +1,14 @@
 # Stage 1: Build Astro site
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
+COPY pnpm-lock.yaml ./
+COPY package.json ./
+RUN pnpm install
 
 COPY . .
-RUN npm run build   # creates /dist
+RUN pnpm run build   # creates /dist
 
 # Stage 2: Serve with nginx
 FROM nginx:alpine
