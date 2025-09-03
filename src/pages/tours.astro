@@ -7,16 +7,6 @@ import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 
-// Images
-import MJAlmondFlowerV1 from '@images/mj-almondFlowerV1.png';
-import MJAlmondFlowerMosaicGlass from '@images/mj-almondFlower-mosaicGlass.png';
-import MJBachusMosaicGlass from '@images/mj-Bachus-mosaicGlass.png';
-import MJGlühweinV1 from '@images/mj-GlühweinV1.png';
-import MJWallWithGrapes from '@images/compressed-mj-wallWithGrapes.png';
-import MJTeaCup from '@images/mj-teaCup.png';
-import WassermühleImWald from '@images/Wassermühle-im-Wald.png';
-
-
 
 // Note: Tour parameter is now read directly in the React component
 ---
@@ -34,13 +24,7 @@ import WassermühleImWald from '@images/Wassermühle-im-Wald.png';
 		<div class="fixed w-full h-[80px]  bg-black -translate-y-[80px] "/>
 		<div class="fixed w-full h-[80px]  bg-gradient-to-br from-stone-300/25 via-stone-900/40 to-transparent -translate-y-[80px] "/>
 	    <ScreenSizeDEVTOOL />
-		<InteractiveTours images={{MJAlmondFlowerV1: MJAlmondFlowerV1.src,
-			 MJAlmondFlowerMosaicGlass: MJAlmondFlowerMosaicGlass.src,
-			  MJBachusMosaicGlass: MJBachusMosaicGlass.src,
-			   MJGlühweinV1: MJGlühweinV1.src,
-			    MJWallWithGrapes: MJWallWithGrapes.src,
-				 MJTeaCup: MJTeaCup.src,
-				  WassermühleImWald: WassermühleImWald.src,}}/>
+		<InteractiveTours />
 		<Footer />
 	</body>
 </html>
