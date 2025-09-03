@@ -1,20 +1,22 @@
-
 ---
+import { Image } from 'astro:assets';
+import HWELogoV2NoText from "@images/HWE-LogoV2-noText.svg";
+import GimmeldingenMap from "@images/GimmeldingenMap.jpg";
 import footerLinks from '/public/information/footer-links.md';
 ---
 
 <footer id="footer" class="bg-gradient-to-b from-white to-gray-50 border-t border-gray-200 relative"
-style="background-image: url('/GimmeldingenMap.jpg'); background-size: cover; background-position: center;">
+style={{backgroundImage: `url("${GimmeldingenMap.src}")`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
 <div class="inset-0 bg-gradient-to-b from-slate-100 via-slate-200/70 to-transparent ">
   <!-- Main Footer Content -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
-    <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-x-32 md:gap-x-8 gap-y-14 px-14 lg:px-0">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-32 md:gap-x-8 gap-y-14 px-14 lg:px-0">
       
       <!-- Company Info -->
-      <div class="lg:col-span-1 flex flex-col justify-end lg:justify-between items-start ">
-        <img src="/HWE-LogoV2-noText.svg" alt="Heyl Weinerlebnistouren Logo" class="h-12 w-auto mr-3 sm:hidden">
+      <div class="lg:col-span-1 row-start-1 flex flex-col justify-end lg:justify-between items-start ">
+        <img src={HWELogoV2NoText.src} alt="Heyl Weinerlebnistouren Logo" class="h-12 w-auto mr-3 sm:hidden">
         <div class="flex items-center mb-4">
-          <img src="/HWE-LogoV2-noText.svg" alt="Heyl Weinerlebnistouren Logo" class="h-12 w-auto mr-3 hidden sm:block">
+          <img src={HWELogoV2NoText.src} alt="Heyl Weinerlebnistouren Logo" class="h-12 w-auto mr-3 hidden sm:block">
           <div>
             <h3 class="text-lg font-semibold text-gray-900">Heyl Weinerlebnistouren</h3>
             <p class="text-sm text-gray-600">Geführte Wein-Erlebnistouren</p>
@@ -41,7 +43,7 @@ style="background-image: url('/GimmeldingenMap.jpg'); background-size: cover; ba
       </div>
 
       <!-- Navigation Links -->
-      <div class="lg:col-span-1 pt-0 sm:pt-4 md:pt-0 sm:ml-14 sm:mt-0 mt-10">
+      <div class="lg:col-span-1 row-start-2 md:row-start-1 pt-0 sm:pt-4 md:pt-0 md:ml-14 sm:mt-0 mt-10">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-4">Navigation</h3>
         <ul class="lg:space-y-1 space-y-0 text-xs leading-snug sm:leading-tight sm:text-sm">
           <li><a href="/" class="text-gray-600 hover:text-gray-900 transition-colors">Startseite</a></li>
@@ -57,7 +59,7 @@ style="background-image: url('/GimmeldingenMap.jpg'); background-size: cover; ba
       </div>
 
       <!-- Collaborators -->
-      <div class="lg:col-span-1 sm:mt-0 mt-10">
+      <div class="lg:col-span-1 row-start-2 md:row-start-1 sm:mt-0 mt-10">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-4">Partner</h3>
         <ul class="lg:space-y-1 space-y-0 text-xs leading-snug sm:leading-tight sm:text-sm">
           <li><a href="https://www.neustadt.eu/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors">Tourist-Info Neustadt</a></li>
@@ -72,8 +74,8 @@ style="background-image: url('/GimmeldingenMap.jpg'); background-size: cover; ba
     <!-- Bottom Section -->
     <div class="pt-8 px-10">
       <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-sm text-gray-500 mb-4 md:mb-0">
-          &copy; 2024 Brigitta Heyl – Geführte Wein-Erlebnistouren. Alle Rechte vorbehalten.
+        <p class="text-sm text-gray-500 mb-4 md:mb-0 text-center md:text-left">
+          &copy; 2024 Brigitta Heyl –<br class="md:hidden"/> Geführte Wein-Erlebnistouren. <br class="sm:hidden"/> Alle Rechte vorbehalten.
         </p>
         <div class="flex space-x-6">
           <a href="/kontakt" class="text-sm text-gray-500 hover:text-gray-700 transition-colors">Kontakt</a>

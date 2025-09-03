@@ -1,5 +1,14 @@
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import BrigittaHeylPortrait from "@images/BrigittaHeylPortrait.png";
+import MJAlmondFlowerV1 from "@images/mj-almondFlowerV1.png";
+import MJAlmondFlowerMosaicGlass from "@images/mj-almondFlower-mosaicGlass.png";
+import MJBachusMosaicGlass from "@images/mj-Bachus-mosaicGlass.png";
+import MJGlühweinV1 from "@images/mj-GlühweinV1.png";
+import MJWallWithGrapes from "@images/compressed-mj-wallWithGrapes.png";
+import MJTeaCup from "@images/mj-teaCup.png";
+import WassermühleImWald from "@images/Wassermühle-im-Wald.png";
 
 const tours = [
   {
@@ -9,8 +18,8 @@ const tours = [
       "Genieße während der Gimmeldinger Mandelblüte eine interaktive Weinerlebnistour mit unseren Mandelblütenhoheiten.",
     availability: "Frühling",
     images: {
-      card: "/mj-almondFlowerV1.png",
-      background: "/mj-almondFlower-mosaicGlass.png",
+      card: MJAlmondFlowerV1.src,
+      background: MJAlmondFlowerMosaicGlass.src,
       objectPosition: "object-[50%_50%]",
       bgObjectPosition: "object-[50%_36%]",
     },
@@ -34,8 +43,8 @@ const tours = [
       "Auf unserer nachhaltigen Wein-Wanderung lauschen wir dem Mussbach, tauchen in seine Geschichten ein und genießen die erfrischende Kühle des Gimmeldinger Tales und seines geheimnisvollen Waldes.",
     availability: "Sommer",
     images: {
-      card: "/Wassermühle-im-Wald.png",
-      background: "/compressed-mj-wallWithGrapes.png",
+      card: WassermühleImWald.src,
+      background: MJWallWithGrapes.src,
       objectPosition: "object-[50%_20%]",
       bgObjectPosition: "object-[50%_36%]",
     },
@@ -51,8 +60,8 @@ const tours = [
       "Genieße die idyllischen Weinberge der Pfalz und besuche ausgewählte Weingüter im historischen Ortskern von Gimmeldingen.",
     availability: "Frühling - Herbst",
     images: {
-      card: "/mj-Bachus-mosaicGlass.png",
-      background: "/compressed-mj-wallWithGrapes.png",
+      card: MJBachusMosaicGlass.src,
+      background: MJWallWithGrapes.src,
       objectPosition: "object-[50%_20%]",
       bgObjectPosition: "object-[50%_50%]",
     },
@@ -79,8 +88,8 @@ const tours = [
       "Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.",
     availability: "Winter",
     images: {
-      card: "/mj-GlühweinV1.png",
-      background: "/mj-teaCup.png",
+      card: MJGlühweinV1.src,
+      background: MJTeaCup.src,
       objectPosition: "object-[50%_35%]",
       bgObjectPosition: "object-center",
     },
@@ -107,7 +116,7 @@ const InteractiveTours = () => {
         <AnimatePresence>
           <motion.img
             key={selectedTour.id + "-bg"}
-            src={selectedTour.images.background}
+            src={`${selectedTour.images.background}`}
             alt={`${selectedTour.title} background`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.75, transition: { duration: 0.8 } }}
@@ -164,7 +173,7 @@ const InteractiveTours = () => {
                   >
                     <div className="relative w-full h-full overflow-hidden rounded-2xl">
                       <img
-                        src={tour.images.card}
+                        src={`${tour.images.card}`}
                         alt={tour.title}
                         className={`w-full h-full ${tour.images.objectPosition} object-cover group-hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden`}
                       />

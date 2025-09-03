@@ -1,39 +1,31 @@
 ---
+import { Image } from 'astro:assets';
 import WaterColorReveal from '@/components/WaterColorReveal.tsx';  
 import QuotesElement from '@/components/QuotesElement.astro';
-const res = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts');
-const posts = await res.json();
 
-const post1 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=ergruenden-sie');
-const post2 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=geniessen-sie');
-const post3 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=entdecken-sie');
-const post4 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=tauchen-sie');
-const post5 = await fetch('http://wordpress-a80wooocckwk0kwg4ow0c4o4.82.29.180.126.sslip.io/wp-json/wp/v2/posts?slug=erleben-sie-2');
-
-
-const post1Json = await post1.json();
-const post2Json = await post2.json();
-const post3Json = await post3.json();
-const post4Json = await post4.json();
-
-// console.log(post1Json);
-// console.log(post2Json);
-// console.log(post3Json);
-// console.log(post4Json);
+// Image Imports
+import ChatGPTAsset from "@images/ChatGPTAsset.png";
+import GimmeldingenMap from "@images/GimmeldingenMap.jpg";
+import ProvidedPhotosGasseBodenWeinreben from "@images/ProvidedPhotos/Gasse-Boden-Weinreben.jpeg";
+import CompressedWineBottleMosaicWall from "@images/compressed-wineBottle-mosaic-wall.png";
+import ProvidedPhotosMeerspinneUndGugelhupf from "@images/ProvidedPhotos/Meerspinne und Gugelhupf.jpg";
+import CompressedMjOldBookMosaicGlass from "@images/compressed-mj-oldBook-mosaicGlass.png";
+import ProvidedPhotosMajaNettAlsNapoleon from "@images/ProvidedPhotos/Maja-Nett-als-Napoleon.jpg";
+import ProvidedPhotosYoungGroupWineTour from "@images/ProvidedPhotos/young-group-wine-tour.jpg";
+import CompressedMjGrapesMosaicGlass from "@images/compressed-mj-grapes-mosaicGlass-transparent.png";
+import CompressedMjWineToastingMosaicGlass from "@images/compressed-mj-wineToasting-mosaicGlass.png";
+import CompressedMjVineYardColorPencilSketch from "@images/compressed-mj-vineYard-ColorPencilSketch.png";
 
 ---
 
-<!-- src/components/TestSection.astro -->
-<!-- Purpose: Alternating image/text sections with watercolor reveal effect tied to scroll progress -->
-
 <section class="w-full flex flex-col gap-24 bg-white px-12 relative md:pb-0 overflow-x-clip">
   <div class="absolute top-0 left-[50%] translate-x-[-60%] translate-y-[-50%] h-[900px] w-full flex justify-center items-center z-10  mix-blend-multiply pointer-events-none">
-    <img src="/ChatGPTAsset.png" alt="Section 4" class="object-contain scale-x-[-1] contrast-200 rotate-[35deg] absolute w-full h-full top-[0%] left-[50%] translate-x-[-50%] translate-y-[0%] saturate-[0.5] opacity-5"  />
+    <Image src={ChatGPTAsset} alt="Section 4" class="object-contain scale-x-[-1] contrast-200 rotate-[35deg] absolute w-full h-full top-[0%] left-[50%] translate-x-[-50%] translate-y-[0%] saturate-[0.5] opacity-5"/>
   </div>
 
   <div class="inset-0 absolute z-0 pointer-events-none "
   style={{
-    backgroundImage: `url(/GimmeldingenMap.jpg)`,
+    backgroundImage: `url(${GimmeldingenMap.src})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -72,18 +64,21 @@ const post4Json = await post4.json();
       mt-12 lg:mt-0">
       <WaterColorReveal client:visible id="V2section-4-xs" width={300} height={300} 
       className="block sm:hidden h-[300px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] ">
-        <img slot="child1" src="/compressed-mj-vineYard-ColorPencilSketch.png" alt="Section 4" class="absolute object-cover object-[80%_50%] w-full h-full group-hover:opacity-0 rounded-xl shadow-lg transition-opacity duration-500"  />
-        <img slot="child2" src="/ProvidedPhotos/Gasse-Boden-Weinreben.jpeg" alt="Section 1 Hover" class="absolute object-contain translate-x-[-13%] translate-y-[0%] scale-[1.3] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <img  slot="child1" src={CompressedMjVineYardColorPencilSketch.src} alt="Section 4" class="absolute object-cover object-[80%_50%] w-full h-full group-hover:opacity-0 rounded-xl shadow-lg transition-opacity duration-500"  />
+        <img  slot="child2" src={ProvidedPhotosGasseBodenWeinreben.src}   alt="Section 1 Hover" class="absolute object-contain translate-x-[-13%] translate-y-[0%] scale-[1.3] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  
       </WaterColorReveal>
       <WaterColorReveal client:visible id="V2section-4-sm" width={360} height={360} 
       className="hidden sm:block lg:hidden h-[360px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] ">
-        <img slot="child1" src="/compressed-mj-vineYard-ColorPencilSketch.png" alt="Section 4" class="absolute object-cover object-[80%_50%] w-full h-full group-hover:opacity-0 rounded-xl shadow-lg transition-opacity duration-500"  />
-        <img slot="child2" src="/ProvidedPhotos/Gasse-Boden-Weinreben.jpeg" alt="Section 1 Hover" class="absolute object-contain translate-x-[-13%] translate-y-[0%] scale-[1.3] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <img  slot="child1" src={CompressedMjVineYardColorPencilSketch.src}  alt="Section 4" class="absolute object-cover object-[80%_50%] w-full h-full group-hover:opacity-0 rounded-xl shadow-lg transition-opacity duration-500"  />
+        <img  slot="child2" src={ProvidedPhotosGasseBodenWeinreben.src}  alt="Section 1 Hover" class="absolute object-contain translate-x-[-13%] translate-y-[0%] scale-[1.3] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  
       </WaterColorReveal>
       <WaterColorReveal client:visible id="V2section-4" width={500} height={500}
        className="hidden lg:block h-[500px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)] ">
-        <img slot="child1" src="/compressed-mj-vineYard-ColorPencilSketch.png" alt="Section 4" class="absolute object-cover object-[80%_50%] w-full h-full group-hover:opacity-0 rounded-xl shadow-lg transition-opacity duration-500"  />
-        <img slot="child2" src="/ProvidedPhotos/Gasse-Boden-Weinreben.jpeg" alt="Section 1 Hover" class="absolute object-contain translate-x-[-13%] translate-y-[0%] scale-[1.3] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <img  slot="child1" src={CompressedMjVineYardColorPencilSketch.src}  alt="Section 4" class="absolute object-cover object-[80%_50%] w-full h-full group-hover:opacity-0 rounded-xl shadow-lg transition-opacity duration-500"  />
+        <img  slot="child2" src={ProvidedPhotosGasseBodenWeinreben.src} alt="Section 1 Hover" class="absolute object-contain translate-x-[-13%] translate-y-[0%] scale-[1.3] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  
       </WaterColorReveal>
       </div>
     </div>
@@ -126,18 +121,21 @@ const post4Json = await post4.json();
       <div class="flex-1 order-1 md:order-1 flex justify-center saturate-[0.6] hover:saturate-[0.8] transition-all duration-300 group">
         <WaterColorReveal client:visible id="V2section-2-xs" width={300} height={300} 
         className="block sm:hidden h-[300px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
-          <img slot="child1" src="/compressed-wineBottle-mosaic-wall.png" alt="Section 4" class="absolute object-cover w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500"  />
-          <img slot="child2" src="/ProvidedPhotos/Meerspinne und Gugelhupf.jpg" alt="Section 1 Hover" class="absolute object-contain scale-[1.3] translate-x-[12%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img  slot="child1" src={CompressedWineBottleMosaicWall.src} alt="Section 4" class="absolute object-cover w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500"  />
+          <img  slot="child2" src={ProvidedPhotosMeerspinneUndGugelhupf.src} alt="Section 1 Hover" class="absolute object-contain scale-[1.3] translate-x-[12%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    
         </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-2-sm" width={360} height={360} 
         className="hidden sm:block lg:hidden h-[360px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
-          <img slot="child1" src="/compressed-wineBottle-mosaic-wall.png" alt="Section 4" class="absolute object-cover w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500"  />
-          <img slot="child2" src="/ProvidedPhotos/Meerspinne und Gugelhupf.jpg" alt="Section 1 Hover" class="absolute object-contain scale-[1.3] translate-x-[12%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img  slot="child1" src={CompressedWineBottleMosaicWall.src} alt="Section 4" class="absolute object-cover w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500"  />
+          <img  slot="child2" src={ProvidedPhotosMeerspinneUndGugelhupf.src} alt="Section 1 Hover" class="absolute object-contain scale-[1.3] translate-x-[12%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    
         </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-2" width={550} height={550}
          className="hidden lg:block h-[550px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
-          <img slot="child1" src="/compressed-wineBottle-mosaic-wall.png" alt="Section 4" class="absolute object-cover w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500"  />
-          <img slot="child2" src="/ProvidedPhotos/Meerspinne und Gugelhupf.jpg" alt="Section 1 Hover" class="absolute object-contain scale-[1.3] translate-x-[12%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img  slot="child1" src={CompressedWineBottleMosaicWall.src} alt="Section 4" class="absolute object-cover w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500"  />
+          <img  slot="child2" src={ProvidedPhotosMeerspinneUndGugelhupf.src} alt="Section 1 Hover" class="absolute object-contain scale-[1.3] translate-x-[12%] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    
         </WaterColorReveal>
 
         <p class="absolute bottom-[0%] right-[45%] translate-x-[100%] translate-y-[-20%] 
@@ -174,18 +172,21 @@ const post4Json = await post4.json();
       <div class="flex-1 order-1 md:order-2 flex justify-center items-center relative saturate-[0.4] hover:saturate-[1] transition-all duration-300 group">
         <WaterColorReveal client:visible id="V2section-1-xs" width={300} height={300}
         className="block sm:hidden h-[300px] aspect-square absolute md:top-[50%] md:translate-y-[-25%] drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
-          <img slot="child1" src="/compressed-mj-oldBook-mosaicGlass.png" alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" />
-          <img slot="child2" src="/ProvidedPhotos/Maja Nett als Napoleon.jpg" alt="Section 1 Hover" class="absolute  object-contain translate-x-[17%] -translate-y-[5%] scale-[2.1] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src} alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" />
+          <img  slot="child2" src={ProvidedPhotosMajaNettAlsNapoleon.src} alt="Section 1 Hover" class="absolute  object-contain translate-x-[17%] -translate-y-[5%] scale-[2.1] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    
         </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-1-sm" width={360} height={360}
         className="hidden sm:block lg:hidden h-[360px] aspect-square absolute md:top-[50%] md:translate-y-[-25%] drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
-          <img slot="child1" src="/compressed-mj-oldBook-mosaicGlass.png" alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" />
-          <img slot="child2" src="/ProvidedPhotos/Maja Nett als Napoleon.jpg" alt="Section 1 Hover" class="absolute  object-contain translate-x-[17%] -translate-y-[5%] scale-[2.1] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src}  alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" />
+          <img  slot="child2" src={ProvidedPhotosMajaNettAlsNapoleon.src} alt="Section 1 Hover" class="absolute  object-contain translate-x-[17%] -translate-y-[5%] scale-[2.1] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    
         </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-1-lg" width={600} height={600}
         className="hidden lg:block h-[600px] aspect-square absolute md:top-[50%] md:translate-y-[-25%] drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
-          <img slot="child1" src="/compressed-mj-oldBook-mosaicGlass.png" alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" />
-          <img slot="child2" src="/ProvidedPhotos/Maja Nett als Napoleon.jpg" alt="Section 1 Hover" class="absolute  object-contain translate-x-[17%] -translate-y-[5%] scale-[2.1] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src}  alt="Section 1" class="absolute object-cover object-[80%_50%] w-full h-full rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" />
+          <img  slot="child2" src={ProvidedPhotosMajaNettAlsNapoleon.src} alt="Section 1 Hover" class="absolute  object-contain translate-x-[17%] -translate-y-[5%] scale-[2.1] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    
         </WaterColorReveal>
         <p class=" w-fit absolute bottom-[0%] right-[45%] translate-x-[100%] translate-y-[-20%] 
         text-nowrap text-4xl xl:text-5xl font-doulaise font-semibold mb-8 text-stone-200/70 md:text-stone-400/20 lowercase
@@ -225,18 +226,21 @@ const post4Json = await post4.json();
       mt-12 lg:mt-0 lg:-ml-12 ">
       <WaterColorReveal client:visible id="V2section-3-xs" width={300} height={300} 
       className="block sm:hidden h-[300px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
-        <img slot="child1" src="/compressed-mj-wineToasting-mosaicGlass.png" alt="Section 3" class="absolute w-[95%] h-[100%] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-48%] rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" /> 
-        <img slot="child2" src="/ProvidedPhotos/young-group-wine-tour.jpg" alt="Section 1 Hover" class="absolute object-contain translate-x-[12%] translate-y-[5%] scale-[1.4] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <img  slot="child1" src={CompressedMjWineToastingMosaicGlass.src} alt="Section 3" class="absolute w-[95%] h-[100%] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-48%] rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" /> 
+        <img  slot="child2" src={ProvidedPhotosYoungGroupWineTour.src} alt="Section 1 Hover" class="absolute object-contain translate-x-[12%] translate-y-[5%] scale-[1.4] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  
       </WaterColorReveal>
       <WaterColorReveal client:visible id="V2section-3-sm" width={360} height={360} 
       className="hidden sm:block lg:hidden h-[360px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
-        <img slot="child1" src="/compressed-mj-wineToasting-mosaicGlass.png" alt="Section 3" class="absolute w-[95%] h-[100%] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-48%] rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" /> 
-        <img slot="child2" src="/ProvidedPhotos/young-group-wine-tour.jpg" alt="Section 1 Hover" class="absolute object-contain translate-x-[12%] translate-y-[5%] scale-[1.4] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <img  slot="child1" src={CompressedMjWineToastingMosaicGlass.src} alt="Section 3" class="absolute w-[95%] h-[100%] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-48%] rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" /> 
+        <img  slot="child2" src={ProvidedPhotosYoungGroupWineTour.src} alt="Section 1 Hover" class="absolute object-contain translate-x-[12%] translate-y-[5%] scale-[1.4] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  
       </WaterColorReveal>
       <WaterColorReveal client:visible id="V2section-3" width={550} height={550}
        className="hidden lg:block h-[550px] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
-        <img slot="child1" src="/compressed-mj-wineToasting-mosaicGlass.png" alt="Section 3" class="absolute w-[95%] h-[100%] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-48%] rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" /> 
-        <img slot="child2" src="/ProvidedPhotos/young-group-wine-tour.jpg" alt="Section 1 Hover" class="absolute object-contain translate-x-[12%] translate-y-[5%] scale-[1.4] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <img  slot="child1" src={CompressedMjWineToastingMosaicGlass.src} alt="Section 3" class="absolute w-[95%] h-[100%] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-48%] rounded-xl shadow-lg group-hover:opacity-0 transition-opacity duration-500" /> 
+        <img  slot="child2" src={ProvidedPhotosYoungGroupWineTour.src} alt="Section 1 Hover" class="absolute object-contain translate-x-[12%] translate-y-[5%] scale-[1.4] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  
       </WaterColorReveal>
         <p class=" w-fit absolute bottom-[0%] right-[45%] translate-x-[100%] translate-y-[-20%] 
         text-nowrap text-4xl lg:text-5xl font-doulaise font-semibold mb-8 px-6 py-3 group-hover:opacity-0 transition-opacity duration-[700ms]
@@ -277,27 +281,39 @@ const post4Json = await post4.json();
         <div class="border-2 border-red-500/0 absolute top-0 left-0 translate-x-[5%] translate-y-[-70%] sm:translate-x-[-23%] sm:translate-y-[-30%] md:translate-x-[-33%] md:translate-y-[-25%] lg:translate-x-[-23%] lg:translate-y-[3%]  xl:translate-y-[-20%] xl:translate-x-[-23%]">        
         <WaterColorReveal client:visible id="V2section-5-sm" width={1000} height={1000}
          className="block sm:hidden h-[400px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible  translate-x-[-250%] translate-y-[10%]">
-          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[35deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
-          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[40deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
-          <!-- <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src}  alt="Section 1" class="absolute object-cover rotate-[35deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+    
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src}  alt="Section 1" class="absolute object-cover rotate-[40deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+    
+          <!-- <img  slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
+      
         </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-5-md" width={1400} height={1400}
          className="hidden sm:block lg:hidden h-[900px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible  translate-x-[-250%] translate-y-[10%]">
-          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[35deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
-          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[40deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
-          <!-- <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src}  alt="Section 1" class="absolute object-cover rotate-[35deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+    
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src}  alt="Section 1" class="absolute object-cover rotate-[40deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+    
+          <!-- <img  slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
+      
         </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-5-lg" width={700} height={700}
          className="hidden lg:block xl:hidden h-[700px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible  translate-x-[-250%] translate-y-[10%]">
-          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[30deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
-          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[25deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
-          <!-- <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src}  alt="Section 1" class="absolute object-cover rotate-[30deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+    
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src}  alt="Section 1" class="absolute object-cover rotate-[25deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+    
+          <!-- <img  slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
+      
         </WaterColorReveal>
         <WaterColorReveal client:visible id="V2section-5-xl" width={800} height={800}
          className="hidden xl:block h-[800px] aspect-square drop-shadow-[16px_16px_5px_rgba(0,0,0,0.09)] overflow-visible  translate-x-[-250%] translate-y-[10%]">
-          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[30deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
-          <img slot="child1" src="/compressed-mj-grapes-mosaicGlass-transparent.png" alt="Section 1" class="absolute object-cover rotate-[25deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
-          <!-- <img slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src}  alt="Section 1" class="absolute object-cover rotate-[30deg] object-[20%_40%] scale-[0.7]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+    
+          <img  slot="child1" src={CompressedMjOldBookMosaicGlass.src}  alt="Section 1" class="absolute object-cover rotate-[25deg] object-[20%_0%] scale-[1.3]  saturate-[0.6] w-full h-full rounded-xl  overflow-visible" />
+    
+          <!-- <img  slot="child2" src="/Bachus&ChristopherusTour/IMG_8044.jpg" alt="Section 1 Hover" class="absolute object-cover w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> -->
+      
         </WaterColorReveal>
         
         <p class="w-fit absolute bottom-[0%] left-[0%] translate-x-[-50%] md:translate-x-[-0%] sm:translate-y-[0%] translate-y-[120%]

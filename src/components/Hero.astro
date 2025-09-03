@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import WaterColorReveal from "./WaterColorReveal.tsx";
+import CompressedMjVineYardPencilSketch from "@images/compressed-mj-vineYard-pencilSketch-1.png";
+import HWELogoV2NoText from "@images/HWE-LogoV2-noText.svg";
 // No imports needed for static assets in public/
 ---
 <section id="hero" class="w-full h-[100vh] min-h-[650px] md:min-h-[700px] xl:min-h-[800px] relative mt-[-70px] 
@@ -7,7 +10,7 @@ max-h-[800px] md:max-h-none">
   <div class="w-full h-full  relative
   border-b-4 border-blue-500/0">
         <!-- <img src="/mj-vineYard-washedOutColors.png" alt="vineyard washed out colors" class="w-full h-full object-cover" /> -->
-        <img src="/compressed-mj-vineYard-pencilSketch-1.png" alt="vineyard washed out colors" class="w-full h-full absolute inset-0
+        <img src={CompressedMjVineYardPencilSketch.src} alt="vineyard washed out colors" class="w-full h-full absolute inset-0
         object-cover object-bottom" />
         <div class="absolute opacity-1 top-0 left-0 w-full h-full"
         style={{
@@ -28,9 +31,7 @@ max-h-[800px] md:max-h-none">
                 <div class="w-[20%] h-[30%] absolute bottom-0 left-0
                 translate-x-[-50%] translate-y-[0%]
                 border-l-4 border-yellow-800/10 border-dashed "/>
-                <img src="/HWE-LogoV2-noText.svg" alt="Logo" 
-                class="w-[min(25vw,40vh)] relative
-                min-w-[230px] md:min-w-[260px] max-w-[400px] object-cover"/> 
+                <Image src={HWELogoV2NoText} alt="Logo" class="w-[min(25vw,40vh)] relative min-w-[230px] md:min-w-[260px] max-w-[400px] object-cover"/> 
               </div>
               <h1 class="text-[clamp(2rem,6vw,4.5rem)] bg-clip-text text-transparent
               bg-gradient-to-r from-red-950/90 via-red-900/90 to-red-950/70
