@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import WaterColorReveal from "./WaterColorReveal.tsx";
 import CompressedMjVineYardPencilSketch from "@images/compressed/webP/compressed-mj-vineYard-pencilSketch-1.webp";
 import HWELogoV2NoText from "@images/HWE-LogoV2-noText.svg";
 // No imports needed for static assets in public/
@@ -9,9 +8,7 @@ import HWELogoV2NoText from "@images/HWE-LogoV2-noText.svg";
 max-h-[800px] md:max-h-none">
   <div class="w-full h-full  relative
   border-b-4 border-blue-500/0">
-        <!-- <img src="/mj-vineYard-washedOutColors.png" alt="vineyard washed out colors" class="w-full h-full object-cover" /> -->
-        <img src={CompressedMjVineYardPencilSketch.src} alt="vineyard washed out colors" class="w-full h-full absolute inset-0
-        object-cover object-bottom" />
+        <Image src={CompressedMjVineYardPencilSketch}  alt="vineyard washed out colors" class="w-full h-full absolute inset-0 object-cover object-bottom" />
         <div class="absolute opacity-1 top-0 left-0 w-full h-full"
         style={{
           backgroundImage: `radial-gradient(ellipse at 50% -250%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,0) 80%)`,
@@ -53,9 +50,6 @@ max-h-[800px] md:max-h-none">
             </div>
 
             <a href="http://www.gimmeldingen.de/unser-ort/portrait.html" class="absolute top-0 right-0 px-6 pt-[80px] h-screen w-screen bg-red-500/0 z-10 min-h-[800px]">
-              <!-- <img src="/Mandelblüte-transparent.png" alt="Vineyard background" class="w-[100px] h-auto object-contain scale-x-[-1] -rotate-[35deg] absolute bottom-0 right-[17%] opacity-1" />
-              <img src="/Mandelblüte-transparent.png" alt="Vineyard background" class="w-[100px] h-auto object-contain scale-x-[-1] rotate-[-10deg] absolute bottom-0 right-[15%] opacity-1" />
-              <img src="/Mandelblüte-transparent.png" alt="Vineyard background" class="w-[100px] h-auto object-contain scale-x-[-1] rotate-[5deg] absolute bottom-0 right-[13%] opacity-1" /> -->
               <p class="w-fit h-fit text-stone-700 lg:bottom-8 lg:right-10 absolute 
               backdrop-blur-sm bg-gradient-to-r from-stone-100/45 via-stone-200/30 to-stone-100/30
               text-sm md:text-[clamp(0.85rem,1.5vw,1.2rem)] font-bonanova font-light
