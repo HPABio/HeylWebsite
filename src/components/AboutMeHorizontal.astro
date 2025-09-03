@@ -1,6 +1,8 @@
 ---
 const { className } = Astro.props;
+import { Image } from 'astro:assets';
 import GetInTouch from '@/components/GetInTouch.astro';
+import BrigittaHeylPortrait2 from "@images/BrigittaHeylPortrait2.png";
 ---
 
 <section class={`relative  ${className} `}>
@@ -12,7 +14,7 @@ import GetInTouch from '@/components/GetInTouch.astro';
       <!-- Row 1, Col 1: Image -->
       <div class="flex justify-center items-end w-full h-full md:row-start-1 md:col-start-2 md:row-span-2">
         <div class="relative rounded-2xl md:shadow-lg overflow-hidden aspect-[6/7] max-h-[500px] ">
-          <img src="/BrigittaHeylPortrait2.png" alt="Portrait von Brigitta Heyl" class="w-full h-full object-cover">
+          <Image src={BrigittaHeylPortrait2} alt="Portrait von Brigitta Heyl" class="w-full h-full object-cover"/>
           <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
         </div>
       </div>
@@ -46,17 +48,6 @@ import GetInTouch from '@/components/GetInTouch.astro';
           </p>
         </div>
       </div>
-      
-      <div class=" max-w-sm md:max-w-md mx-auto md:col-start-1 md:col-span-2 md:row-start-6 md:row-span-1 mt-44">
-      <div class="hidden w-fit h-fit flex justify-center items-center mx-auto relative">
-        <img src="/HWE-LogoV2-noText.svg" alt="Vineyard background" class="relative
-        w-[200px] object-cover opacity-85" />
-    </div>
-    <p class="hidden font-light text-gray-700 text-center leading-snug md:text-3xl">
-      "Ich freue mich darauf, Sie auf eine meiner Touren mitzunehmen!"
-    </p>
-      </div>   
-    </div>
   </div>
   
 </section> 

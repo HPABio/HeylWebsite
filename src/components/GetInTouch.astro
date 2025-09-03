@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import HWELogoV2NoText from "@images/HWE-LogoV2-noText.svg";
 const { className } = Astro.props;
 ---
 
@@ -61,7 +63,7 @@ const { className } = Astro.props;
     </div>
     
     <div class="w-fit h-fit absolute top-0 right-[0%] sm:translate-x-[-5%] sm:translate-y-[-46%] md:translate-x-[-5%] md:translate-y-[-16%] lg:translate-x-[-20%] lg:translate-y-[-30%]">
-      <img src="/HWE-LogoV2-noText.svg" alt="Vineyard background" class="relative
+      <img src={HWELogoV2NoText.src} alt="Vineyard background" class="relative
       w-[200px] object-cover opacity-85" />
   </div>
   </div>
@@ -124,8 +126,7 @@ const { className } = Astro.props;
     </div>
     
     <div class="w-fit h-fit absolute top-0 right-[0%] sm:translate-x-[-5%] sm:translate-y-[-26%] md:translate-x-[-5%] md:translate-y-[-16%] lg:translate-x-[-20%] lg:translate-y-[-30%]">
-      <img src="/HWE-LogoV2-noText.svg" alt="Vineyard background" class="relative
-      w-[150px] md:w-[200px] object-cover opacity-85" />
+      <img src={HWELogoV2NoText.src} alt="Vineyard background" class="relative w-[150px] md:w-[200px] object-cover opacity-85" />
   </div>
   </div>
 </section> 
