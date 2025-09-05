@@ -1,112 +1,119 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BrigittaHeylPortrait from "@images/BrigittaHeylPortrait.png";
-import MJAlmondFlowerV1 from "@images/compressed/webP/compressed-mj-almondFlowerV1.webp";
-import MJAlmondFlowerMosaicGlass from "@images/compressed/webP/compressed-mj-almondFlower-mosaicGlass.webp";
-import MJBachusMosaicGlass from "@images/compressed/webP/compressed-mj-Bachus-mosaicGlass.webp";
-import MJGlühweinV1 from "@images/compressed/webP/compressed-mj-GlühweinV1.webp";
-import MJWallWithGrapes from "@images/compressed/webP/compressed-mj-wallWithGrapes.webp";
-import MJGlühweinV2 from "@images/compressed/webP/compressed-mj-GlühweinV2.webp";
-import WassermühleImWald from "@images/compressed/webP/compressed-Wassermühle-im-Wald.png";
+import { Image } from "astro:assets";
 
-const tours = [
-  {
-    id: "mandelbluete",
-    title: "Mandelblüte, Meerspinne und Monarchen",
-    description:
-      "Genieße während der Gimmeldinger Mandelblüte eine interaktive Weinerlebnistour mit unseren Mandelblütenhoheiten.",
-    availability: "Frühling",
-    images: {
-      card: MJAlmondFlowerV1.src,
-      background: MJAlmondFlowerMosaicGlass.src,
-      objectPosition: "object-[50%_50%]",
-      bgObjectPosition: "object-[50%_36%]",
-    },
-    longDescription: `
-      <p class="mb-4">Erlebe mit Freunden, Kollegen und Familie eine unterhaltsame Weinerlebnistour durch die rosa blühenden Weinberge von Gimmeldingen. Geführt von einer zertifizierten Kultur- und Weinbotschafterin erwartet Dich eine spannende Mischung aus Natur, Genuss und kurzweiligen historischen Episoden - perfekt für alle Sinne! Das erwartet dich:</p>
-      <ul class="list-disc pl-5 space-y-2 mb-4">
-        <li>🌸 Genieße einen rosa Begrüßungs-Secco mit einem Pfälzer Snack und einer herrlichen Aussicht!</li>
-        <li>🥾 Erkunde auf der 4 km langen Weinbergs-Wanderung die schönsten Plätze und Mandelbäume in Gimmeldingen</li>
-        <li>🍷 Lass Dich unterwegs von weiteren 4 exzellenten Weinen lokaler Weingüter mit abgestimmten Mandel-Snacks verwöhnen</li>
-        <li>✨ Genieße vor Ort einen besonderen Riesling aus der historischen Meerspinn-Lage</li>
-        <li>📖 Erfahre, warum das Mandelblütenfest in Gimmeldingen stattfindet, was Mandeln mit der Meerspinne gemeinsam haben und warum die Bayern das Oktoberfest den Pfälzern verdanken</li>
-        <li>🎁 Zum Abschluss wartet eine süße, mandelige Überraschung auf Dich</li>
-      </ul>
-      <p>Diese Tour ist mehr als nur eine Führung – sie verbindet, inspiriert und macht Spaß: Ob als Team-Aktivität oder gemütlicher Tag mit Deinen Liebsten – diese Tour verbindet Genuss mit Natur, lässt Geschichte erlebbar werden und zeigt Dir Gimmeldingen von seiner schönsten Seite.</p>
-    `,
-  },
-  {
-    id: "mussbach",
-    title: "Magische Momente am Mussbach ▸ Nachhaltige Weinwanderung",
-    description:
-      "Auf unserer nachhaltigen Wein-Wanderung lauschen wir dem Mussbach, tauchen in seine Geschichten ein und genießen die erfrischende Kühle des Gimmeldinger Tales und seines geheimnisvollen Waldes.",
-    availability: "Sommer",
-    images: {
-      card: WassermühleImWald.src,
-      background: MJWallWithGrapes.src,
-      objectPosition: "object-[50%_20%]",
-      bgObjectPosition: "object-[50%_36%]",
-    },
-    longDescription: `
-      <p class="mb-4">Wenn die Tage kürzer werden und die Landschaft in ein winterliches Kleid gehüllt ist, entfaltet die Pfalz einen ganz besonderen Charme. Bei unserer Glühwein-Tour wärmen wir uns mit hausgemachtem Glühwein, lauschen spannenden Geschichten am knisternden Feuer und genießen die gemütliche Atmosphäre. Ein unvergessliches Wintererlebnis, das Herz und Seele wärmt.</p>
-      <p class="mb-4">Entdecke die versteckten Schätze des Gimmeldinger Tales und lass dich von der Magie des Waldes verzaubern. Diese Tour verbindet Nachhaltigkeit mit Genuss und bietet ein einzigartiges Naturerlebnis.</p>
-    `,
-  },
-  {
-    id: "bacchus",
-    title: "Von Bacchus bis Christophorus",
-    description:
-      "Genieße die idyllischen Weinberge der Pfalz und besuche ausgewählte Weingüter im historischen Ortskern von Gimmeldingen.",
-    availability: "Frühling - Herbst",
-    images: {
-      card: MJBachusMosaicGlass.src,
-      background: MJWallWithGrapes.src,
-      objectPosition: "object-[50%_20%]",
-      bgObjectPosition: "object-[50%_50%]",
-    },
-    longDescription: `
-      <p class="mb-4">Ein kulinarisches Gruppenerlebnis, das Gimmeldingen und die Pfalz lebendig macht – interaktiv, spannend und unterhaltsam.</p>
-      <p class="mb-4 text-center font-semibold text-accent2-brick">🌿 Weinberge/historischer Ortskern •  🍷 5 Weine/5 Häppchen  • 🤝 Teamevent/Zeitreise • ⏱️ 4 Stunden/4 km</p>
-      <ul class="list-disc pl-5 space-y-2 mb-4">
-        <li>🌿 Weinbergwanderung mit großartigen Ausblicken und spannenden Einblicken in den Weinbau.</li>
-        <li>🍷 Exquisite Weine von 5 lokalen Winzern und perfekt dazu abgestimmte Leckerbissen.</li>
-        <li>🏘️ Spaziergang durch die charmanten Gassen von Gimmeldingen zu 3 historischen Weingütern mit Weinverkostungen.</li>
-        <li>🕰️ Interaktive Zeitreise durch die pfälzische Weingeschichte - jeder Teilnehmer wird dabei Teil der Geschichte !</li>
-        <li>🤝 Ideal als Teamevent oder entspannter Ausflug mit Freunden & Familie.</li>
-      </ul>
-      <h4 class="text-xl font-bold font-bonanova text-gray-800 mt-6 mb-2">So läuft die Tour ab:</h4>
-      <p class="mb-2">Zum Auftakt genießen wir einen Begrüßungs-Riesling und köstliche Mini-Saumagenburger in einem historischen Weingut. Danach wandern wir entspannt durch sanfte Weinberge, genießen weite Ausblicke und verkosten unterwegs zwei erlesene Weine – perfekt ergänzt durch kulinarische Köstlichkeiten.</p>
-      <p class="mb-2">Mitten in den Reben erfahren wir Spannendes über Bio-Weinbau und Qualitätsweine – anschaulich, unterhaltsam und direkt vor Ort erklärt. In mehreren kleinen Episoden tauchen wir dabei in die pfälzische Weingeschichte ein: Als römischer Legionär, Karl der Große, barocke Hofdame oder Napoleon  wird jeder Teilnehmer ein Teil der pfälzischen Geschichte, wobei Krone oder Napoleonshut für lockere Stimmung, gemeinsames Lachen und viel Spaß sorgen.</p>
-      <p>Im zweiten Teil der Tour erkunden wir den historischen Ortskern, verkosten zwei weitere Weine in renommierten Familienweingütern in die wir ganz persönliche Einblicke erhalten. Zum Abschluss suchen wir noch Christophorus – und Du darfst Dich auf eine kleine Überraschung freuen!</p>
-    `,
-  },
-  {
-    id: "gluehwein",
-    title: "Glühwein - Geheimnisvolles Gimmeldingen",
-    description:
-      "Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.",
-    availability: "Winter",
-    images: {
-      card: MJGlühweinV2.src,
-      background: MJGlühweinV1.src,
-      objectPosition: "object-[50%_35%]",
-      bgObjectPosition: "object-center",
-    },
-    longDescription: `
-      <p class="mb-4">Wenn die Tage kürzer werden und die Landschaft in ein winterliches Kleid gehüllt ist, entfaltet die Pfalz einen ganz besonderen Charme. Bei unserer Glühwein-Tour wärmen wir uns mit hausgemachtem Glühwein, lauschen spannenden Geschichten am knisternden Feuer und genießen die gemütliche Atmosphäre.</p>
-      <p class="mb-4">Entdecke die geheimnisvolle Seite Gimmeldingens bei Kerzenschein und lass dich von winterlichen Geschichten verzaubern. Ein unvergessliches Wintererlebnis, das Herz und Seele wärmt.</p>
-      <ul class="list-disc pl-5 space-y-2 mb-4">
-        <li>🔥 Gemütliche Atmosphäre am knisternden Feuer</li>
-        <li>🍷 Hausgemachter Glühwein mit traditionellen Rezepten</li>
-        <li>📖 Spannende Geschichten über Gimmeldingen im Winter</li>
-        <li>❄️ Winterliche Wanderung durch verschneite Weinberge</li>
-        <li>💝 Pfälzer Herzlichkeit und Gastfreundschaft</li>
-      </ul>
-    `,
-  },
-];
+interface Props {
+  images: {
+    MJAlmondFlowerV1: ImageMetadata;
+    MJAlmondFlowerMosaicGlass: ImageMetadata;
+    MJBachusMosaicGlass: ImageMetadata;
+    MJGlühweinV1: ImageMetadata;
+    MJWallWithGrapes: ImageMetadata;
+    MJGlühweinV2: ImageMetadata;
+    WassermühleImWald: ImageMetadata;
+  };
+  backgroundImage: ImageMetadata;
+}
 
-const InteractiveTours = () => {
+const InteractiveTours = ({ images, backgroundImage }: Props) => {
+  const tours = [
+    {
+      id: "mandelbluete",
+      title: "Mandelblüte, Meerspinne und Monarchen",
+      description:
+        "Genieße während der Gimmeldinger Mandelblüte eine interaktive Weinerlebnistour mit unseren Mandelblütenhoheiten.",
+      availability: "Frühling",
+      images: {
+        card: images.MJAlmondFlowerV1.src,
+        background: backgroundImage.src,
+        objectPosition: "object-[50%_50%]",
+        bgObjectPosition: "object-[50%_36%]",
+      },
+      longDescription: `
+        <p class="mb-4">Erlebe mit Freunden, Kollegen und Familie eine unterhaltsame Weinerlebnistour durch die rosa blühenden Weinberge von Gimmeldingen. Geführt von einer zertifizierten Kultur- und Weinbotschafterin erwartet Dich eine spannende Mischung aus Natur, Genuss und kurzweiligen historischen Episoden - perfekt für alle Sinne! Das erwartet dich:</p>
+        <ul class="list-disc pl-5 space-y-2 mb-4">
+          <li>🌸 Genieße einen rosa Begrüßungs-Secco mit einem Pfälzer Snack und einer herrlichen Aussicht!</li>
+          <li>🥾 Erkunde auf der 4 km langen Weinbergs-Wanderung die schönsten Plätze und Mandelbäume in Gimmeldingen</li>
+          <li>🍷 Lass Dich unterwegs von weiteren 4 exzellenten Weinen lokaler Weingüter mit abgestimmten Mandel-Snacks verwöhnen</li>
+          <li>✨ Genieße vor Ort einen besonderen Riesling aus der historischen Meerspinn-Lage</li>
+          <li>📖 Erfahre, warum das Mandelblütenfest in Gimmeldingen stattfindet, was Mandeln mit der Meerspinne gemeinsam haben und warum die Bayern das Oktoberfest den Pfälzern verdanken</li>
+          <li>🎁 Zum Abschluss wartet eine süße, mandelige Überraschung auf Dich</li>
+        </ul>
+        <p>Diese Tour ist mehr als nur eine Führung – sie verbindet, inspiriert und macht Spaß: Ob als Team-Aktivität oder gemütlicher Tag mit Deinen Liebsten – diese Tour verbindet Genuss mit Natur, lässt Geschichte erlebbar werden und zeigt Dir Gimmeldingen von seiner schönsten Seite.</p>
+      `,
+    },
+    {
+      id: "mussbach",
+      title: "Magische Momente am Mussbach ▸ Nachhaltige Weinwanderung",
+      description:
+        "Auf unserer nachhaltigen Wein-Wanderung lauschen wir dem Mussbach, tauchen in seine Geschichten ein und genießen die erfrischende Kühle des Gimmeldinger Tales und seines geheimnisvollen Waldes.",
+      availability: "Sommer",
+      images: {
+        card: images.WassermühleImWald.src,
+        background: images.MJWallWithGrapes.src,
+        objectPosition: "object-[50%_20%]",
+        bgObjectPosition: "object-[50%_36%]",
+      },
+      longDescription: `
+        <p class="mb-4">Wenn die Tage kürzer werden und die Landschaft in ein winterliches Kleid gehüllt ist, entfaltet die Pfalz einen ganz besonderen Charme. Bei unserer Glühwein-Tour wärmen wir uns mit hausgemachtem Glühwein, lauschen spannenden Geschichten am knisternden Feuer und genießen die gemütliche Atmosphäre. Ein unvergessliches Wintererlebnis, das Herz und Seele wärmt.</p>
+        <p class="mb-4">Entdecke die versteckten Schätze des Gimmeldinger Tales und lass dich von der Magie des Waldes verzaubern. Diese Tour verbindet Nachhaltigkeit mit Genuss und bietet ein einzigartiges Naturerlebnis.</p>
+      `,
+    },
+    {
+      id: "bacchus",
+      title: "Von Bacchus bis Christophorus",
+      description:
+        "Genieße die idyllischen Weinberge der Pfalz und besuche ausgewählte Weingüter im historischen Ortskern von Gimmeldingen.",
+      availability: "Frühling - Herbst",
+      images: {
+        card: images.MJBachusMosaicGlass.src,
+        background: images.MJWallWithGrapes.src,
+        objectPosition: "object-[50%_20%]",
+        bgObjectPosition: "object-[50%_50%]",
+      },
+      longDescription: `
+        <p class="mb-4">Ein kulinarisches Gruppenerlebnis, das Gimmeldingen und die Pfalz lebendig macht – interaktiv, spannend und unterhaltsam.</p>
+        <p class="mb-4 text-center font-semibold text-accent2-brick">🌿 Weinberge/historischer Ortskern •  🍷 5 Weine/5 Häppchen  • 🤝 Teamevent/Zeitreise • ⏱️ 4 Stunden/4 km</p>
+        <ul class="list-disc pl-5 space-y-2 mb-4">
+          <li>🌿 Weinbergwanderung mit großartigen Ausblicken und spannenden Einblicken in den Weinbau.</li>
+          <li>🍷 Exquisite Weine von 5 lokalen Winzern und perfekt dazu abgestimmte Leckerbissen.</li>
+          <li>🏘️ Spaziergang durch die charmanten Gassen von Gimmeldingen zu 3 historischen Weingütern mit Weinverkostungen.</li>
+          <li>🕰️ Interaktive Zeitreise durch die pfälzische Weingeschichte - jeder Teilnehmer wird dabei Teil der Geschichte !</li>
+          <li>🤝 Ideal als Teamevent oder entspannter Ausflug mit Freunden & Familie.</li>
+        </ul>
+        <h4 class="text-xl font-bold font-bonanova text-gray-800 mt-6 mb-2">So läuft die Tour ab:</h4>
+        <p class="mb-2">Zum Auftakt genießen wir einen Begrüßungs-Riesling und köstliche Mini-Saumagenburger in einem historischen Weingut. Danach wandern wir entspannt durch sanfte Weinberge, genießen weite Ausblicke und verkosten unterwegs zwei erlesene Weine – perfekt ergänzt durch kulinarische Köstlichkeiten.</p>
+        <p class="mb-2">Mitten in den Reben erfahren wir Spannendes über Bio-Weinbau und Qualitätsweine – anschaulich, unterhaltsam und direkt vor Ort erklärt. In mehreren kleinen Episoden tauchen wir dabei in die pfälzische Weingeschichte ein: Als römischer Legionär, Karl der Große, barocke Hofdame oder Napoleon  wird jeder Teilnehmer ein Teil der pfälzischen Geschichte, wobei Krone oder Napoleonshut für lockere Stimmung, gemeinsames Lachen und viel Spaß sorgen.</p>
+        <p>Im zweiten Teil der Tour erkunden wir den historischen Ortskern, verkosten zwei weitere Weine in renommierten Familienweingütern in die wir ganz persönliche Einblicke erhalten. Zum Abschluss suchen wir noch Christophorus – und Du darfst Dich auf eine kleine Überraschung freuen!</p>
+      `,
+    },
+    {
+      id: "gluehwein",
+      title: "Glühwein - Geheimnisvolles Gimmeldingen",
+      description:
+        "Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.",
+      availability: "Winter",
+      images: {
+        card: images.MJGlühweinV2.src,
+        background: images.MJGlühweinV1.src,
+        objectPosition: "object-[50%_35%]",
+        bgObjectPosition: "object-center",
+      },
+      longDescription: `
+        <p class="mb-4">Wenn die Tage kürzer werden und die Landschaft in ein winterliches Kleid gehüllt ist, entfaltet die Pfalz einen ganz besonderen Charme. Bei unserer Glühwein-Tour wärmen wir uns mit hausgemachtem Glühwein, lauschen spannenden Geschichten am knisternden Feuer und genießen die gemütliche Atmosphäre.</p>
+        <p class="mb-4">Entdecke die geheimnisvolle Seite Gimmeldingens bei Kerzenschein und lass dich von winterlichen Geschichten verzaubern. Ein unvergessliches Wintererlebnis, das Herz und Seele wärmt.</p>
+        <ul class="list-disc pl-5 space-y-2 mb-4">
+          <li>🔥 Gemütliche Atmosphäre am knisternden Feuer</li>
+          <li>🍷 Hausgemachter Glühwein mit traditionellen Rezepten</li>
+          <li>📖 Spannende Geschichten über Gimmeldingen im Winter</li>
+          <li>❄️ Winterliche Wanderung durch verschneite Weinberge</li>
+          <li>💝 Pfälzer Herzlichkeit und Gastfreundschaft</li>
+        </ul>
+      `,
+    },
+  ];
+
   const [selectedTour, setSelectedTour] = useState(tours[0]);
 
   return (

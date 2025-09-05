@@ -4,10 +4,27 @@ import '@/styles/global.css';
 import InteractiveTours from '@/components/InteractiveTours.tsx';
 import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
 
+import favicon from '@images/favicon.svg';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 
+import MJAlmondFlowerV1 from "@images/compressed/webP/compressed-mj-almondFlowerV1.webp";
+import MJAlmondFlowerMosaicGlass from "@images/compressed/webP/compressed-mj-almondFlower-mosaicGlass.webp";
+import MJBachusMosaicGlass from "@images/compressed/webP/compressed-mj-Bachus-mosaicGlass.webp";
+import MJGlühweinV1 from "@images/compressed/webP/compressed-mj-GlühweinV1.webp";
+import MJWallWithGrapes from "@images/compressed/webP/compressed-mj-wallWithGrapes.webp";
+import MJGlühweinV2 from "@images/compressed/webP/compressed-mj-GlühweinV2.webp";
+import WassermühleImWald from "@images/compressed/webP/compressed-Wassermühle-im-Wald.png";
 
+const images = {
+  MJAlmondFlowerV1,
+  MJAlmondFlowerMosaicGlass,
+  MJBachusMosaicGlass,
+  MJGlühweinV1,
+  MJWallWithGrapes,
+  MJGlühweinV2,
+  WassermühleImWald,
+};
 // Note: Tour parameter is now read directly in the React component
 ---
 
@@ -15,7 +32,8 @@ import Footer from '@/components/Footer.astro';
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={favicon.src} />
+		<link rel="preload" as="image" href={MJAlmondFlowerMosaicGlass.src}>
 		<title>Unsere Touren</title>
 		<link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400..700&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Gloock&family=Indie+Flower&family=Lusitana:wght@400;700&family=Monsieur+La+Doulaise&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
 	</head>
@@ -24,7 +42,7 @@ import Footer from '@/components/Footer.astro';
 		<div class="fixed w-full h-[80px]  bg-black -translate-y-[80px] "/>
 		<div class="fixed w-full h-[80px]  bg-gradient-to-br from-stone-300/25 via-stone-900/40 to-transparent -translate-y-[80px] "/>
 	    <ScreenSizeDEVTOOL />
-		<InteractiveTours client:load/>
+		<InteractiveTours client:load images={images} backgroundImage={MJAlmondFlowerMosaicGlass} />
 		<Footer />
 	</body>
 </html>

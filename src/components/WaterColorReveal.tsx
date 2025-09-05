@@ -1,4 +1,3 @@
-"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "tailwindcss/tailwind.css";
 import { useRef, type ReactNode } from "react";
