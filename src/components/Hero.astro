@@ -1,18 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 import HWELogoV2NoText from "@images/HWE-LogoV2-noText.svg";
+import CompressedMjVineYardPencilSketch from '@images/compressed/webP/compressed-mj-vineYard-pencilSketch-1.webp';
 
-interface Props {
-  backgroundImage: ImageMetadata;
-}
 
-const { backgroundImage } = Astro.props;
 ---
 <section id="hero" class="w-full h-[100vh] min-h-[650px] md:min-h-[700px] xl:min-h-[800px] relative mt-[-70px] 
 max-h-[800px] md:max-h-none">
   <div class="w-full h-full  relative
   border-b-4 border-blue-500/0">
-        <Image src={backgroundImage} loading='eager' fetchpriority='high' alt="vineyard washed out colors" class="w-full h-full absolute inset-0 object-cover object-bottom" />
+        <Image src={CompressedMjVineYardPencilSketch} loading='eager' fetchpriority='high' decoding='async' alt="vineyard washed out colors" class="w-full h-full absolute inset-0 object-cover object-bottom" />
         <div class="absolute opacity-1 top-0 left-0 w-full h-full"
         style={{
           backgroundImage: `radial-gradient(ellipse at 50% -250%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,0) 80%)`,
