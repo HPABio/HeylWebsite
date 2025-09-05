@@ -12,7 +12,7 @@ const { backgroundImage } = Astro.props;
 max-h-[800px] md:max-h-none">
   <div class="w-full h-full  relative
   border-b-4 border-blue-500/0">
-        <Image src={backgroundImage} fetchpriority="high" loading="eager" decoding="async"  alt="vineyard washed out colors" class="w-full h-full absolute inset-0 object-cover object-bottom" />
+        <Image src={backgroundImage} alt="vineyard washed out colors" class="w-full h-full absolute inset-0 object-cover object-bottom" />
         <div class="absolute opacity-1 top-0 left-0 w-full h-full"
         style={{
           backgroundImage: `radial-gradient(ellipse at 50% -250%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,0) 80%)`,
@@ -53,16 +53,16 @@ max-h-[800px] md:max-h-none">
              </div>
             </div>
 
-            <a href="http://www.gimmeldingen.de/unser-ort/portrait.html" class="absolute top-0 right-0 px-6 pt-[80px] h-screen w-screen bg-red-500/0 z-10 min-h-[800px]">
-              <p class="w-fit h-fit text-stone-700 lg:bottom-8 lg:right-10 absolute 
+            <div class="absolute top-0 right-0 px-6 pt-[80px] h-screen w-screen z-10 min-h-[800px]">
+              <a href="http://www.gimmeldingen.de/unser-ort/portrait.html" class="w-fit h-fit text-stone-700 lg:bottom-8 lg:right-10 absolute 
               backdrop-blur-sm bg-gradient-to-r from-stone-100/45 via-stone-200/30 to-stone-100/30
               text-sm md:text-[clamp(0.85rem,1.5vw,1.2rem)] font-bonanova font-light
-              border-[1.5px] border-soft-beige/20 rounded-3xl px-2">
+              border-[1.5px] border-soft-beige/20 rounded-3xl px-2 block">
               <span class="text-transparent bg-clip-text bg-stone-300 ">📍</span>
               Gimmeldingen,
                 <span class="text-stone-800/70 text-xs md:text-[clamp(0.56rem,0.7vw,0.8rem)] pr-2 2xl:pr-4 font-bold">Neustadt an der Weinstraße</span>
-                </p>
-            </a>
+                </a>
+            </div>
 
 
             
