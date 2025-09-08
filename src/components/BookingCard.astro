@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets';
+import HWELogoV2NoText from "@images/HWE-LogoV2-noText.svg";
+const { className } = Astro.props;
+---
+
+<section id="get-in-touch" class={`py-4 w-screen relative ${className} `}>
+  <div class=" w-full max-w-[75%] md:max-w-lg mx-auto relative z-10 mt-20 md:mt-24 mb-8 bg-stone-100 rounded-xl">
+    <div class="bg-gradient-to-br from-stone-50/85 to-stone-100/50 rounded-xl shadow-lg border border-stone-200/50 p-6 md:p-8 md:pb-6 relative overflow-hidden">
+      {/* Background decoration */}
+      <div class="absolute top-0 right-0 w-24 h-24 opacity-10">
+        <svg
+          viewBox="0 0 100 100"
+          class="w-full h-full text-accent1/20"
+        >
+          <path d="M50 0 L100 50 L50 100 L0 50 Z" fill="currentColor" />
+        </svg>
+      </div>
+
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        {/* Left side with button (2/3 width) */}
+        <div class="flex-1  text-center md:text-left leading-tight">
+          <h3 class="sm:text-xl text-left font-bold font-bonanova tracking-tight sm:leading-none mb-4 md:mb-8">
+            <span class="text-accent1/80">
+              Bereit für Ihr <br class="md:hidden block" />
+              Wein-Erlebnis?
+            </span>
+          </h3>
+          <p class="w-64 text-[13px] sm:text-sm text-left text-stone-600/50 sm:text-stone-600/70 font-normal mb-4 sm:mb-0 lg:mb-4 sm:leading-snug">
+            Buchen Sie jetzt <br class="sm:hidden block" /> Ihre <br />{" "}
+            unvergessliche <br class="sm:hidden block" />{" "}
+            Wein-Erlebnistour.
+          </p>
+          <div class="w-full flex justify-start  my-4 rounded-full bg-gradient-to-r from-accent1/20 to-accent1/10
+          md:w-[80%]">
+            <div class="flex justify-between w-full ">
+              <a
+                href="https://eveeno.com/de/event-cal/34263?style=grid"
+                class="inline-flex items-center px-6 py-2 bg-gradient-to-r from-accent1 to-accent1/80 text-white font-semibold text-sm rounded-full shadow-lg hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group"
+              >
+                Ihre Tour buchen 
+                <svg
+                  class="w-4 h-4 ml-2 group-hover:scale-110 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="/gruppen"
+                class="inline-flex items-center justify-end 
+                text-accent1 font-semibold text-sm rounded-full pr-3 hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group"
+              >
+                <svg
+                class=" w-5 aspect-square mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+              Auch  für Gruppen
+              </a>
+              {/* <p class="bg-stone-500/30 text-transparent bg-clip-text text-5xl text-center my-auto ml-4 mt-2 flex-shrink">🍷</p> */}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="max-w-xs text-[10px] sm:text-[11px] sm:leading-tight pt-1
+      mx-auto font-light text-gray-700/60 sm:text-gray-700 text-center w-full relative z-10 ">
+        "Buchen Sie jetzt und erleben Sie unvergessliche Momente in den
+        Weinbergen!"
+      </p>
+    </div>
+
+    <div class="w-fit h-fit absolute top-0 right-[0%] sm:translate-x-[-5%] sm:translate-y-[-26%] md:translate-x-[0%] md:translate-y-[-18%] lg:translate-x-[-20%] lg:translate-y-[-30%]">
+      <Image
+        src={HWELogoV2NoText}
+        loading="lazy"
+        fetchpriority="auto"
+        alt="Vineyard background"
+        class="relative w-[150px] md:w-[180px] object-cover opacity-85"
+      />
+    </div>
+  </div>
+</section> 

@@ -46,7 +46,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
     },
     {
       id: "mussbach",
-      title: "Magische Momente am Mussbach ▸ Nachhaltige Weinwanderung",
+      title: "Magische Momente am Mussbach",
       description:
         "Auf unserer nachhaltigen Wein-Wanderung lauschen wir dem Mussbach, tauchen in seine Geschichten ein und genießen die erfrischende Kühle des Gimmeldinger Tales und seines geheimnisvollen Waldes.",
       availability: "Sommer",
@@ -132,10 +132,10 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
           />
         </AnimatePresence>
 
-        <div className="absolute w-full h-[95vh] bg-gradient-to-b from-black via-black/30 to-transparent "></div>
-        <div className="absolute w-full h-[55vh] bg-gradient-to-b from-black via-black/30 to-transparent "></div>
-        <div className="absolute top-0 w-full h-[85vh] mt-[15vh] bg-gradient-to-t from-stone-100 via-stone-100/95 to-transparent"></div>
-        <div className="absolute top-0 w-full h-[85vh] mt-[15vh] bg-gradient-to-t from-stone-100/90 via-stone-100/95 to-transparent"></div>
+        <div className="absolute w-full h-[95vh] bg-gradient-to-b from-black/70 via-black/30 to-transparent "></div>
+        <div className="absolute w-full h-[55vh] bg-gradient-to-b from-black/90 via-amber-950/30 to-transparent "></div>
+        <div className="absolute top-0 w-full h-[95vh] mt-[5vh] bg-gradient-to-t from-stone-100 via-stone-100/95 to-transparent"></div>
+        <div className="absolute top-0 w-full h-[95vh] mt-[5vh] bg-gradient-to-t from-stone-100/90 via-stone-100/95 to-transparent"></div>
         <div className="relative w-full h-full flex flex-col justify-center z-20 ">
           <div className="relative z-20 w-full">
             <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,8 +163,11 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
 
 
               {/* Detailed Description Section */}
-              <div className="mt-6 md:mt-12 max-w-3xl mx-auto px-4 h-[50vh] border-b-4 border-accent1 relative">
-                <div className=" h-full overflow-scroll ">
+              <div className="mt-1 max-w-3xl mx-auto pt-6 h-[73vh] border-b-4 border-accent1 relative overflow-hidden">
+              <h2 className="text-[1.4rem] font-bold font-bonanova text-gray-100 mb-2">
+                      Über diese Tour
+                    </h2>
+                <div className=" h-full w-full overflow-scroll absolute top-16 left-0 right-0 px-4 ">
 
                 
                 <AnimatePresence mode="wait">
@@ -178,11 +181,9 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                     }}
                     exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
                   >
-                    <h2 className="text-[1.2rem] font-bold font-bonanova text-gray-300/70">
-                      Über diese Tour
-                    </h2>
+                    
                     <div
-                      className="mt-4 text-xs sm:text-sm md:text-lg text-gray-800 font-body leading-relaxed"
+                      className="mt-2 pb-48 text-xs sm:text-sm md:text-lg text-gray-800 font-body leading-relaxed px-2"
                       dangerouslySetInnerHTML={{
                         __html: selectedTour.longDescription,
                       }}
@@ -190,14 +191,14 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                   </motion.div>
                 </AnimatePresence>
                 </div>
-                <div className="absolute h-[7vh] w-full bottom-0 left-[50%] translate-x-[-50%] right-0 bg-gradient-to-t from-stone-100 via-stone-100/95 to-transparent" />
+                <div className="absolute h-[41vh] w-full bottom-0 left-[50%] translate-x-[-50%] right-0 bg-gradient-to-t from-stone-100 via-stone-100/95 to-transparent" />
               </div>
 
 
               {/* Tours Grid - thumbnail selection */}
               <div
-                className="grid gap-1 grid-cols-4 sm:grid-cols-4 mb-12 mt-6
-                  mx-auto max-w-[95%]  relative">
+                className="grid gap-1 grid-cols-4 sm:grid-cols-4 mb-6 mt-6
+                  mx-auto max-w-[85%] absolute bottom-0 left-0 right-0 ">
                     
                 {tours.map((tour) => (
                   <motion.div
@@ -231,13 +232,33 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                   </motion.div>
                 ))}
               </div>
-
-             
-
-
-
-
             </div>
+
+
+            <div className="absolute w-full -bottom-6 left-0 right-0 flex flex-row items-center justify-center text-accent1 px-4 ">
+                  <svg
+                    className="w-4 h-4 animate-bounce  "
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                    />
+                  </svg>
+                  <span className="text-xs mb-1">
+                    Weiter scrollen
+                  </span>
+                </div>
+
+
+
+
+
+
           </div>
         </div>
       </div>
