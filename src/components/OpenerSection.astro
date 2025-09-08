@@ -56,7 +56,7 @@ import GimmeldingenMap from "@images/GimmeldingenMap.jpg";
     <!-- MOBILE (Tablet) Opening Section: Center Piece -->
   <div class="hidden md:block lg:hidden max-w-sm md:max-w-2xl md:mx-auto mt-12 md:my-24 translate-x-[12%] relative">
     <div class="w-[400px] h-[400px] absolute top-0 left-0 px-6 z-0 translate-y-[-10%] translate-x-[-35%]">
-      <WaterColorReveal client:visible id="Opener-location-link-md" width={250} height={250} 
+      <WaterColorReveal client:visible id="Opener-location-link-md" width={220} height={220} 
       className="h-[45vh] aspect-square drop-shadow-[20px_20px_5px_rgba(0,0,0,0.07)]">
       <div slot="child2" class="w-[400px] h-[400px] relative flex items-center justify-start ">
         <a href="http://www.gimmeldingen.de/unser-ort/portrait.html" class="relative w-fit h-fit mb-12 ml-16">
@@ -69,7 +69,7 @@ import GimmeldingenMap from "@images/GimmeldingenMap.jpg";
             </p>
         </a>
       </div>
-      <Image src={GimmeldingenMap} loading="lazy" fetchpriority="auto" decoding='async' alt="Section 4" class="absolute object-contain scale-[1.5] brightness-[70%] contrast-[2] rotate-45 bottom-[0%] left-[0%] translate-x-[-10%] translate-y-[-20%] rounded-xl shadow-lg "  /> 
+      <Image slot="child1" src={GimmeldingenMap} loading="lazy" fetchpriority="auto" decoding='async' alt="Section 4" class="absolute object-contain scale-[1.5] brightness-[70%] contrast-[2] rotate-45 bottom-[0%] left-[0%] translate-x-[-10%] translate-y-[-20%] rounded-xl shadow-lg "  /> 
     </WaterColorReveal>
     </div>
     <div class=" text-lg text-gray-600 font-body  flex flex-col justify-center items-center">
@@ -108,7 +108,7 @@ import GimmeldingenMap from "@images/GimmeldingenMap.jpg";
     </WaterColorReveal>
     </div>
     <div class=" text-lg text-gray-600 font-body  flex flex-col justify-center items-center z-10">
-      <h2 class="text-[40px] sm:text-5xl 2xl:text-7xl font-normal text-red-950/50 lowercase font-doulaise z-20 ">
+      <h2 class="text-[40px] sm:text-5xl 2xl:text-7xl font-normal text-accent2-wine/90 lowercase font-doulaise z-20 ">
         mittendrin statt nur dabei
       </h2>
       <div class="w-screen z-10">
@@ -134,7 +134,7 @@ import GimmeldingenMap from "@images/GimmeldingenMap.jpg";
   </svg>
   </a>
 </div> -->
-<div class="md:absolute md:bottom-0 md:left-0 relative w-full md:h-[120px] h-[50px] z-10  bg-white ">
+<!-- <div class="md:absolute md:bottom-0 md:left-0 relative w-full md:h-[120px] h-[50px] z-10  bg-white "> -->
 
 </div>
 </section> 

@@ -4,6 +4,7 @@ import BrigittaHeylPortrait from "@images/BrigittaHeylPortrait.png";
 import { Image } from "astro:assets";
 import HWELogoV2NoText from "@images/HWE-LogoV2-noText.svg";
 
+
 interface Props {
   images: {
     MJAlmondFlowerV1: ImageMetadata;
@@ -47,7 +48,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
     },
     {
       id: "mussbach",
-      title: "Magische Momente am Mussbach ▸ Nachhaltige Weinwanderung",
+      title: "Magische Momente am Mussbach",
       description:
         "Auf unserer nachhaltigen Wein-Wanderung lauschen wir dem Mussbach, tauchen in seine Geschichten ein und genießen die erfrischende Kühle des Gimmeldinger Tales und seines geheimnisvollen Waldes.",
       availability: "Sommer",
@@ -144,8 +145,74 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
 
 
 
-              {/* MOBILE Contact Card Section */}
-              <div className=" w-full sm:w sm:max-w-[65%] md:max-w-lg mx-auto relative z-10 mt-20 md:mt-24 mb-8 bg-stone-100 rounded-xl">
+
+              {/* Tours Grid - thumbnail selection */}
+              <div
+                className="grid gap-1 md:gap-2 2xl:gap-3 grid-cols-4 sm:grid-cols-4 my-12
+                  mx-auto max-w-[550px] md:max-w-[650px] lg:max-w-[750px] xl:max-w-[800px] 2xl:max-w-[950px] "
+              >
+                {tours.map((tour) => (
+                  <motion.div
+                    key={tour.id}
+                    onClick={() => setSelectedTour(tour)}
+                    className={`cursor-pointer group relative overflow-hidden aspect-[9/16] md:aspect-[4/5] 
+                                  rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 ${
+                                    selectedTour.id === tour.id
+                                      ? "outline-offset-[12px] ring-offset-0 ring-2 ring-soft-beige outline-[2px] outline-soft-beige/30 outline-none border-[2.5px] border-stone-100 z-30"
+                                      : "border-[2.5px] border-soft-beige/20 brightness-[0.6] saturate-[0.7]"
+                                  }`}
+                    whileHover={{ scale: 1.03 }}
+                  >
+                    <div className="relative w-full h-full overflow-hidden rounded-2xl">
+                      <img
+                        src={`${tour.images.card}`}
+                        alt={tour.title}
+                        className={`w-full h-full ${tour.images.objectPosition} object-cover group-hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden`}
+                      />
+                      <div
+                        className="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-amber-900/90 font-semibold 
+                                  text-[0.2rem] sm:text-[0.5rem] md:text-xs py-1 px-3 rounded-full shadow-sm"
+                      >
+                        {tour.availability}
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                      <h3
+                        className="absolute bottom-4 left-4 text-[0.5rem] sm:text-[0.65rem] sm:leading-tight md:text-sm 2xl:text-base font-semibold font-bonanova text-soft-sand/90">
+                        {tour.title}
+                      </h3>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+
+            <div className="max-w-[85%] 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+              {/* Title and Description */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedTour.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+                  exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
+                  className="text-center pt-[3vh] lg:pt-[5vh] xl:pt-[7vh]"
+                >
+                  <h1 className=" text-3xl md:text-4xl xl:text-5xl 2xl:text-7xl font-bonanova font-bold text-accent1 drop-shadow-lg">
+                    {selectedTour.title}
+                  </h1>
+                  <p
+                    className="hidden mt-4 max-w-xl xl:max-w-2xl mx-auto text-lg xl:text-lg md:leading-none lg:leading-tight xl:leading-none 2xl:leading-none 2xl:text-2xl
+                     xl:mb-14 text-stone-300/70 font-body drop-shadow-sm"
+                    dangerouslySetInnerHTML={{
+                      __html: selectedTour.description,
+                    }}
+                  ></p>
+                </motion.div>
+              </AnimatePresence>
+
+
+
+{/* MOBILE Contact Card Section */}
+<div className=" w-full sm:w sm:max-w-[65%] md:max-w-lg mx-auto relative z-10 mt-20 md:mt-24 mb-8 bg-stone-100 rounded-xl">
         <div className="bg-gradient-to-br from-stone-50/85 to-stone-100/50 rounded-xl shadow-lg border border-stone-200/50 
          p-6 md:p-8 md:pb-6 relative overflow-hidden">
           {/* Background decoration */}
@@ -236,76 +303,6 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
           />
         </div>
       </div>
-
-
-
-
-
-              {/* Tours Grid - thumbnail selection */}
-              <div
-                className="grid gap-1 md:gap-2 2xl:gap-3 grid-cols-4 sm:grid-cols-4 my-12
-                  mx-auto max-w-[550px] md:max-w-[650px] lg:max-w-[750px] xl:max-w-[800px] 2xl:max-w-[950px] "
-              >
-                {tours.map((tour) => (
-                  <motion.div
-                    key={tour.id}
-                    onClick={() => setSelectedTour(tour)}
-                    className={`cursor-pointer group relative overflow-hidden aspect-[9/16] md:aspect-[4/5] 
-                                  rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 ${
-                                    selectedTour.id === tour.id
-                                      ? "outline-offset-[12px] ring-offset-0 ring-2 ring-soft-beige outline-[2px] outline-soft-beige/30 outline-none border-[2.5px] border-stone-100 z-30"
-                                      : "border-[2.5px] border-soft-beige/20 brightness-[0.6] saturate-[0.7]"
-                                  }`}
-                    whileHover={{ scale: 1.03 }}
-                  >
-                    <div className="relative w-full h-full overflow-hidden rounded-2xl">
-                      <img
-                        src={`${tour.images.card}`}
-                        alt={tour.title}
-                        className={`w-full h-full ${tour.images.objectPosition} object-cover group-hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden`}
-                      />
-                      <div
-                        className="absolute top-3 right-3 bg-stone-200/80 backdrop-blur-sm text-amber-900/90 font-semibold 
-                                  text-[0.2rem] sm:text-[0.5rem] md:text-xs py-1 px-3 rounded-full shadow-sm"
-                      >
-                        {tour.availability}
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                      <h3
-                        className="absolute bottom-4 left-4 text-[0.5rem] sm:text-[0.65rem] sm:leading-tight md:text-sm 2xl:text-base font-semibold font-bonanova text-soft-sand/90">
-                        {tour.title}
-                      </h3>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-
-            <div className="max-w-[85%] 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-              {/* Title and Description */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={selectedTour.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-                  exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
-                  className="text-center pt-[3vh] lg:pt-[5vh] xl:pt-[7vh]"
-                >
-                  <h1 className=" text-3xl md:text-4xl xl:text-5xl 2xl:text-7xl font-bonanova font-bold text-accent1 drop-shadow-lg">
-                    {selectedTour.title}
-                  </h1>
-                  <p
-                    className="hidden mt-4 max-w-xl xl:max-w-2xl mx-auto text-lg xl:text-lg md:leading-none lg:leading-tight xl:leading-none 2xl:leading-none 2xl:text-2xl
-                     xl:mb-14 text-stone-300/70 font-body drop-shadow-sm"
-                    dangerouslySetInnerHTML={{
-                      __html: selectedTour.description,
-                    }}
-                  ></p>
-                </motion.div>
-              </AnimatePresence>
-
-
-
 
 
 

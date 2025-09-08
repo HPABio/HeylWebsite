@@ -5,6 +5,7 @@ import InteractiveTours from '@/components/InteractiveTours.tsx';
 import InteractiveToursMobile from '@/components/InteractiveTours-mobile.tsx';
 import InteractiveToursMobileV2 from '@/components/InteractiveTours-mobileV2.tsx';
 import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
+import ToursV2 from '@/components/ToursV2.astro';
 
 import favicon from '@images/favicon.svg';
 import Header from '@/components/Header.astro';
@@ -41,7 +42,7 @@ const images = {
 	</head>
 	<body class="bg-gradient-to-b from-black via-stone-100/75 to-transparent">
 		<!-- Development Navigation Buttons -->
-		<div class="fixed top-20 left-4 z-50 flex flex-col gap-2">
+		<div class="hidden fixed top-20 left-4 z-50 flex flex-col gap-2">
 			<a href="/toursv2" class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-1 rounded shadow-lg transition-colors">
 				Tours V2
 			</a>
@@ -49,12 +50,13 @@ const images = {
 				Tours V3
 			</a>
 		</div>
-		<Header isDarkMode={true} isHome={false} />
-		<div class="fixed w-full h-[80px]  bg-black -translate-y-[80px] "/>
-		<div class="fixed w-full h-[80px]  bg-gradient-to-br from-stone-300/25 via-stone-900/40 to-transparent -translate-y-[80px] "/>
+		<Header isDarkMode={false} isHome={false} />
+		<!-- <div class="fixed w-full h-[80px]  bg-black -translate-y-[80px] "/>
+		<div class="fixed w-full h-[80px]  bg-gradient-to-br from-stone-300/25 via-stone-900/40 to-transparent -translate-y-[80px] "/> -->
 	    <!-- <ScreenSizeDEVTOOL /> -->
+		<ToursV2 />
 		<InteractiveTours client:load images={images} backgroundImage={MJAlmondFlowerMosaicGlass} className="hidden sm:block" />
-		<InteractiveToursMobile client:load images={images} backgroundImage={MJAlmondFlowerMosaicGlass} className="sm:hidden" />
+		<InteractiveToursMobile client:load images={images} backgroundImage={MJAlmondFlowerMosaicGlass} className="sm:hidden" /> 	
 		<Footer />
 	</body>
 </html>

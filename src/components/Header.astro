@@ -28,35 +28,37 @@ const { isHome = false } = Astro.props;
       <li>
         <a
           href={isHome ? "/#hero" : "/"}
-          class="hover:text-orange-700/80 hover:font-bold transition"
+          class="hover:text-accent2-wine hover:font-bold transition"
           >Start</a
         >
       </li>
       <li>
         <a
           href="/tours"
-          class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-amber-50/90 hover:text-amber-950 font-semibold text-xs sm:text-sm rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-200"
+          class="inline-flex items-center px-4 py-2 font-semibold text-xs sm:text-sm rounded-full shadow-lg
+           bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50 hover:scale-105
+            transform transition-all duration-200 hover:text-base"
           >Touren</a
         >
       </li>
       <li>
         <a
           href="/gruppen"
-          class={isHome ? "hover:text-orange-700/80 hover:font-bold transition" : "hover:text-orange-700/80 hover:font-bold transition -mr-7"}
+          class={isHome ? "hover:text-accent2-wine hover:font-bold transition" : "hover:text-accent2-wine hover:font-bold transition -mr-7"}
           >Gruppen</a
         >
       </li>
       <li>
         <a
           href="#about-me"
-          class={isHome ? "hover:text-orange-700/80 hover:font-bold transition" : "hidden"}
+          class={isHome ? "hover:text-accent2-wine hover:font-bold transition" : "hidden"}
           >Über mich</a
         >
       </li>
       <li>
         <a
           href="/kontakt"
-          class="hover:text-orange-700/80 hover:font-bold transition"
+          class="hover:text-accent2-wine hover:font-bold transition"
           >Kontakt</a
         >
       </li>
@@ -85,8 +87,8 @@ const { isHome = false } = Astro.props;
         >
       </li>
       <li>
-        <a href={isHome ? "#about-me" : "/#about-me"} class="mobile-nav-link text-3xl font-bonanova"
-          >Über mich</a
+        <a href="/gruppen" class="mobile-nav-link text-3xl font-bonanova"
+          >Gruppen</a
         >
       </li>
       <li>
@@ -95,15 +97,10 @@ const { isHome = false } = Astro.props;
         >
       </li>
       <li>
-        <a href="/tours" class="mobile-nav-link text-3xl font-bonanova"
-          >Touren</a
-        >
-      </li>
-      <li>
         <a
           href="/tours"
-          class="mt-8 inline-flex items-center px-8 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-amber-50/90 hover:text-amber-950 font-semibold text-xl rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-200"
-          >Buchen</a
+          class="inline-flex items-center px-8 py-3 bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50/90 hover:text-amber-950 font-semibold text-xl rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-200"
+          >TOUREN</a
         >
       </li>
     </ul>

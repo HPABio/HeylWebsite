@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import HWELogoV2NoText from "@images/HWE-LogoV2-noText.svg";
-const { className } = Astro.props;
+const { className, rightButton:rightButton = "Ihre Tour buchen", leftButton:leftButton = "Auch  für Gruppen",
+ fontLeftButton:fontLeftButton = " font-semibold pr-3 text-sm ", fontRightButton:fontRightButton = "px-6 py-2  font-semibold text-sm" } = Astro.props;
 ---
 
 <section id="get-in-touch" class={`py-4 w-screen relative ${className} `}>
@@ -36,9 +37,8 @@ const { className } = Astro.props;
             <div class="flex justify-between w-full ">
               <a
                 href="https://eveeno.com/de/event-cal/34263?style=grid"
-                class="inline-flex items-center px-6 py-2 bg-gradient-to-r from-accent1 to-accent1/80 text-white font-semibold text-sm rounded-full shadow-lg hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group"
-              >
-                Ihre Tour buchen
+                class=`inline-flex items-center ${fontRightButton} bg-gradient-to-r from-accent1 to-accent1/80 text-white rounded-full shadow-lg hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group`>
+                {rightButton}
                 <svg
                   class="w-4 h-4 ml-2 group-hover:scale-110 transition-transform duration-300"
                   fill="none"
@@ -55,9 +55,8 @@ const { className } = Astro.props;
               </a>
               <a
                 href="/gruppen"
-                class="inline-flex items-center justify-end 
-                text-accent1 font-semibold text-sm rounded-full pr-3 hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group"
-              >
+                class=`inline-flex items-center justify-end ${fontLeftButton}
+                text-accent1 rounded-full  hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group`>
                 <svg
                 class=" w-5 aspect-square mr-2"
                 fill="none"
@@ -71,7 +70,7 @@ const { className } = Astro.props;
                   d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                 ></path>
               </svg>
-              Auch  für Gruppen
+              {leftButton}
               </a>
               {/* <p class="bg-stone-500/30 text-transparent bg-clip-text text-5xl text-center my-auto ml-4 mt-2 flex-shrink">🍷</p> */}
             </div>

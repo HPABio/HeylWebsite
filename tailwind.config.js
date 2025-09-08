@@ -9,6 +9,7 @@ module.exports = {
         accent2: {
           brick: "#B46B54",
           plum: "#55354E",
+          wine: "#8A2D52",
         },
         soft: {
           beige: "#D8C7B5",
