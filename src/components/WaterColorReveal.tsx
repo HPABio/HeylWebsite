@@ -47,6 +47,11 @@ const WaterColorReveal = ({
       ? 1000 // Default pixel value if percentage
       : Number(height);
 
+  // Child one opacity
+  const child2Opacity = useTransform(scrollYProgress,
+    [0, 0.4, 0.55],
+    [0, 0, 1]);
+
   // For center reveal, use circle radius
   const circleRadius = useTransform(
     scrollYProgress,
@@ -108,7 +113,19 @@ const WaterColorReveal = ({
         </defs>
         <foreignObject width={widthInPx} height={heightInPx}>
           <div
-            className="w-full h-full"
+            className="w-full h-full block sm:hidden"
+            style={{
+              mask: `url(#${id}-revealMask)`,
+              WebkitMask: `url(#${id}-revealMask)`,
+            }}
+          >
+            <div>{child1}</div>
+            <motion.div
+            style={{ opacity: child2Opacity }}
+            >{child2}</motion.div>
+          </div>
+          <div
+            className="w-full h-full hidden sm:block"
             style={{
               mask: `url(#${id}-revealMask)`,
               WebkitMask: `url(#${id}-revealMask)`,

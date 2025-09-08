@@ -1,8 +1,7 @@
 ---
 // src/pages/tours.astro
 import '@/styles/global.css';
-import InteractiveTours from '@/components/InteractiveTours.tsx';
-import InteractiveToursMobile from '@/components/InteractiveTours-mobile.tsx';
+import InteractiveTours	 from '@/components/InteractiveTours.tsx';
 import InteractiveToursMobileV2 from '@/components/InteractiveTours-mobileV2.tsx';
 import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
 
@@ -44,8 +43,8 @@ const images = {
 		<div class="fixed w-full h-[80px]  bg-black -translate-y-[80px] "/>
 		<div class="fixed w-full h-[80px]  bg-gradient-to-br from-stone-300/25 via-stone-900/40 to-transparent -translate-y-[80px] "/>
 	    <ScreenSizeDEVTOOL />
+		<InteractiveToursMobileV2 client:load images={images} backgroundImage={MJAlmondFlowerMosaicGlass} className="md:hidden block" />
 		<InteractiveTours client:load images={images} backgroundImage={MJAlmondFlowerMosaicGlass} className="hidden md:block" />
-		<InteractiveToursMobile client:load images={images} backgroundImage={MJAlmondFlowerMosaicGlass} className="md:hidden" />
 		<Footer />
 	</body>
 </html>
