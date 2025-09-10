@@ -120,8 +120,8 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
   const [selectedTour, setSelectedTour] = useState(tours[0]);
 
   return (
-    <section className={`min-h-screen bg-stone-100 text-text ${className}`}>
-      <div className="relative w-full h-full bg-stone-100">
+    <section className={`min-h-screen text-text ${className}`}>
+      <div className="relative w-full h-full">
         <AnimatePresence>
           <motion.img
             key={selectedTour.id + "-bg"}
@@ -134,10 +134,10 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
           />
         </AnimatePresence>
 
-        <div className="absolute w-full h-[35vh] bg-gradient-to-b  from-stone-100/90 via-stone-100/90 to-transparent"></div>
+        <div className="absolute w-full h-[35vh] bg-gradient-to-b  from-stone-100/90 via-stone-100/90 to-transparent "></div>
         <div className="absolute w-full h-[85vh] bg-gradient-to-b  from-stone-100/60 via-stone-100/60 to-transparent"></div>
-        <div className="absolute top-0 w-full h-[70vh] mt-[30vh] bg-gradient-to-t from-stone-100 via-stone-100/5 to-transparent"></div>
-        <div className="absolute top-0 w-full h-[70vh] mt-[30vh] bg-gradient-to-t from-stone-100/90 via-stone-100/90 to-transparent"></div>
+        <div className="absolute top-0 w-full h-[70vh] mt-[30vh] bg-gradient-to-t from-stone-100 via-stone-100/5 to-transparent "></div>
+        <div className="absolute top-0 w-full h-[70vh] mt-[30vh] bg-gradient-to-t from-stone-100/90 via-stone-100/90 to-transparent "></div>
         <div className="relative w-full h-full flex flex-col justify-center z-20 ">
           <div className="relative z-20 w-full">
 
