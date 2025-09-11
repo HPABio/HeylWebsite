@@ -193,9 +193,9 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
         </AnimatePresence>
 
         {/* Content Container */}
-        <div className="relative w-full h-full min-h-[1000px] max-w-[1400px] mx-auto flex flex-row justify-center z-20 ">
-          <div className="relative z-20 w-full flex flex-row pl-10 pr-4 lg:px-14  ">
+        <div className="relative w-full h-full min-h-[1000px] flex flex-row justify-center z-20 ">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-stone-100/90 via-stone-100/30 to-transparent"/>
+          <div className="relative z-20 w-full max-w-[1400px] mx-auto flex flex-row pl-10 pr-4 lg:px-14  ">
             {/* Left Side - Tour Cards (1/3 width) */}
             <div className="
             w-1/4 flex relative items-start justify-end pt-12 
