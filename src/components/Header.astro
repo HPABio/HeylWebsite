@@ -78,7 +78,8 @@ const { isHome = false } = Astro.props;
   >
     <ul class="flex flex-col items-center space-y-8">
       <li>
-        <a href="/#hero" class="mobile-nav-link text-3xl font-bonanova"
+        <a href={isHome ? "/#hero" : "/"}
+        class="mobile-nav-link text-3xl font-bonanova"
           >Start</a
         >
       </li>
@@ -87,8 +88,13 @@ const { isHome = false } = Astro.props;
           >Gruppen</a
         >
       </li>
+      <li class={isHome ? "hidden" : "block"}>
+        <a href="/#about-me" class="mobile-nav-link text-3xl font-bonanova"
+          >Über mich</a
+        >
+      </li>
       <li>
-        <a href={isHome ? "#get-in-touch" : "/#get-in-touch"} class="mobile-nav-link text-3xl font-bonanova"
+        <a href={isHome ? "#get-in-touch-mobile" : "/kontakt"} class="mobile-nav-link text-3xl font-bonanova"
           >Kontakt</a
         >
       </li>
