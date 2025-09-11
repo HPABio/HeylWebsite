@@ -29,11 +29,11 @@ const { isHome = false } = Astro.props;
       <li>
         <a
           href="/tours"
-          class="inline-flex items-center px-4 py-2 font-semibold text-xs sm:text-sm rounded-full shadow-lg
+          class="inline-flex items-center px-4 py-2 font-semibold text-xs sm:text-sm rounded-full shadow-lg font-bonanova
            bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50 hover:scale-105
             transform transition-all duration-200 hover:text-base hover:pl-9 group"
           ><p><span class="hidden group-hover:inline-block absolute top-1 left-3
-            text-lg font-extrabold font-bonanova bg-stone-50 text-transparent bg-clip-text pt-1 ">🍇</span>  Touren</p></a
+            text-lg font-extrabold font-bonanova bg-stone-50 text-transparent bg-clip-text pt-1 ">🍇</span>  TOUREN</p></a
         >
       </li>
       <li>
@@ -73,8 +73,8 @@ const { isHome = false } = Astro.props;
   <div
     id="menu"
     class="fixed h-fit w-full inset-0 z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none 
-    transition-all duration-300 ease-in-out transform -translate-y-full
-    py-12"
+    transition-all duration-300 ease-in-out transform -translate-y-full bg-gradient-to-t from-transparent via-stone-50 to-stone-50
+    pt-12 pb-96"
   >
     <ul class="flex flex-col items-center space-y-8">
       <li>
@@ -95,7 +95,9 @@ const { isHome = false } = Astro.props;
       <li>
         <a
           href="/tours"
-          class="inline-flex items-center px-8 py-3 bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50/90 hover:text-amber-950 font-semibold text-xl rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-200"
+          class="inline-flex items-center px-8 py-3 font-semibold text-xl rounded-full shadow-lg font-bonanova
+          bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50/90 
+          hover:text-amber-950 hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-200"
           >TOUREN</a
         >
       </li>

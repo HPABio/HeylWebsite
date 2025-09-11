@@ -31,7 +31,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
         card: images.MJAlmondFlowerV1.src,
         background: backgroundImage.src,
         objectPosition: "object-[50%_50%]",
-        bgObjectPosition: "object-[50%_36%]",
+        bgObjectPosition: "object-contain",
       },
       longDescription: `
         <p class="mb-4">Erlebe mit Freunden, Kollegen und Familie eine unterhaltsame Weinerlebnistour durch die rosa blühenden Weinberge von Gimmeldingen. Geführt von einer zertifizierten Kultur- und Weinbotschafterin erwartet Dich eine spannende Mischung aus Natur, Genuss und kurzweiligen historischen Episoden - perfekt für alle Sinne! Das erwartet dich:</p>
@@ -54,7 +54,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
       availability: "Sommer",
       images: {
         card: images.WassermühleImWald.src,
-        background: images.MJWallWithGrapes.src,
+        background: backgroundImage.src,
         objectPosition: "object-[50%_20%]",
         bgObjectPosition: "object-[50%_36%]",
       },
@@ -71,7 +71,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
       availability: "Frühling - Herbst",
       images: {
         card: images.MJBachusMosaicGlass.src,
-        background: images.MJWallWithGrapes.src,
+        background: backgroundImage.src,
         objectPosition: "object-[50%_20%]",
         bgObjectPosition: "object-[50%_50%]",
       },
@@ -99,7 +99,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
       availability: "Winter",
       images: {
         card: images.MJGlühweinV2.src,
-        background: images.MJGlühweinV1.src,
+        background: backgroundImage.src,
         objectPosition: "object-[50%_35%]",
         bgObjectPosition: "object-center",
       },
@@ -130,12 +130,12 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.75, transition: { duration: 0.8 } }}
             exit={{ opacity: 0 }}
-            className={`absolute inset-0 w-full h-[95vh] ${selectedTour.images.bgObjectPosition} object-cover saturate-[1]`}
+            className={`absolute inset-0 w-full h-[115vh] -mt-[15vh] ${selectedTour.images.bgObjectPosition} object-cover saturate-[1]`}
           />
         </AnimatePresence>
 
-        <div className="absolute w-full h-[35vh] bg-gradient-to-b  from-stone-100/90 via-stone-100/90 to-transparent "></div>
-        <div className="absolute w-full h-[85vh] bg-gradient-to-b  from-stone-100/60 via-stone-100/60 to-transparent"></div>
+        <div className="absolute w-full h-[35vh] -mt-[70px] bg-gradient-to-b  from-stone-100/90 via-stone-100/90 to-transparent "></div>
+        <div className="absolute w-full h-[85vh] -mt-[70px] bg-gradient-to-b  from-stone-100/60 via-stone-100/60 to-transparent"></div>
         <div className="absolute top-0 w-full h-[70vh] mt-[30vh] bg-gradient-to-t from-stone-100 via-stone-100/5 to-transparent "></div>
         <div className="absolute top-0 w-full h-[70vh] mt-[30vh] bg-gradient-to-t from-stone-100/90 via-stone-100/90 to-transparent "></div>
         <div className="relative w-full h-full flex flex-col justify-center z-20 ">
