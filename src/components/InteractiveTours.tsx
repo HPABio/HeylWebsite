@@ -23,9 +23,10 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
   const tours = [
     {
       id: "mandelbluete",
+      info: "Genuss, Geschichte und Natur",
       title: "Mandelblüte, Meerspinne und Monarchen",
-      description:
-        "Genieße während der Gimmeldinger Mandelblüte eine interaktive Weinerlebnistour mit unseren Mandelblütenhoheiten.",
+      subtitle:
+        "Erleben Sie die Pfälzer Mandelblüte auf einer einzigartigen Route.",
       availability: "Frühling",
       images: {
         card: images.MJAlmondFlowerV1.src,
@@ -48,9 +49,10 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
     },
     {
       id: "mussbach",
-      title: "Magische Momente am Mussbach",
-      description:
-        "Auf unserer nachhaltigen Wein-Wanderung lauschen wir dem Mussbach, tauchen in seine Geschichten ein und genießen die erfrischende Kühle des Gimmeldinger Tales und seines geheimnisvollen Waldes.",
+      info: "Wasser, Wald und Wein - eine Weinwanderung",
+      title: "Magischer Mussbach",
+      subtitle:
+      "Lauschen Sie dem Mussbach - den Geschichten des Gimmeldinger Tales und seines geheimnisvollen Waldes.",
       availability: "Sommer",
       images: {
         card: images.WassermühleImWald.src,
@@ -59,15 +61,24 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
         bgObjectPosition: "object-[50%_36%]",
       },
       longDescription: `
-        <p class="mb-4">Wenn die Tage kürzer werden und die Landschaft in ein winterliches Kleid gehüllt ist, entfaltet die Pfalz einen ganz besonderen Charme. Bei unserer Glühwein-Tour wärmen wir uns mit hausgemachtem Glühwein, lauschen spannenden Geschichten am knisternden Feuer und genießen die gemütliche Atmosphäre. Ein unvergessliches Wintererlebnis, das Herz und Seele wärmt.</p>
-        <p class="mb-4">Entdecke die versteckten Schätze des Gimmeldinger Tales und lass dich von der Magie des Waldes verzaubern. Diese Tour verbindet Nachhaltigkeit mit Genuss und bietet ein einzigartiges Naturerlebnis.</p>
+        <p class="mb-4">🌊 Wasser & Wald • 🍷 5 Weine/ regionale Snacks • 🌱 Nachhaltigkeit & Baumpflanzung • ⏱️ 6 Stunden/4, 8 oder 12 km</p>
+        <p class="mb-4">Wenn die Sonne hoch steht und das Gimmeldinger Tal in sommerlicher Kühle erstrahlt, beginnt ein nachhaltiges Erlebnis der besonderen Art. Auf unserer interaktiven Weinwanderung entdecken wir die Magie des Mussbachs, erfahren spannende Geschichten über Mühlen, Wasser und Holz und genießen fünf erlesene Weine mit passenden Snacks – inmitten eines grünen, erfrischenden Naturparadieses. Ideal für Teams oder Genießer, die Natur, Nachhaltigkeit und Geschichte verbinden möchten.</p>
+        <ul class="list-disc pl-5 space-y-2 mb-4">
+          <li>🌊 Erfrischender Auftakt: Genieße einen prickelnden Begrüßungswein an einem schattigen Platz  in einem Mussbacher Weingut</li>
+          <li>🥾 Sommerliche Wanderlust: Entdecke den Mussbach über Lobloch entlang des erfrischenden Bachlaufes bis ins Gimmeldinger Tal auf schattigen Pfaden, durch Wälder und zu historischen Mühlen</li>
+          <li>🍷 Weingenuss der Extraklasse: Lass Dich unterwegs von fünf regionalen Weinen mit saisonalen Snacks verwöhnen – jedes Glas erzählt von nachhaltiger Weinbaukunst in der Pfalz.</li>
+          <li>🕰️ Geschichten, die begeistern: Lebendige Erzählungen über Wasser, Holz, Treideln am Speyerbach, Eselsmühlen, Kunsthandwerk und Wappenschmieden – lebendige Geschichte zum Mitmachen.</li>
+          <li>🌱 Zum Abschluss: Jeder Teilnehmer pflanzt über Click-A-Tree einen Baum und erhält ein persönliches Zertifikat – so hinterlassen wir gemeinsam einen grünen Fußabdruck in der Pfalz.</li>
+        </ul>
+        <p>Diese Tour ist mehr als nur eine Wanderung: Sie verbindet Erfrischung, Genuss, Geschichte und Nachhaltigkeit, lässt die Magie des Mussbachs spürbar werden und macht Natur und Kultur hautnah erlebbar. Ideal für Teams, Familien oder Freunde, die den Sommer in der Pfalz bewusst genießen wollen.</p>
       `,
     },
     {
       id: "bacchus",
+      info: "Für Genießer und Entdecker",
       title: "Von Bacchus bis Christophorus",
-      description:
-        "Genieße die idyllischen Weinberge der Pfalz und besuche ausgewählte Weingüter im historischen Ortskern von Gimmeldingen.",
+      subtitle:
+        "Weinberge, Geschichte und Kultur - eine Tour auf den Spuren der Weinkultur und regionaler Legenden.",
       availability: "Frühling - Herbst",
       images: {
         card: images.MJBachusMosaicGlass.src,
@@ -93,9 +104,10 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
     },
     {
       id: "gluehwein",
-      title: "Glühwein - Geheimnisvolles Gimmeldingen",
-      description:
-        "Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.",
+      info: "Wärmende Wintertour mit Glühwein",
+      title: "Geheimnisvolles Gimmeldingen",
+      subtitle:
+        "Genießen Sie Natur, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.",
       availability: "Winter",
       images: {
         card: images.MJGlühweinV2.src,
@@ -104,15 +116,17 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
         bgObjectPosition: "object-center",
       },
       longDescription: `
-        <p class="mb-4">Wenn die Tage kürzer werden und die Landschaft in ein winterliches Kleid gehüllt ist, entfaltet die Pfalz einen ganz besonderen Charme. Bei unserer Glühwein-Tour wärmen wir uns mit hausgemachtem Glühwein, lauschen spannenden Geschichten am knisternden Feuer und genießen die gemütliche Atmosphäre.</p>
-        <p class="mb-4">Entdecke die geheimnisvolle Seite Gimmeldingens bei Kerzenschein und lass dich von winterlichen Geschichten verzaubern. Ein unvergessliches Wintererlebnis, das Herz und Seele wärmt.</p>
-        <ul class="list-disc pl-5 space-y-2 mb-4">
+        <p class="mb-4">🌟 Winterzauber  • 🧣 5 Glühweine &Co+Snacks  • 🧙‍♂️ Teamevent+Zeitreise • ⏱️ 4 Stunden/4 km</p>
+        <p class="mb-4">Erlebe Gimmeldingen im Lichterglanz: Diese Tour führt dich durch geheimnisvolle Gassen und Keller des malerischen Weinorts sowie entlang des plätschernden Mussbaches – begleitet von einem wärmenden 5-teiligen Foodpairing mit Secco, 3 Glühweinen und einer pfälzischen Kostbarkeit. Bei jeder Station entfalten sich die Geheimnisse von Gimmeldingen mit spannenden Anekdoten und Hintergrundwissen, lebendig erzählt von einer zertifizierten Kultur- und Weinbotschafterin.</p>
+        <ul class="list-disc space-y-2 mb-4">
           <li>🔥 Gemütliche Atmosphäre am knisternden Feuer</li>
           <li>🍷 Hausgemachter Glühwein mit traditionellen Rezepten</li>
           <li>📖 Spannende Geschichten über Gimmeldingen im Winter</li>
           <li>❄️ Winterliche Wanderung durch verschneite Weinberge</li>
           <li>💝 Pfälzer Herzlichkeit und Gastfreundschaft</li>
         </ul>
+        <p class="mb-4">Das erwartet dich: Zum Auftakt wirst du mit einem prickelnden Secco und einem pfälzischen Snack in einem historischen Weinkeller willkommen geheißen. Von dort aus führt dich ein entspannter Spaziergang über rund 4 Kilometer durch romantische Gassen und versteckte Winkel des malerischen Weinorts Gimmeldingen. Die winterliche Stimmung entlang des plätschernden Mußbachs verleiht der Tour dabei eine ganz besondere Atmosphäre. Unterwegs erwarten dich weitere vier liebevoll gestaltete Stationen in historischen Gebäuden – jede einzelne ein Genussmoment mit wärmendem Glühwein und passenden Häppchen bzw einer Pfälzer Köstlichkeit. Und das Besondere: Du wirst selbst Teil der Geschichte – schlüpfst in die Rolle des Bischofs von Speyer, des Belzenickels, Adligen und Müllern, spürst die Magie des Mußbachs, erfährst von skurrilen Begebenheiten, alten Weihnachtsbräuchen und lüftest so die Geheimnisse, die sich hinter den historischen Mauern Gimmeldingens verbergen.</p>
+        <p class="mb-4">Diese Tour verbindet Genuss, Natur und Kultur auf einzigartige Weise. Ob als weihnachtliche Team-Aktivität, Betriebsausflug oder romantischer Nachmittag mit Freunden – schaffe Dir unvergessliche Erinnerungen in der Winterzeit.</p>
       `,
     },
   ];
@@ -203,7 +217,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                     className="hidden mt-4 max-w-xl xl:max-w-2xl mx-auto text-lg xl:text-lg md:leading-none lg:leading-tight xl:leading-none 2xl:leading-none 2xl:text-2xl
                      xl:mb-14 text-stone-300/70 font-body drop-shadow-sm"
                     dangerouslySetInnerHTML={{
-                      __html: selectedTour.description,
+                      __html: selectedTour.subtitle,
                     }}
                   ></p>
                 </motion.div>

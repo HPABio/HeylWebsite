@@ -57,9 +57,10 @@ const images = {
 		
 		<!-- mobile only -->
 		<InteractiveToursMobile client:load images={images} backgroundImage={MJWallWithGrapes} className="md:hidden" /> 	
+		<!-- <InteractiveToursMobileV2 client:load images={images} backgroundImage={MJWallWithGrapes} className="md:hidden" /> 	 -->
 
 		<!-- SM Screens and bigger -->
-		<!-- <InteractiveTours client:load images={images} backgroundImage={MJWallWithGrapes} className="hidden sm:block" /> -->
+		<InteractiveTours client:load images={images} backgroundImage={MJWallWithGrapes} className="hidden sm:block" />
 		<InteractiveToursVertical client:load images={images} backgroundImage={MJWallWithGrapes} className="hidden md:block" />
 		<GetInTouch className="hidden md:block -mt-[600px]  bg-gradient-to-t from-stone-100 to-transparent" />
 		<Footer />

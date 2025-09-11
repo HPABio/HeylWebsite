@@ -21,19 +21,20 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
   const tours = [
     {
       id: "mandelbluete",
+      info: "Genuss, Geschichte und Natur",
       title: "Mandelblüte, Meerspinne und Monarchen",
-      description:
-        "Genieße während der Gimmeldinger Mandelblüte eine interaktive Weinerlebnistour mit unseren Mandelblütenhoheiten.",
+      subtitle:
+        "Erleben Sie die Pfälzer Mandelblüte auf einer einzigartigen Route.",
       availability: "Frühling",
       images: {
         card: images.MJAlmondFlowerV1.src,
         background: backgroundImage.src,
         objectPosition: "object-[50%_50%]",
-        bgObjectPosition: "object-[50%_36%]",
+        bgObjectPosition: "object-contain",
       },
       longDescription: `
-        <p className="mb-4">Erlebe mit Freunden, Kollegen und Familie eine unterhaltsame Weinerlebnistour durch die rosa blühenden Weinberge von Gimmeldingen. Geführt von einer zertifizierten Kultur- und Weinbotschafterin erwartet Dich eine spannende Mischung aus Natur, Genuss und kurzweiligen historischen Episoden - perfekt für alle Sinne! Das erwartet dich:</p>
-        <ul className="list-disc pl-5 space-y-2 mb-4">
+        <p class="mb-4">Erlebe mit Freunden, Kollegen und Familie eine unterhaltsame Weinerlebnistour durch die rosa blühenden Weinberge von Gimmeldingen. Geführt von einer zertifizierten Kultur- und Weinbotschafterin erwartet Dich eine spannende Mischung aus Natur, Genuss und kurzweiligen historischen Episoden - perfekt für alle Sinne! Das erwartet dich:</p>
+        <ul class="list-disc pl-5 space-y-2 mb-4">
           <li>🌸 Genieße einen rosa Begrüßungs-Secco mit einem Pfälzer Snack und einer herrlichen Aussicht!</li>
           <li>🥾 Erkunde auf der 4 km langen Weinbergs-Wanderung die schönsten Plätze und Mandelbäume in Gimmeldingen</li>
           <li>🍷 Lass Dich unterwegs von weiteren 4 exzellenten Weinen lokaler Weingüter mit abgestimmten Mandel-Snacks verwöhnen</li>
@@ -46,72 +47,84 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
     },
     {
       id: "mussbach",
-      //   title: "Magische Momente am Mussbach ▸ Nachhaltige Weinwanderung",
-      title: "Magische Momente am Mussbach",
-      description:
-        "Auf unserer nachhaltigen Wein-Wanderung lauschen wir dem Mussbach, tauchen in seine Geschichten ein und genießen die erfrischende Kühle des Gimmeldinger Tales und seines geheimnisvollen Waldes.",
+      info: "Wasser, Wald und Wein - eine Weinwanderung",
+      title: "Magischer Mussbach",
+      subtitle:
+      "Lauschen Sie dem Mussbach - den Geschichten des Gimmeldinger Tales und seines geheimnisvollen Waldes.",
       availability: "Sommer",
       images: {
         card: images.WassermühleImWald.src,
-        background: images.MJWallWithGrapes.src,
+        background: backgroundImage.src,
         objectPosition: "object-[50%_20%]",
         bgObjectPosition: "object-[50%_36%]",
       },
       longDescription: `
-        <p className="mb-4">Wenn die Tage kürzer werden und die Landschaft in ein winterliches Kleid gehüllt ist, entfaltet die Pfalz einen ganz besonderen Charme. Bei unserer Glühwein-Tour wärmen wir uns mit hausgemachtem Glühwein, lauschen spannenden Geschichten am knisternden Feuer und genießen die gemütliche Atmosphäre. Ein unvergessliches Wintererlebnis, das Herz und Seele wärmt.</p>
-        <p className="mb-4">Entdecke die versteckten Schätze des Gimmeldinger Tales und lass dich von der Magie des Waldes verzaubern. Diese Tour verbindet Nachhaltigkeit mit Genuss und bietet ein einzigartiges Naturerlebnis.</p>
+        <p class="mb-4">🌊 Wasser & Wald • 🍷 5 Weine/ regionale Snacks • 🌱 Nachhaltigkeit & Baumpflanzung • ⏱️ 6 Stunden/4, 8 oder 12 km</p>
+        <p class="mb-4">Wenn die Sonne hoch steht und das Gimmeldinger Tal in sommerlicher Kühle erstrahlt, beginnt ein nachhaltiges Erlebnis der besonderen Art. Auf unserer interaktiven Weinwanderung entdecken wir die Magie des Mussbachs, erfahren spannende Geschichten über Mühlen, Wasser und Holz und genießen fünf erlesene Weine mit passenden Snacks – inmitten eines grünen, erfrischenden Naturparadieses. Ideal für Teams oder Genießer, die Natur, Nachhaltigkeit und Geschichte verbinden möchten.</p>
+        <ul class="list-disc pl-5 space-y-2 mb-4">
+          <li>🌊 Erfrischender Auftakt: Genieße einen prickelnden Begrüßungswein an einem schattigen Platz  in einem Mussbacher Weingut</li>
+          <li>🥾 Sommerliche Wanderlust: Entdecke den Mussbach über Lobloch entlang des erfrischenden Bachlaufes bis ins Gimmeldinger Tal auf schattigen Pfaden, durch Wälder und zu historischen Mühlen</li>
+          <li>🍷 Weingenuss der Extraklasse: Lass Dich unterwegs von fünf regionalen Weinen mit saisonalen Snacks verwöhnen – jedes Glas erzählt von nachhaltiger Weinbaukunst in der Pfalz.</li>
+          <li>🕰️ Geschichten, die begeistern: Lebendige Erzählungen über Wasser, Holz, Treideln am Speyerbach, Eselsmühlen, Kunsthandwerk und Wappenschmieden – lebendige Geschichte zum Mitmachen.</li>
+          <li>🌱 Zum Abschluss: Jeder Teilnehmer pflanzt über Click-A-Tree einen Baum und erhält ein persönliches Zertifikat – so hinterlassen wir gemeinsam einen grünen Fußabdruck in der Pfalz.</li>
+        </ul>
+        <p>Diese Tour ist mehr als nur eine Wanderung: Sie verbindet Erfrischung, Genuss, Geschichte und Nachhaltigkeit, lässt die Magie des Mussbachs spürbar werden und macht Natur und Kultur hautnah erlebbar. Ideal für Teams, Familien oder Freunde, die den Sommer in der Pfalz bewusst genießen wollen.</p>
       `,
     },
     {
       id: "bacchus",
+      info: "Für Genießer und Entdecker",
       title: "Von Bacchus bis Christophorus",
-      description:
-        "Genieße die idyllischen Weinberge der Pfalz und besuche ausgewählte Weingüter im historischen Ortskern von Gimmeldingen.",
+      subtitle:
+        "Weinberge, Geschichte und Kultur - eine Tour auf den Spuren der Weinkultur und regionaler Legenden.",
       availability: "Frühling - Herbst",
       images: {
         card: images.MJBachusMosaicGlass.src,
-        background: images.MJWallWithGrapes.src,
+        background: backgroundImage.src,
         objectPosition: "object-[50%_20%]",
         bgObjectPosition: "object-[50%_50%]",
       },
       longDescription: `
-        <p className="mb-4">Ein kulinarisches Gruppenerlebnis, das Gimmeldingen und die Pfalz lebendig macht – interaktiv, spannend und unterhaltsam.</p>
-        <p className="mb-4 text-center font-semibold text-accent2-brick">🌿 Weinberge/historischer Ortskern •  🍷 5 Weine/5 Häppchen  • 🤝 Teamevent/Zeitreise • ⏱️ 4 Stunden/4 km</p>
-        <ul className="list-disc pl-5 space-y-2 mb-4">
+        <p class="mb-4">Ein kulinarisches Gruppenerlebnis, das Gimmeldingen und die Pfalz lebendig macht – interaktiv, spannend und unterhaltsam.</p>
+        <p class="mb-4 text-center font-semibold text-accent2-brick">🌿 Weinberge/historischer Ortskern •  🍷 5 Weine/5 Häppchen  • 🤝 Teamevent/Zeitreise • ⏱️ 4 Stunden/4 km</p>
+        <ul class="list-disc pl-5 space-y-2 mb-4">
           <li>🌿 Weinbergwanderung mit großartigen Ausblicken und spannenden Einblicken in den Weinbau.</li>
           <li>🍷 Exquisite Weine von 5 lokalen Winzern und perfekt dazu abgestimmte Leckerbissen.</li>
           <li>🏘️ Spaziergang durch die charmanten Gassen von Gimmeldingen zu 3 historischen Weingütern mit Weinverkostungen.</li>
           <li>🕰️ Interaktive Zeitreise durch die pfälzische Weingeschichte - jeder Teilnehmer wird dabei Teil der Geschichte !</li>
           <li>🤝 Ideal als Teamevent oder entspannter Ausflug mit Freunden & Familie.</li>
         </ul>
-        <h4 className="text-xl font-bold font-bonanova text-gray-800 mt-6 mb-2">So läuft die Tour ab:</h4>
-        <p className="mb-2">Zum Auftakt genießen wir einen Begrüßungs-Riesling und köstliche Mini-Saumagenburger in einem historischen Weingut. Danach wandern wir entspannt durch sanfte Weinberge, genießen weite Ausblicke und verkosten unterwegs zwei erlesene Weine – perfekt ergänzt durch kulinarische Köstlichkeiten.</p>
-        <p className="mb-2">Mitten in den Reben erfahren wir Spannendes über Bio-Weinbau und Qualitätsweine – anschaulich, unterhaltsam und direkt vor Ort erklärt. In mehreren kleinen Episoden tauchen wir dabei in die pfälzische Weingeschichte ein: Als römischer Legionär, Karl der Große, barocke Hofdame oder Napoleon  wird jeder Teilnehmer ein Teil der pfälzischen Geschichte, wobei Krone oder Napoleonshut für lockere Stimmung, gemeinsames Lachen und viel Spaß sorgen.</p>
+        <h4 class="text-xl font-bold font-bonanova text-gray-800 mt-6 mb-2">So läuft die Tour ab:</h4>
+        <p class="mb-2">Zum Auftakt genießen wir einen Begrüßungs-Riesling und köstliche Mini-Saumagenburger in einem historischen Weingut. Danach wandern wir entspannt durch sanfte Weinberge, genießen weite Ausblicke und verkosten unterwegs zwei erlesene Weine – perfekt ergänzt durch kulinarische Köstlichkeiten.</p>
+        <p class="mb-2">Mitten in den Reben erfahren wir Spannendes über Bio-Weinbau und Qualitätsweine – anschaulich, unterhaltsam und direkt vor Ort erklärt. In mehreren kleinen Episoden tauchen wir dabei in die pfälzische Weingeschichte ein: Als römischer Legionär, Karl der Große, barocke Hofdame oder Napoleon  wird jeder Teilnehmer ein Teil der pfälzischen Geschichte, wobei Krone oder Napoleonshut für lockere Stimmung, gemeinsames Lachen und viel Spaß sorgen.</p>
         <p>Im zweiten Teil der Tour erkunden wir den historischen Ortskern, verkosten zwei weitere Weine in renommierten Familienweingütern in die wir ganz persönliche Einblicke erhalten. Zum Abschluss suchen wir noch Christophorus – und Du darfst Dich auf eine kleine Überraschung freuen!</p>
       `,
     },
     {
       id: "gluehwein",
-      title: "Glühwein - Geheimnisvolles Gimmeldingen",
-      description:
-        "Wärmende Wintertour mit Glühwein, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.",
+      info: "Wärmende Wintertour mit Glühwein",
+      title: "Geheimnisvolles Gimmeldingen",
+      subtitle:
+        "Genießen Sie Natur, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.",
       availability: "Winter",
       images: {
         card: images.MJGlühweinV2.src,
-        background: images.MJGlühweinV1.src,
+        background: backgroundImage.src,
         objectPosition: "object-[50%_35%]",
         bgObjectPosition: "object-center",
       },
       longDescription: `
-        <p className="mb-4">Wenn die Tage kürzer werden und die Landschaft in ein winterliches Kleid gehüllt ist, entfaltet die Pfalz einen ganz besonderen Charme. Bei unserer Glühwein-Tour wärmen wir uns mit hausgemachtem Glühwein, lauschen spannenden Geschichten am knisternden Feuer und genießen die gemütliche Atmosphäre.</p>
-        <p className="mb-4">Entdecke die geheimnisvolle Seite Gimmeldingens bei Kerzenschein und lass dich von winterlichen Geschichten verzaubern. Ein unvergessliches Wintererlebnis, das Herz und Seele wärmt.</p>
-        <ul className="list-disc pl-5 space-y-2 mb-4">
+        <p class="mb-4">🌟 Winterzauber  • 🧣 5 Glühweine &Co+Snacks  • 🧙‍♂️ Teamevent+Zeitreise • ⏱️ 4 Stunden/4 km</p>
+        <p class="mb-4">Erlebe Gimmeldingen im Lichterglanz: Diese Tour führt dich durch geheimnisvolle Gassen und Keller des malerischen Weinorts sowie entlang des plätschernden Mussbaches – begleitet von einem wärmenden 5-teiligen Foodpairing mit Secco, 3 Glühweinen und einer pfälzischen Kostbarkeit. Bei jeder Station entfalten sich die Geheimnisse von Gimmeldingen mit spannenden Anekdoten und Hintergrundwissen, lebendig erzählt von einer zertifizierten Kultur- und Weinbotschafterin.</p>
+        <ul class="list-disc space-y-2 mb-4">
           <li>🔥 Gemütliche Atmosphäre am knisternden Feuer</li>
           <li>🍷 Hausgemachter Glühwein mit traditionellen Rezepten</li>
           <li>📖 Spannende Geschichten über Gimmeldingen im Winter</li>
           <li>❄️ Winterliche Wanderung durch verschneite Weinberge</li>
           <li>💝 Pfälzer Herzlichkeit und Gastfreundschaft</li>
         </ul>
+        <p class="mb-4">Das erwartet dich: Zum Auftakt wirst du mit einem prickelnden Secco und einem pfälzischen Snack in einem historischen Weinkeller willkommen geheißen. Von dort aus führt dich ein entspannter Spaziergang über rund 4 Kilometer durch romantische Gassen und versteckte Winkel des malerischen Weinorts Gimmeldingen. Die winterliche Stimmung entlang des plätschernden Mußbachs verleiht der Tour dabei eine ganz besondere Atmosphäre. Unterwegs erwarten dich weitere vier liebevoll gestaltete Stationen in historischen Gebäuden – jede einzelne ein Genussmoment mit wärmendem Glühwein und passenden Häppchen bzw einer Pfälzer Köstlichkeit. Und das Besondere: Du wirst selbst Teil der Geschichte – schlüpfst in die Rolle des Bischofs von Speyer, des Belzenickels, Adligen und Müllern, spürst die Magie des Mußbachs, erfährst von skurrilen Begebenheiten, alten Weihnachtsbräuchen und lüftest so die Geheimnisse, die sich hinter den historischen Mauern Gimmeldingens verbergen.</p>
+        <p class="mb-4">Diese Tour verbindet Genuss, Natur und Kultur auf einzigartige Weise. Ob als weihnachtliche Team-Aktivität, Betriebsausflug oder romantischer Nachmittag mit Freunden – schaffe Dir unvergessliche Erinnerungen in der Winterzeit.</p>
       `,
     },
   ];
@@ -158,7 +171,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                     className="hidden mt-4 max-w-[98%] mx-auto text-[0.8rem] leading-tight 
                    text-gray-300/70 font-body drop-shadow-sm "
                     dangerouslySetInnerHTML={{
-                      __html: selectedTour.description,
+                      __html: selectedTour.subtitle,
                     }}
                   ></p>
                 </motion.div>
@@ -261,8 +274,51 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
         </div>
       </div>
 
+
+
+                    {/* Book Tour Button */}
+                    <div className="w-[320px] md:w-[340px] lg:w-[400px] flex justify-start my-8 rounded-full bg-gradient-to-r from-stone-100/20 to-gray-50/80
+                    border-[1.5px] border-accent1/80 lg:my-8 mx-auto">
+                          <div className="flex justify-between w-full ">
+                            <a href="https://eveeno.com/de/event-cal/34263?style=grid"
+                              className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-accent1 to-accent1/80 text-white font-semibold 
+                              rounded-full shadow-lg hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group">
+                              <p className="text-xs md:text-sm lg:text-lg">Tour buchen</p>
+                              <svg className="w-3 md:w-4 lg:w-5 aspect-square ml-2 group-hover:scale-110 transition-transform duration-300"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                ></path>
+                              </svg>
+                            </a>
+                            <a href="/gruppen"
+                              className="inline-flex items-center justify-end text-accent2-wine font-semibold
+                              text-xs md:text-sm rounded-full pr-4 lg:pr-6 hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group">
+                              <svg className=" w-4 md:w-5 lg:w-6 aspect-square mr-1 md:mr-2"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                ></path>
+                              </svg>
+                              <p className="text-accent1 text-xs md:text-sm lg:text-lg">Auch für Gruppen</p>
+                            </a>
+                          </div>
+                     </div>
+
+
+
+
+
       {/* MOBILE Contact Card Section */}
-      <div className="block md:hidden w-full max-w-[75%] sm:max-w-2xl mx-auto relative z-10 mt-12 md:mt-16 mb-8">
+      <div className="hidden w-full max-w-[75%] sm:max-w-2xl mx-auto relative z-10 mt-12 md:mt-16 mb-8">
         <div className="bg-gradient-to-br from-stone-50/85 to-stone-100/50 rounded-xl shadow-lg border border-stone-200/50 p-6 md:p-8 md:pb-6 relative overflow-hidden">
           {/* Background decoration */}
           <div className="absolute top-0 right-0 w-24 h-24 opacity-10">

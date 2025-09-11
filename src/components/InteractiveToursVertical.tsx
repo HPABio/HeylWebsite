@@ -193,14 +193,14 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
         </AnimatePresence>
 
         {/* Content Container */}
-        <div className="relative w-full h-full min-h-[1000px] flex flex-row justify-center z-20 ">
+        <div className="relative w-full h-full min-h-[1000px] flex flex-row justify-center z-20 pt-4 lg:pt-8 xl:pt-10">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-stone-100/90 via-stone-100/30 to-transparent"/>
-          <div className="relative z-20 w-full max-w-[1400px] mx-auto flex flex-row pl-10 pr-4 lg:px-14  ">
+          <div className="relative z-20 w-full max-w-[1400px] mx-auto flex flex-row pl-10 pr-4 lg:px-14 ">
             {/* Left Side - Tour Cards (1/3 width) */}
             <div className="
-            w-1/4 flex relative items-start justify-end pt-12 
+            w-1/4 flex relative items-start justify-end pt-20 
             max-h-[800px] max-w-[400px] mx-auto 
-            lg:max-h-[700px] xl:max-h-[800px] xl:w-1/3 lg:max-w-[600px] lg:h-[80vh] lg:pt-0 lg:mt-24 ">
+            lg:max-h-[700px] xl:max-h-[800px] xl:w-1/3 lg:max-w-[600px] lg:h-[80vh] lg:pt-0 lg:mt-16">
               {/* Tours Grid - vertical stacking */}
               <div className="w-full h-full flex flex-col gap-2 items-end justify-start">
                 {tours.map((tour) => (
@@ -242,9 +242,9 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
             </div>
 
             {/* Right Side - Content (2/3 width) */}
-            <div className="w-3/4 lg:w-2/3 px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-start  h-fit">
+            <div className="w-3/4 lg:w-2/3 px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-start  h-fit ">
               {/* Detailed Description Section */}
-              <div className="relative w-full h-fit max-w-3xl mx-auto pb-14 mt-0 lg:mt-[4vw] flex flex-col items-start justify-start ">
+              <div className="relative w-full h-fit max-w-3xl mx-auto pb-14 mt-0 flex flex-col items-start justify-start ">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={selectedTour.id + "-desc"}
