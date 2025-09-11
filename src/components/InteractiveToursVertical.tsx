@@ -262,42 +262,57 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                     </h2>
 
 
+
+
+
+
+
+
                     {/* Book Tour Button */}
-                    <div className="w-[320px] md:w-[340px] lg:w-[400px] flex justify-start my-8 rounded-full bg-gradient-to-r from-stone-100/20 to-gray-50/80
-                    border-[1.5px] border-accent1/80 lg:my-8">
-                          <div className="flex justify-between w-full ">
-                            <a href="https://eveeno.com/de/event-cal/34263?style=grid"
-                              className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-accent1 to-accent1/80 text-white font-semibold 
-                              rounded-full shadow-lg hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group">
-                              <p className="text-xs md:text-sm lg:text-lg">Tour buchen</p>
-                              <svg className="w-3 md:w-4 lg:w-5 aspect-square ml-2 group-hover:scale-110 transition-transform duration-300"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                ></path>
-                              </svg>
-                            </a>
-                            <a href="/gruppen"
-                              className="inline-flex items-center justify-end text-accent2-wine font-semibold
-                              text-xs md:text-sm rounded-full pr-4 lg:pr-6 hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group">
-                              <svg className=" w-4 md:w-5 lg:w-6 aspect-square mr-1 md:mr-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                                ></path>
-                              </svg>
-                              <p className="text-accent1 text-xs md:text-sm lg:text-lg">Auch für Gruppen</p>
-                            </a>
-                          </div>
-                     </div>
+                    <div className= "w-[320px] md:w-[360px] flex justify-start my-4 rounded-full bg-gradient-to-r from-accent1/20 to-accent1/10">
+                <div className="flex justify-between w-full ">
+                  <a
+                    href="https://eveeno.com/de/event-cal/34263?style=grid"
+                    className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-accent1 to-accent1/80 text-white font-semibold text-xs md:text-sm rounded-full shadow-lg hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group"
+                  >
+                    Ihre Tour buchen 
+                    <svg
+                      className="w-3 md:w-4 aspect-square ml-2 group-hover:scale-110 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <a
+                    href="/gruppen"
+                    className="inline-flex items-center justify-end 
+                    text-accent1 font-semibold text-xs md:text-sm rounded-full pr-3 hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group"
+                  >
+                    <svg
+                    className=" w-4 md:w-5 aspect-square mr-1 md:mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                  Auch  für Gruppen
+                  </a>
+                  {/* <p className="bg-stone-500/30 text-transparent bg-clip-text text-5xl text-center my-auto ml-4 mt-2 flex-shrink">🍷</p> */}
+                </div>
+              </div>
 
 
                     <div
