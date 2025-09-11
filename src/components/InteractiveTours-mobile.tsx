@@ -47,7 +47,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
     },
     {
       id: "mussbach",
-      info: "Wasser, Wald und Wein - eine Weinwanderung",
+      info: "Wasser, Wald und Wein",
       title: "Magischer Mussbach",
       subtitle:
       "Lauschen Sie dem Mussbach - den Geschichten des Gimmeldinger Tales und seines geheimnisvollen Waldes.",
@@ -142,17 +142,17 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.75, transition: { duration: 0.8 } }}
             exit={{ opacity: 0 }}
-            className={`absolute -top-20 left-0 w-full h-[95vh] -mt-[70px] ${selectedTour.images.bgObjectPosition} object-cover object-[0%_100%] saturate-[1]`}
+            className={`absolute -top-52 left-0 w-full h-[95vh] -mt-[70px] ${selectedTour.images.bgObjectPosition} object-cover object-[0%_100%] saturate-[1]`}
           />
         </AnimatePresence>
 
-        <div className="absolute w-full h-[95vh] -mt-[70px] bg-gradient-to-b from-stone-200/70 via-stone-200/30 to-transparent "></div>
-        <div className="absolute w-full h-[55vh] -mt-[70px] bg-gradient-to-b from-stone-200/90 via-amber-950/30 to-transparent "></div>
-        <div className="absolute top-0 w-full h-[95vh] -mt-[70px] bg-gradient-to-t from-stone-100 via-stone-100/95 to-transparent"></div>
+        {/* <div className="absolute w-full h-[95vh] -mt-[70px] bg-gradient-to-b from-stone-50/30 via-stone-50/0 to-transparent "></div> */}
+        <div className="absolute w-full h-[26vh] -mt-[70px] bg-gradient-to-b from-white via-stone-50/80 to-transparent "></div>
+        <div className="absolute top-0 w-full h-[95vh] mt-[70px] bg-gradient-to-t from-stone-100 via-stone-100 to-stone-50/5"></div>
         <div className="absolute top-0 w-full h-[95vh] -mt-[70px] bg-gradient-to-t from-stone-100/90 via-stone-100/95 to-transparent"></div>
         <div className="relative w-full h-full flex flex-col justify-center z-20 ">
           <div className="relative z-20 w-full">
-            <div className="w-full mx-auto px-4 pt-2">
+            <div className="w-full mx-auto px-4 pt-4">
               {/* Title and Description */}
               <AnimatePresence mode="wait">
                 <motion.div
@@ -170,20 +170,15 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
             sm:text-4xl">
               {selectedTour.title}
             </h1>
-            <p className="relative z-10 max-w-sm px-10 mt-4  mx-auto text-gray-800 font-playfair
-            text-[0.6rem] leading-tight sm:text-xs"
-            dangerouslySetInnerHTML={{
-              __html: selectedTour.subtitle,
-            }}></p>
-                 
+            
                 </motion.div>
               </AnimatePresence>
 
 
               {/* Detailed Description Section */}
-              <div className="mt-1 max-w-3xl mx-auto pt-0 h-[65vh] rounded-b-xl border-b-4 border-accent1/30 relative overflow-hidden ">
-                <div className=" h-full w-full overflow-scroll absolute top-4 left-0 right-0 px-4 rounded-t-xl pb-[200px] border-t-2 border-t-text/10 pt-10
-                border-x-4 border-x-text/10">
+              <div className="max-w-3xl mx-auto h-[65vh] rounded-b-xl border-b-4 border-text/20 relative overflow-hidden ">
+                <div className=" h-full w-full overflow-scroll absolute top-4 left-0 right-0 px-4 rounded-t-xl pb-[200px] border-t-4 border-t-stone-50/70 pt-10
+                border-x-4 border-x-stone-50/60">
 
                 
                 <AnimatePresence mode="wait">
@@ -214,18 +209,18 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
 
               {/* Tours Grid - thumbnail selection */}
               <div
-                className="grid gap-1 grid-cols-4 sm:grid-cols-4 mb-6 mt-6
+                className="flex flex-row items-center justify-center mb-6 mt-6
                   mx-auto max-w-[85%] absolute bottom-0 left-0 right-0 ">
                     
                 {tours.map((tour) => (
                   <motion.div
                     key={tour.id}
                     onClick={() => setSelectedTour(tour)}
-                    className={`cursor-pointer group relative overflow-hidden aspect-[4/5]
+                    className={`cursor-pointer group relative overflow-hidden aspect-[4/5] w-full
                                   rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 ${
                                     selectedTour.id === tour.id
-                                      ? "outline-offset-[6px] scale-110 ring-offset-0 ring-2 ring-soft-beige outline-[2px] outline-soft-beige/30 outline-none border-[2.5px] border-stone-100 z-30"
-                                      : "border-[2.5px] border-soft-beige/20 brightness-[0.6] saturate-[0.7]"
+                                      ? "outline-offset-[4px] scale-105 flex-grow ring-offset-0 ring-2 ring-soft-beige outline-[2px] outline-stone-50/70 outline-none border-[2.5px] border-stone-100 z-30"
+                                      : "border-[2.5px] border-soft-beige/20 brightness-[0.6] saturate-[0.7] scale-95 flex-shrink"
                                   }`}
                     whileHover={{ scale: 1.03 }}
                   >
