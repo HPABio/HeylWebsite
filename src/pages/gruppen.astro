@@ -190,10 +190,17 @@ import GetInTouch from '@/components/GetInTouch.astro';
 						
 						
 						<!-- Small Groups Section -->
-						<section class=" bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-orange-200/50">
+						<section class=" bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-orange-200/50 relative">
 							<div class="grid grid-cols-1 lg:grid-cols-2">
-								<div class="p-8 lg:p-12">				
-									<div class="lg:hidden flex flex-row items-center justify-center mx-auto mb-3">
+								<div class="inset-0 z-10">
+									<Image src={OnSitePhotosGruppenfotoBeiSteigelmanns} loading="lazy" fetchpriority="auto" alt="Kleingruppen" class="w-2/3 aspect-square object-cover absolute -bottom-44 -right-20 z-0 scale-[1.7]" />
+									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-white via-white/50 to-white/0"/>
+									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-white via-white to-transparent"/>
+									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-r from-white via-white/90 to-transparent"/>
+								</div>		
+								<!-- Content Area left MD and smaller -->
+								<div class="p-8 lg:p-12 relative z-10">		
+									<div class="lg:hidden flex flex-row items-center justify-center mx-auto mb-3 ">
 										<div class="flex w-24 h-24 bg-stone-50/80 rounded-full items-center justify-center mx-auto mb-3">
 											<svg class="w-12 h-12 text-accent2-wine " fill="none" stroke="currentColor" viewBox="0 0 24 24">
 												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
@@ -246,7 +253,10 @@ import GetInTouch from '@/components/GetInTouch.astro';
 										</svg>
 									</a>
 								</div>
-								<div class="flex items-center justify-center relative overflow-hidden">
+
+
+								<!-- Image Area roght LG and bigger -->
+								<div class="hidden lg:flex items-center justify-center relative overflow-hidden">
 								<Image src={OnSitePhotosGruppenfotoBeiSteigelmanns} loading="eager" alt="Kleingruppen" class="w-full h-full object-cover absolute top-0 left-0 z-0 scale-[2.2]" />
 								<div class="flex items-center justify-center h-full w-full z-10 
 									bg-gradient-to-br lg:bg-gradient-to-tr from-white via-white/80 to-white/5">
@@ -268,9 +278,10 @@ import GetInTouch from '@/components/GetInTouch.astro';
 						</section>
 	
 						<!-- Travel Groups Section -->
-						<section class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-orange-200/50">
+						<section class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-orange-200/50 relative">
 							<div class="grid grid-cols-1 lg:grid-cols-2">
-								<div class="flex items-center justify-center order-2 lg:order-1 relative overflow-hidden">
+								<!-- Image Area left LG and bigger -->
+								<div class="hidden lg:flex items-center justify-center order-2 lg:order-1 relative overflow-hidden">
 									<Image src={GeminiTravelBus} loading="lazy" fetchpriority="auto" alt="Reisegruppen" class="w-full h-full object-cover absolute top-0 left-[50%] translate-x-[-80%] translate-y-[-30%] z-0 scale-[2.2]" /> 
 									<div class="flex items-center justify-center h-full w-full z-10 relative
 									bg-gradient-to-tl from-white via-white/70 to-white/15">
@@ -287,7 +298,15 @@ import GetInTouch from '@/components/GetInTouch.astro';
 									</div>
 								</div>
 								</div>
-								<div class="p-8 lg:p-12 order-1 lg:order-2">
+								<!-- Image Area right MD and smaller -->
+								<div class="inset-0">
+									<Image src={GeminiTravelBus} loading="lazy" fetchpriority="auto" alt="Kleingruppen" class="w-1/2 aspect-square object-cover absolute bottom-0 -right-12 z-0 scale-[2.1]" />
+									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-white via-white/50 to-white/0"/>
+									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-white via-white to-transparent"/>
+									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-r from-white via-white to-transparent"/>
+								</div>
+								<!-- Content Area right -->
+								<div class="p-8 lg:p-12 order-1 lg:order-2 relative z-10">
 									<div class="lg:hidden flex flex-row items-center justify-center mx-auto mb-3">
 										<div class="flex w-24 h-24 bg-stone-50/80 rounded-full items-center justify-center mx-auto mb-3">
 											<svg class="w-12 h-12 text-accent2-wine " fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -344,8 +363,14 @@ import GetInTouch from '@/components/GetInTouch.astro';
 						</section>
 	
 						<!-- Corporate Events Section -->
-						<section class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-orange-200/50">
-							<div class="grid grid-cols-1 lg:grid-cols-2">
+						<section class="w-full h-full bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-orange-200/50 relative">
+							<div class="inset-0">
+								<Image src={GeminiBusinessTrip} loading="lazy" fetchpriority="auto" alt="Kleingruppen" class="w-1/2 aspect-square object-cover absolute bottom-0 right-0 z-0 scale-[1]" />
+								<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-white via-white/50 to-white/0"/>
+								<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-white via-white to-transparent"/>
+								<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-r from-white via-white to-transparent"/>
+							</div>
+							<div class="grid grid-cols-1 lg:grid-cols-2 relative z-10">
 								<div class="p-8 lg:p-12">
 									<div class="lg:hidden flex flex-row items-center justify-center mx-auto mb-3">
 										<div class="flex w-24 h-24 bg-stone-50/80 rounded-full items-center justify-center mx-auto mb-3">
