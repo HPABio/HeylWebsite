@@ -44,7 +44,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     // Create transporter using Gmail SMTP
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: process.env.GMAIL_USER, // Your Gmail address
@@ -83,7 +83,7 @@ Diese Nachricht wurde automatisch von der Website heyl-weintouren.de gesendet.
     // Send email
     await transporter.sendMail({
       from: process.env.GMAIL_USER,
-      to: "hendrikcooper@gmx.de", // Your email address
+      to: process.env.RECIPIENT_EMAIL || "hendrikcooper@gmx.de", // Fallback to your email
       subject: emailSubject,
       text: emailBody,
       replyTo: email, // So you can reply directly to the sender
