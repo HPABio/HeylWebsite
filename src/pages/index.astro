@@ -5,7 +5,7 @@ import Hero from '@/components/Hero.astro';
 import Footer from '@/components/Footer.astro';
 import BubbleSection from '@/components/BubbleSection.astro';
 import OpenerSection from '@/components/OpenerSection.astro';
-import favicon from '@images/favicon.svg';
+import favicon from '@images/favicon.svg';		
 import AboutMe from '@/components/AboutMe.astro';
 import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
 ---
@@ -23,15 +23,8 @@ import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
 		<main>
 			<Hero />		
 			<OpenerSection />
-			<!-- <FirstInfoSection /> -->
 			<BubbleSection loading="lazy" />
-			<!-- <Tours /> -->
-			<!-- <ToursV2 /> -->
 			<AboutMe loading="lazy" fetchpriority="low" />
-			<!-- <InteractiveTours /> -->
-			<!-- <InteractiveToursV2 /> -->
-			<!-- <Region /> -->
-			<!-- <GetInTouch /> -->
 		</main>
 		<Footer loading="lazy" fetchpriority="low" />
 	</body>

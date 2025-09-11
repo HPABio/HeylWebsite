@@ -2,6 +2,7 @@
 // src/pages/tours.astro
 import '@/styles/global.css';
 import InteractiveTours from '@/components/InteractiveTours.tsx';
+import InteractiveToursVertical from '@/components/InteractiveToursVertical.tsx';
 import InteractiveToursMobile from '@/components/InteractiveTours-mobile.tsx';
 import InteractiveToursMobileV2 from '@/components/InteractiveTours-mobileV2.tsx';
 import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
@@ -18,6 +19,7 @@ import MJGlühweinV1 from "@images/compressed/webP/compressed-mj-GlühweinV1.web
 import MJWallWithGrapes from "@images/compressed/webP/compressed-mj-wallWithGrapes.webp";
 import MJGlühweinV2 from "@images/compressed/webP/compressed-mj-GlühweinV2.webp";
 import WassermühleImWald from "@images/compressed/webP/compressed-Wassermühle-im-Wald.png";
+import GetInTouch from "@/components/GetInTouch.astro";
 
 const images = {
   MJAlmondFlowerV1,
@@ -43,7 +45,7 @@ const images = {
 	<body class="bg-stone-50">
 		<ScreenSizeDEVTOOL />
 		<!-- Development Navigation Buttons -->
-		<div class="fixed top-20 left-4 z-50 flex flex-col gap-2 ">
+		<div class="hidden fixed top-20 left-4 z-50 flex flex-col gap-2 ">
 			<a href="/toursv2" class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-1 rounded shadow-lg transition-colors">
 				Tours V2
 			</a>
@@ -54,11 +56,12 @@ const images = {
 		<Header isDarkMode={false} isHome={false} />
 		
 		<!-- mobile only -->
-		<InteractiveToursMobile client:load images={images} backgroundImage={MJWallWithGrapes} className="sm:hidden" /> 	
+		<InteractiveToursMobile client:load images={images} backgroundImage={MJWallWithGrapes} className="md:hidden" /> 	
 
 		<!-- SM Screens and bigger -->
-		<InteractiveTours client:load images={images} backgroundImage={MJWallWithGrapes} className="hidden sm:block" />
-		
+		<!-- <InteractiveTours client:load images={images} backgroundImage={MJWallWithGrapes} className="hidden sm:block" /> -->
+		<InteractiveToursVertical client:load images={images} backgroundImage={MJWallWithGrapes} className="hidden md:block" />
+		<GetInTouch className="hidden md:block -mt-[600px]  bg-gradient-to-t from-stone-100 to-transparent" />
 		<Footer />
 	</body>
 </html>
