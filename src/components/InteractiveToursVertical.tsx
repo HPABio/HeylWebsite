@@ -28,9 +28,9 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
         "Erleben Sie die Pfälzer Mandelblüte auf einer einzigartigen Route.",
       availability: "Frühling",
       images: {
-        card: images.MJAlmondFlowerV1.src,
+        card: images.MJAlmondFlowerMosaicGlass.src,
         background: backgroundImage.src,
-        objectPosition: "object-[50%_50%]",
+        objectPosition: "object-[50%_20%]",
         bgObjectPosition: "object-contain",
       },
       longDescription: `
@@ -109,9 +109,9 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
         "Genießen Sie Natur, Geschichten und Pfälzer Herzlichkeit in der kalten Jahreszeit.",
       availability: "Winter",
       images: {
-        card: images.MJGlühweinV2.src,
+        card: images.MJGlühweinV1.src,
         background: backgroundImage.src,
-        objectPosition: "object-[50%_35%]",
+        objectPosition: "object-[50%_28%]",
         bgObjectPosition: "object-center",
       },
       longDescription: `
