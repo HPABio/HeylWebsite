@@ -24,7 +24,7 @@ import GetInTouch from '@/components/GetInTouch.astro';
 	<body>
 		<Header isHome={false} />
 		<main class="min-h-screen bg-gradient-to-b from-white to-gray-50 relative">
-			<ScreenSizeDEVTOOL />
+			<!-- <ScreenSizeDEVTOOL /> -->
 			<!-- Hero Section -->
 			<div class="relative w-full h-[30vw] min-h-[250px] max-h-[300px]"
 			style={{backgroundImage: `url("${CompressedMjVineYardColorPencilSketch.src}")`, backgroundSize: "cover", backgroundPosition: "100% 50%",}}>
@@ -192,8 +192,8 @@ import GetInTouch from '@/components/GetInTouch.astro';
 						<!-- Small Groups Section -->
 						<section class=" bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-orange-200/50 relative">
 							<div class="grid grid-cols-1 lg:grid-cols-2">
-								<div class="inset-0 z-10">
-									<Image src={OnSitePhotosGruppenfotoBeiSteigelmanns} loading="lazy" fetchpriority="auto" alt="Kleingruppen" class="w-2/3 aspect-square object-cover absolute -bottom-44 -right-20 z-0 scale-[1.7]" />
+								<div class="inset-0 z-10 block lg:hidden">
+									<Image src={OnSitePhotosGruppenfotoBeiSteigelmanns} loading="lazy" fetchpriority="auto" alt="Kleingruppen" class="w-2/3 aspect-square object-cover absolute bottom-0 left-2/3 sm:-bottom-44 sm:-right-20 z-0 scale-[1.7]" />
 									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-white via-white/50 to-white/0"/>
 									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-white via-white to-transparent"/>
 									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-r from-white via-white/90 to-transparent"/>
@@ -257,23 +257,22 @@ import GetInTouch from '@/components/GetInTouch.astro';
 
 								<!-- Image Area roght LG and bigger -->
 								<div class="hidden lg:flex items-center justify-center relative overflow-hidden">
-								<Image src={OnSitePhotosGruppenfotoBeiSteigelmanns} loading="eager" alt="Kleingruppen" class="w-full h-full object-cover absolute top-0 left-0 z-0 scale-[2.2]" />
-								<div class="flex items-center justify-center h-full w-full z-10 
-									bg-gradient-to-br lg:bg-gradient-to-tr from-white via-white/80 to-white/5">
-										<div class="text-center w-full h-full flex flex-col items-center justify-center 
-										bg-gradient-to-tr from-white via-white/40 to-white/0">
-										<!-- <h3 class="text-3xl font-bold text-gray-900 my-6 leading-none">Kleingruppen</h3> -->
-										<div class="hidden lg:felx w-24 h-24 bg-stone-50/80 rounded-full items-center justify-center mx-auto mb-3">
-											<svg class="w-12 h-12 text-accent2-wine " fill="none" stroke="currentColor" viewBox="0 0 24 24">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
-											</svg>
-										</div>
-										<!-- <p class="text-text/20 text-3xl -mt-2">---</p> -->
-										<p class="hidden lg:block text-accent1/80 text-6xl mt-4">8-20</p>
-										<p class="hidden lg:block text-accent1 -mt-2 text-lg tracking-widest uppercase">Personen</p>
+									<Image src={OnSitePhotosGruppenfotoBeiSteigelmanns} loading="eager" alt="Kleingruppen" class="w-full h-full object-cover absolute top-0 left-0 z-0 scale-[2.2]" />
+									<div class="flex items-center justify-center h-full w-full z-10 bg-gradient-to-br lg:bg-gradient-to-tr from-white via-white/80 to-white/5">
+										<div class="text-center w-full h-full flex flex-col items-center justify-center bg-gradient-to-tr from-white via-white/40 to-white/0">
+											<div class="hidden lg:flex relative w-24 h-24 bg-stone-50/80 rounded-full items-center justify-center mx-auto mb-3 z-20">
+												<svg class="w-8 h-8 text-accent2-wine " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+												</svg>
+											</div>
+											<!-- <p class="text-text/20 text-3xl -mt-2">---</p> -->
+											<p class="hidden lg:block text-accent1/80 text-6xl mt-4">8-20</p>
+											<p class="hidden lg:block text-accent1 -mt-2 text-lg tracking-widest uppercase">Personen</p>
 										</div>
 									</div>
 								</div>
+
+
 							</div>
 						</section>
 	
@@ -299,10 +298,10 @@ import GetInTouch from '@/components/GetInTouch.astro';
 								</div>
 								</div>
 								<!-- Image Area right MD and smaller -->
-								<div class="inset-0">
-									<Image src={GeminiTravelBus} loading="lazy" fetchpriority="auto" alt="Kleingruppen" class="w-1/2 aspect-square object-cover absolute bottom-0 -right-12 z-0 scale-[2.1]" />
+								<div class="inset-0 lg:hidden">
+									<Image src={GeminiTravelBus} loading="lazy" fetchpriority="auto" alt="Kleingruppen" class="w-1/2 aspect-square object-cover absolute bottom-12 sm:bottom-0 -right-12 z-0 scale-[2.5] sm:scale-[2.1]" />
 									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-white via-white/50 to-white/0"/>
-									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-white via-white to-transparent"/>
+									<div class="w-full h-full absolute top-[20%] sm:top-0 left-0 bg-gradient-to-b from-white via-white to-transparent "/>
 									<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-r from-white via-white to-transparent"/>
 								</div>
 								<!-- Content Area right -->
@@ -365,10 +364,10 @@ import GetInTouch from '@/components/GetInTouch.astro';
 						<!-- Corporate Events Section -->
 						<section class="w-full h-full bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-orange-200/50 relative">
 							<div class="inset-0">
-								<Image src={GeminiBusinessTrip} loading="lazy" fetchpriority="auto" alt="Kleingruppen" class="w-1/2 aspect-square object-cover absolute bottom-0 right-0 z-0 scale-[1]" />
+								<Image src={GeminiBusinessTrip} loading="lazy" fetchpriority="auto" alt="Kleingruppen" class="w-1/2 aspect-square object-cover absolute bottom-0 right-0 z-0 scale-[1.5] sm:scale-[1]" />
 								<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-white via-white/50 to-white/0"/>
-								<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-white via-white to-transparent"/>
-								<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-r from-white via-white to-transparent"/>
+								<div class="w-full h-full absolute top-[20%] sm:top-0 left-0 bg-gradient-to-b from-white via-white to-transparent "/>
+								<div class="w-full h-full absolute top-0 -left-7 sm:left-0 bg-gradient-to-r from-white via-white to-transparent"/>
 							</div>
 							<div class="grid grid-cols-1 lg:grid-cols-2 relative z-10">
 								<div class="p-8 lg:p-12">
