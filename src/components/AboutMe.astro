@@ -6,13 +6,13 @@ import GetInTouch from '@/components/GetInTouch.astro';
 ---
 
 <section id="about-me" class={`relative w-screen  mx-auto bg-white pb-28 ${className} `}>
-  <div class="absolute inset-0 z-0 opacity-1" style={{
+  <div class="absolute top-0 left-[50%] translate-x-[-50%] h-full w-[100%] min-w-[2000px] z-0 opacity-1" style={{
     background: "url(https://www.toptal.com/designers/subtlepatterns/uploads/seamless_paper_texture.png)",
     backgroundSize: "15%",
     backgroundRepeat: "repeat",
   }}></div>
 
-  <AboutMeVertical className="block lg:hidden pt-44" />
-  <AboutMeHorizontal className="hidden lg:block pt-24 sm:pt-32 z-10" />
+  <AboutMeVertical className="block lg:hidden pt-44 md:pt-10" />
+  <AboutMeHorizontal className="hidden lg:block pt-12 z-10 px-14" />
   <GetInTouch className="hidden md:block md:col-start-1 md:col-span-2 md:row-start-5 md:row-span-1 mx-auto sm:max-w-sm md:max-w-xl xl:max-w-2xl mt-24 md:mt-0 lg:mt-44 z-0" />
 </section> 

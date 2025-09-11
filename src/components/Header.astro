@@ -31,14 +31,16 @@ const { isHome = false } = Astro.props;
           href="/tours"
           class="inline-flex items-center px-4 py-2 font-semibold text-xs sm:text-sm rounded-full shadow-lg
            bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50 hover:scale-105
-            transform transition-all duration-200 hover:text-base"
-          >Touren</a
+            transform transition-all duration-200 hover:text-base hover:pl-9 group"
+          ><p><span class="hidden group-hover:inline-block absolute top-1 left-3
+            text-lg font-extrabold font-bonanova bg-stone-50 text-transparent bg-clip-text pt-1 ">🍇</span>  Touren</p></a
         >
       </li>
       <li>
         <a
           href="/gruppen"
-          class={isHome ? "hover:text-accent2-wine hover:font-bold transition" : "hover:text-accent2-wine hover:font-bold transition -mr-7"}
+          class={isHome ? "hover:text-accent2-wine hover:font-bold transition" :
+          "hover:text-accent2-wine hover:font-bold transition -mr-7"}
           >Gruppen</a
         >
       </li>
