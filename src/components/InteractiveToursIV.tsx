@@ -136,10 +136,14 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
 
   return (
     <section
-      className={`min-h-screen text-text bg-gradient-to-br from-stone-50 via-amber-50/30 to-stone-100 ${className}`}
+      className={`min-h-screen text-text relative ${className}`}
     >
+      <img src={GimmeldingenMap.src} alt="Tour Background" className="w-full h-full absolute top-0 left-0 object-cover object-center" />
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-300 via-transparent to-gray-50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
+
       {/* Enhanced Header Section */}
-      <div className="relative w-full h-[70vh] min-h-[600px] max-h-[800px] overflow-hidden">
+      <div className="relative w-full h-[60vh] min-h-[500px] lg:min-h-[570px] xl:min-h-[590px] max-h-[800px] overflow-hidden -mt-[70px]">
         <motion.div
           key={selectedTour.id + "-hero"}
           initial={{ opacity: 0, scale: 1.1 }}
@@ -155,8 +159,10 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
             alt="Tour Background"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/85" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/35" />
+          <div className="hidden md:block absolute top-0 left-0 w-full h-[60%] bg-gradient-to-b from-gray-50 via-gray-50/60 to-black/0 z-10" />
+          <div className="hidden md:block absolute top-0 left-0 w-full h-[20%] bg-gradient-to-b from-gray-50 via-gray-50/60 to-black/0 z-10" />
         </motion.div>
 
         {/* Navigation Buttons */}
@@ -170,14 +176,14 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                 currentIndex === 0 ? tours.length - 1 : currentIndex - 1;
               setSelectedTour(tours[prevIndex]);
             }}
-            className="ml-6 p-4 bg-white/20 backdrop-blur-md rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 group"
+            className="ml-6 p-3 lg:p-4 bg-white/20 backdrop-blur-md rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 group"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0, transition: { delay: 1.2 } }}
           >
             <svg
-              className="w-6 h-6 text-white group-hover:text-accent1 transition-colors duration-300"
+              className="w-3 md:w-4 lg:w-6 aspect-square text-white group-hover:text-accent1 transition-colors duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -202,14 +208,14 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                 currentIndex === tours.length - 1 ? 0 : currentIndex + 1;
               setSelectedTour(tours[nextIndex]);
             }}
-            className="mr-6 p-4 bg-white/20 backdrop-blur-md rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 group"
+            className="mr-6 p-3 lg:p-4 bg-white/20 backdrop-blur-md rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 group"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0, transition: { delay: 1.2 } }}
           >
             <svg
-              className="w-6 h-6 text-white group-hover:text-accent1 transition-colors duration-300"
+              className="w-3 md:w-4 lg:w-6 aspect-square text-white group-hover:text-accent1 transition-colors duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -225,7 +231,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6 lg:px-12">
+        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center lg:mt-10 mt-8  px-6 lg:px-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedTour.id + "-content"}
@@ -245,12 +251,11 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
               className="max-w-5xl mx-auto"
             >
               {/* Seasonal Badge */}
-              <motion.div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent1/25 to-accent1/15 backdrop-blur-md rounded-full mb-6 border border-accent1/30">
-                <div className="w-2 h-2 bg-accent1 rounded-full animate-pulse" />
-                <span className="text-accent1 font-bold text-sm uppercase tracking-wider">
-                  {selectedTour.availability} • {selectedTour.info}
-                </span>
-              </motion.div>
+              <div className="w-fit flex items-center justify-center mx-auto gap-2 px-10 py-2 bg-white/30 backdrop-blur-sm rounded-full  ">
+                  <span className="text-gray-800 font-semibold">
+                  {selectedTour.info}
+                  </span>
+                </div>
 
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -259,7 +264,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                   y: 0,
                   transition: { duration: 0.8, delay: 0.7 },
                 }}
-                className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-bonanova text-white mb-8 leading-[0.9] drop-shadow-2xl"
+                className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-bonanova text-white mb-8 leading-[0.9] drop-shadow-2xl"
               >
                 {selectedTour.title}
               </motion.h1>
@@ -271,7 +276,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                   y: 0,
                   transition: { duration: 0.8, delay: 0.9 },
                 }}
-                className="text-xl md:text-2xl lg:text-3xl text-stone-100 font-playfair leading-relaxed max-w-4xl mx-auto drop-shadow-lg"
+                className="text-xl md:text-2xl xl:text-3xl text-stone-100 font-playfair leading-relaxed max-w-4xl mx-auto drop-shadow-lg"
                 dangerouslySetInnerHTML={{ __html: selectedTour.subtitle }}
               />
 
@@ -283,155 +288,131 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                   y: 0,
                   transition: { duration: 0.8, delay: 1.1 },
                 }}
-                className="flex flex-wrap justify-center gap-6 mt-8"
+                className="flex flex-wrap justify-center gap-6 mt-4 lg:mt-8"
               >
-                <div className="flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full  hover:brightness-[13] hover:shawdow-[52px] shadow-yellow-100 transition-all duration-500">
-                  {/* <span className="text-2xl">🌸</span> */}
-                  <span className="text-white font-semibold hover:text-black hover:font-black hover:uppercase transition-all duration-300">
-                    Frühling
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full  hover:brightness-[13] hover:shawdow-[12px] shadow-yellow-100 transition-all duration-500">
-                  {/* <span className="text-2xl">🌿</span> */}
-                  <span className="text-white font-semibold hover:text-black hover:font-black hover:uppercase transition-all duration-300">
-                    Sommer
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full  hover:brightness-[13] hover:shawdow-[12px] shadow-yellow-100 transition-all duration-500">
-                  {/* <span className="text-2xl">🍂</span> */}
-                  <span className="text-white font-semibold hover:text-black hover:font-black hover:uppercase transition-all duration-300">
-                    Herbst
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full  hover:brightness-[13] hover:shawdow-[12px] shadow-yellow-100 transition-all duration-500">
-                  {/* <span className="text-2xl">❄️</span> */}
-                  <span className="text-white font-semibold hover:text-black hover:font-black hover:uppercase transition-all duration-300">
-                    Winter
-                  </span>
-                </div>
+                <motion.div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent1/25 to-accent1/15 backdrop-blur-md rounded-full mb-6 border border-accent1/30">
+                {/* <div className="w-2 h-2 bg-accent1 rounded-full animate-pulse" /> */}
+                <span className="text-accent1 font-bold text-sm uppercase tracking-wider">
+                • {selectedTour.availability} •
+                </span>
+              </motion.div>
               </motion.div>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.8, delay: 1.5 },
-          }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
-          >
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-1 h-3 bg-white/70 rounded-full mt-2"
-            />
-          </motion.div>
-        </motion.div>
       </div>
 
       {/* Main Content Section */}
-      <div className="w-full h-full relative flex flex-row items-center justify-center  py-4">
-        {/* Enhanced Tour Selection Sidebar */}
-        <div className="">
-          <div className="sticky top-8">
-            <div className="flex flex-row items-center justify-center gap-4 w-1/2 mx-auto">
-              {tours.map((tour, index) => {
-                const getSeasonalColor = (season: string) => {
-                  switch (season.toLowerCase()) {
-                    case "frühling":
-                      return "from-pink-500/20 to-rose-400/20 border-pink-300/30";
-                    case "sommer":
-                      return "from-green-500/20 to-emerald-400/20 border-green-300/30";
-                    case "frühling - herbst":
-                      return "from-amber-500/20 to-orange-400/20 border-amber-300/30";
-                    case "winter":
-                      return "from-blue-500/20 to-indigo-400/20 border-blue-300/30";
-                    default:
-                      return "from-accent1/20 to-accent1/10 border-accent1/30";
-                  }
-                };
-
-                return (
-                  <motion.div
-                    key={tour.id}
-                    onClick={() => setSelectedTour(tour)}
-                    className={`cursor-pointer group relative overflow-hidden w-full h-full rounded-3xl transition-all duration-500 ${
-                      selectedTour.id === tour.id
-                        ? "ring-2 ring-accent1 shadow-2xl scale-[1.03] bg-white"
-                        : "hover:shadow-xl hover:scale-[1.02] bg-white/50 backdrop-blur-sm"
-                    }`}
-                    whileHover={{ y: -4 }}
-                    whileTap={{ scale: 0.97 }}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                      transition: { delay: index * 0.1 },
-                    }}
-                  >
-                    <div className="aspect-[4/3] relative">
-                      <img
-                        src={tour.images.card}
-                        alt={tour.title}
-                        className={`w-full h-full object-cover transition-all duration-500 ${
+      <div className="w-full h-full relative flex flex-row items-center justify-center  ">
+        
+        
+            {/* Scroll Indicator */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, delay: 1.5 },
+              }}
+              className="absolute top-1/3 -translate-y-4 right-6 z-20 flex flex-col lg:flex-row items-center gap-2
+              text-gray-400"
+            >scroll <br/> down
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="w-6 h-10 border-2 border-black/50 rounded-full flex justify-center"
+              >
+                <motion.div
+                  animate={{ y: [0, 12, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-1 h-3 bg-black/70 rounded-full mt-2"
+                />
+              </motion.div>
+            </motion.div>
+            
+            {/* Enhanced Tour Selection Sidebar */}
+            <div className="-mt-6 lg:-mt-8 xl:-mt-9 ">
+              <div className="sticky top-8">
+                <div className="flex flex-row items-center justify-center w-[75vw] lg:w-[65vw] xl:w-[55vw] mx-auto">
+                  {tours.map((tour, index) => {
+                    return (
+                      <motion.div
+                        key={tour.id}
+                        onClick={() => setSelectedTour(tour)}
+                        className={`cursor-pointer group relative overflow-hidden w-full h-full xl:rounded-3xl drop-shadow-md rounded-2xl transition-all duration-500 ${
                           selectedTour.id === tour.id
-                            ? "brightness-110"
-                            : "group-hover:scale-110 brightness-90"
+                                          ? "outline-offset-[6px] aspect-[10/8] drop-shadow-2xl ring-offset-0 ring-2 mx-4 ring-soft-beige outline-[2px] outline-accent1 outline-none border-[2.5px] border-stone-100 z-30 "
+                                          : "border-[2.5px] border-soft-beige/20 drop-shadow-lg aspect-[4/3]  brightness-[1] saturate-[0.8]"
                         }`}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                        whileHover={{ y: -4 }}
+                        whileTap={{ scale: 0.97 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                          transition: { delay: index * 0.05 },
+                        }}
+                      >
+                        <div className="w-full h-full relative group transition-all duration-500 ">
+                          <img
+                            src={tour.images.card}
+                            alt={tour.title}
+                            className={`w-full h-full object-cover object-center  ${
+                              selectedTour.id === tour.id
+                                ? "brightness-100 "
+                                : "group-hover:scale-110 group-hover:contrast-100 brightness-[0.7] contrast-[0.7]"
+                            }`}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
 
-                      {/* Availability Badge */}
-                      <div className="absolute top-4 right-4">
-                        <span className="px-3 py-1 bg-white/95 backdrop-blur-sm text-gray-800 text-xs font-bold rounded-full shadow-sm border border-white/20">
-                          {tour.availability}
-                        </span>
-                      </div>
+                          {/* Availability Badge */}
+                          {/* <div className="hidden absolute top-4 right-4">
+                            <span className="px-3 py-1 bg-white/95 backdrop-blur-sm text-gray-800 text-xs font-bold rounded-full shadow-sm border border-white/20">
+                              {tour.availability}
+                            </span>
+                          </div> */}
 
-                      {/* Tour Title */}
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h4 className="text-white font-bold font-bonanova text-sm lg:text-base leading-tight drop-shadow-lg">
-                          {tour.title}
-                        </h4>
-                      </div>
+                          {/* Tour Title */}
+                          <div className="absolute bottom-4 left-4 right-4 ">
+                            <h4 className="text-white/40 font-bold font-bonanova
+                             text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem] group-hover:text-white leading-tight drop-shadow-lg">
+                              {tour.title}
+                            </h4>
+                          </div>
 
-                      {/* Hover Effect Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-accent1/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-            {/* Tour Count
-              <div className="w-full max-w-sm mt-8 p-4 bg-gradient-to-r from-stone-100 to-stone-50 rounded-2xl border border-stone-200">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-600">
-                    Verfügbare Touren
-                  </span>
-                  <span className="text-lg font-bold text-accent1">
-                    {tours.length}
-                  </span>
+                          {/* Hover Effect Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 mix-blend-color-burn to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                      </motion.div>
+                    );
+                  })}
                 </div>
-              </div> */}
-          </div>
-        </div>
+                {/* Tour Count
+                  <div className="w-full max-w-sm mt-8 p-4 bg-gradient-to-r from-stone-100 to-stone-50 rounded-2xl border border-stone-200">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-gray-600">
+                        Verfügbare Touren
+                      </span>
+                      <span className="text-lg font-bold text-accent1">
+                        {tours.length}
+                      </span>
+                    </div>
+                  </div> */}
+              </div>
+            </div>
+
+
       </div>
+
+
+      {/* Enhanced Tour Details */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
         <div className="grid grid-cols-1">
-          {/* Enhanced Tour Details */}
           <div className="lg:col-span-3 order-1 lg:order-2">
             <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-100">
               {/* Tour Header */}
-              <div className="relative bg-gradient-to-r from-stone-50 to-amber-50/30 p-8 lg:p-12 border-b border-stone-200">
+              <div className="relative bg-stone-100 bg-gradient-to-r from-stone-50 to-amber-50/40 p-8 lg:p-12 border-b border-stone-200">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={selectedTour.id + "-header"}
@@ -447,42 +428,67 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                       <div>
                         <div className="flex items-center gap-3 mb-4">
                           <div>
-                            <h2 className="text-3xl lg:text-4xl font-bold font-bonanova text-gray-800">
+                            <p className="text-accent1 font-semibold text-sm uppercase tracking-wider">
+                               • {selectedTour.info} •
+                            </p>
+                            <h2 className="md:mr-44 text-3xl lg:text-5xl font-bold font-bonanova text-gray-800">
                               {selectedTour.title}
                             </h2>
-                            <p className="text-accent1 font-semibold text-sm uppercase tracking-wider">
-                              {selectedTour.availability} • {selectedTour.info}
-                            </p>
                           </div>
                         </div>
                         <div className="w-24 h-1 bg-gradient-to-r from-accent1 to-accent1/60 rounded-full" />
                       </div>
-
-                      {/* Quick Info Cards */}
-                      <div className="flex flex-wrap gap-4">
-                        <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-stone-200">
-                          <span className="text-lg">⏱️</span>
-                          <span className="text-sm font-semibold text-gray-700">
-                            4-6h
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-stone-200">
-                          <span className="text-lg">🥾</span>
-                          <span className="text-sm font-semibold text-gray-700">
-                            4-12km
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-stone-200">
-                          <span className="text-lg">🍷</span>
-                          <span className="text-sm font-semibold text-gray-700">
-                            5 Weine
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-stone-200">
-                          <span className="text-lg">👥</span>
-                          <span className="text-sm font-semibold text-gray-700">
-                            Gruppen
-                          </span>
+                      
+                      {/* Booking Button */}
+                      <div className="absolute top-0 right-0 h-full flex flex-col justify-end lg:justify-start border-2 border-red-500">
+                      <div className="mb-8 h-1/2">
+                        <img src={BrigittaHeylPortrait.src} alt="Brigitta Heyl" className="h-full w-auto aspect-square object-cover object-top rounded-full mx-auto border-4 border-accent1 shadow-lg"/>      
+                      </div>
+                        <div className="w-[280px] lg:w-[320px] flex justify-end rounded-full bg-gradient-to-r from-accent1/20 to-accent1/10">
+                          <div className="flex justify-between w-full">
+                            <motion.a
+                              href="https://eveeno.com/de/event-cal/34263?style=grid"
+                              whileHover={{ scale: 1.02 }}
+                              whileTap={{ scale: 0.98 }}
+                              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-accent1 to-accent1/80 text-white font-semibold text-sm lg:text-base rounded-full shadow-lg hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group"
+                            >
+                              Tour buchen
+                              <svg
+                                className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform duration-300"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                />
+                              </svg>
+                            </motion.a>
+                            <motion.a
+                              href="/gruppen"
+                              whileHover={{ scale: 1.02 }}
+                              whileTap={{ scale: 0.98 }}
+                              className="inline-flex items-center justify-end text-accent1 font-semibold text-sm lg:text-base rounded-full pr-3 hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group"
+                            >
+                              <svg
+                                className="w-4 h-4 mr-2"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                />
+                              </svg>
+                              Auch für Gruppen
+                            </motion.a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -491,7 +497,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
               </div>
 
               {/* Tour Description */}
-              <div className="p-8 lg:p-12">
+              <div className="p-8 lg:p-12 relative bg-stone-50">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={selectedTour.id + "-details"}
@@ -505,9 +511,6 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                   >
                     <div className="mb-8">
                       <h3 className="text-2xl font-bold font-bonanova text-gray-800 mb-6 flex items-center gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-accent1/20 to-accent1/10 rounded-lg flex items-center justify-center">
-                          <span className="text-accent1 text-lg">📖</span>
-                        </div>
                         Was Sie erwartet
                       </h3>
                     </div>
@@ -533,13 +536,14 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
               </div>
 
               {/* Enhanced Booking Section */}
-              <div className="relative bg-gradient-to-br from-accent1/5 via-stone-50 to-amber-50/20 p-8 lg:p-12 border-t border-stone-200 overflow-hidden">
+              <div className="relative  bg-stone-100 bg-gradient-to-r from-stone-50 to-amber-50/40 p-8 lg:p-12 border-t border-stone-200">
                 {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-5">
+                <div className="absolute inset-0 opacity-5 ">
                   <div className="absolute top-10 left-10 w-20 h-20 bg-accent1 rounded-full" />
                   <div className="absolute bottom-10 right-10 w-16 h-16 bg-accent1 rounded-full" />
                   <div className="absolute top-1/2 left-1/4 w-8 h-8 bg-accent1 rounded-full" />
                 </div>
+                <GetInTouch className="max-w-xl lg:max-w-2xl mx-auto my-8" />
 
                 <div className="relative z-10">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8">

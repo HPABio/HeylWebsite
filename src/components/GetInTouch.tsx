@@ -26,7 +26,7 @@ const GetInTouch = ({ className = "" }: Props) => {
               <p className="md:max-w-80 lg:max-w-full sm:text-sm md:text-base lg:text-lg text-stone-600/80 font-normal md:mt-2 lg:mt-0 md:mb-2 lg:mb-4 sm:leading-tight md:leading-tight lg:leading-tight">
                 Ich helfe Ihnen gerne weiter und beantworte alle Ihre Fragen zu unseren Wein-Erlebnistouren.
               </p>
-              <div className="w-[320px] md:w-[360px] flex justify-start my-4 rounded-full bg-gradient-to-r from-accent1/20 to-accent1/10">
+              <div className="w-[320px] md:w-[360px] flex justify-start my-4 lg:mt-12 rounded-full bg-gradient-to-r from-accent1/20 to-accent1/10">
                 <div className="flex justify-between w-full ">
                   <a
                     href="https://eveeno.com/de/event-cal/34263?style=grid"
