@@ -1,11 +1,11 @@
 import React from 'react';
 import BrigittaHeylPortrait from "@images/BrigittaHeylPortrait.png";
 
-const BookingButtonV1: React.FC = () => {
+const BookingButtonV1: React.FC = (className: string) => {
   return (
     <main>
       {/* Booking Button */}
-      <div className="w-full h-full flex justify-end ml-8 mt-6 ">
+      <div className={`w-full h-full flex justify-end ml-8 mt-6 ${className}`}>
         <div
     className="flex justify-between rounded-full bg-gradient-to-br from-accent1/20 to-accent1/10 
                         group transition-all duration-500 relative"
