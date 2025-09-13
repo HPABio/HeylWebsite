@@ -1,13 +1,13 @@
 ---
 // src/pages/tours.astro
 import '@/styles/global.css';
-import InteractiveTours from '@/components/InteractiveTours.tsx';
-import InteractiveToursIV from '@/components/InteractiveToursIV.tsx';
-import InteractiveToursVertical from '@/components/InteractiveToursVertical.tsx';
-import InteractiveToursMobile from '@/components/InteractiveTours-mobile.tsx';
-import InteractiveToursMobileV2 from '@/components/InteractiveTours-mobileV2.tsx';
+import InteractiveTours from '@/components/ToursPageComponents/InteractiveTours';
+import InteractiveToursIV from '@/components/ToursPageComponents/InteractiveToursIV';
+import InteractiveToursVertical from '@/components/ToursPageComponents/InteractiveToursVertical';
+import InteractiveToursMobile from '@/components/ToursPageComponents/InteractiveTours-mobile';
+import InteractiveToursMobileV2 from '@/components/ToursPageComponents/InteractiveTours-mobileV2';
 import ScreenSizeDEVTOOL from '@/components/ScreenSizeDEVTOOL.astro';
-import ToursV2 from '@/components/ToursV2.astro';
+import ToursV2 from '@/components/ToursPageComponents/ToursV2.astro';
 
 import favicon from '@images/favicon.svg';
 import Header from '@/components/Header.astro';
@@ -20,7 +20,7 @@ import MJGlühweinV1 from "@images/compressed/webP/compressed-mj-GlühweinV1.web
 import MJWallWithGrapes from "@images/compressed/webP/compressed-mj-wallWithGrapes.webp";
 import MJGlühweinV2 from "@images/compressed/webP/compressed-mj-GlühweinV2.webp";
 import WassermühleImWald from "@images/compressed/webP/compressed-Wassermühle-im-Wald.png";
-import GetInTouch from "@/components/GetInTouch.astro";
+import GetInTouch from "@/components/InfoCards/GetInTouchCard.astro";
 
 const images = {
   MJAlmondFlowerV1,

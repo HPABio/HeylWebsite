@@ -3,8 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import BrigittaHeylPortrait from "@images/BrigittaHeylPortrait.png";
 import HWELogoV2NoText from "@images/HWE-LogoV2-noText.svg";
 import GimmeldingenMap from "@images/GimmeldingenMap.jpg";
-import GetInTouch from "./GetInTouch";
-
+import GetInTouch from "../InfoCards/GetInTouchCard";
 
 interface Props {
   images: {
@@ -22,6 +21,32 @@ interface Props {
 
 const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
   const tours = [
+    {
+      id: "welcome",
+      info: "⋅ vier Touren ⋅ vier Jahreszeiten ⋅ vier Geschichten ⋅",
+      title: "Entdecken Sie meine interaktiven Touren",
+      subtitle:
+        "Lassen Sie sich von mir durch die malerischen Weinberge Gimmeldingens und durch ihre Geschichte führen.",
+      availability: "Für jede Saison die passende Tour",
+      images: {
+        card: images.MJAlmondFlowerMosaicGlass.src,
+        background: backgroundImage.src,
+        objectPosition: "object-[50%_20%]",
+        bgObjectPosition: "object-contain",
+      },
+      longDescription: `
+        <p class="mb-4">Erlebe mit Freunden, Kollegen und Familie eine unterhaltsame Weinerlebnistour durch die rosa blühenden Weinberge von Gimmeldingen. Geführt von einer zertifizierten Kultur- und Weinbotschafterin erwartet Dich eine spannende Mischung aus Natur, Genuss und kurzweiligen historischen Episoden - perfekt für alle Sinne! Das erwartet dich:</p>
+        <ul class="list-disc pl-5 space-y-2 mb-4">
+          <li>🌸 Genieße einen rosa Begrüßungs-Secco mit einem Pfälzer Snack und einer herrlichen Aussicht!</li>
+          <li>🥾 Erkunde auf der 4 km langen Weinbergs-Wanderung die schönsten Plätze und Mandelbäume in Gimmeldingen</li>
+          <li>🍷 Lass Dich unterwegs von weiteren 4 exzellenten Weinen lokaler Weingüter mit abgestimmten Mandel-Snacks verwöhnen</li>
+          <li>✨ Genieße vor Ort einen besonderen Riesling aus der historischen Meerspinn-Lage</li>
+          <li>📖 Erfahre, warum das Mandelblütenfest in Gimmeldingen stattfindet, was Mandeln mit der Meerspinne gemeinsam haben und warum die Bayern das Oktoberfest den Pfälzern verdanken</li>
+          <li>🎁 Zum Abschluss wartet eine süße, mandelige Überraschung auf Dich</li>
+        </ul>
+        <p>Diese Tour ist mehr als nur eine Führung – sie verbindet, inspiriert und macht Spaß: Ob als Team-Aktivität oder gemütlicher Tag mit Deinen Liebsten – diese Tour verbindet Genuss mit Natur, lässt Geschichte erlebbar werden und zeigt Dir Gimmeldingen von seiner schönsten Seite.</p>
+      `,
+    },
     {
       id: "mandelbluete",
       info: "Genuss, Geschichte und Natur",
@@ -135,11 +160,13 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
   const [selectedTour, setSelectedTour] = useState(tours[0]);
 
   return (
-    <section
-      className={`min-h-screen text-text relative ${className}`}
-    >
-      <img src={GimmeldingenMap.src} alt="Tour Background" className="w-full h-full absolute top-0 left-0 object-cover object-center" />
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-300 via-transparent to-gray-50" />
+    <section className={`min-h-screen text-text relative ${className}`}>
+      <img
+        src={GimmeldingenMap.src}
+        alt="Tour Background"
+        className="w-full h-full absolute top-0 left-0 object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-300 via-transparent to-gray-300/80" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
 
       {/* Enhanced Header Section */}
@@ -231,7 +258,15 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center lg:mt-10 mt-8  px-6 lg:px-12">
+        <div className="relative z-10 h-full w-full flex flex-col justify-center items-center text-center lg:mt-10 mt-8  px-6 lg:px-12">
+          {/* Seasonal Badge */}
+          <div className="absolute w-full top-10 bg-white/0 text-text/40 items-center justify-center mx-auto gap-2 px-10 py-2 backdrop-blur-sm rounded-full">
+                    <h4 className="text-text/40 font-semibold text-center">
+                <span className="text-text/40 font-semibold text-center">
+                  {selectedTour.info}
+                </span>
+                    </h4>
+              </div>
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedTour.id + "-content"}
@@ -250,13 +285,6 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
               }}
               className="max-w-5xl mx-auto"
             >
-              {/* Seasonal Badge */}
-              <div className="w-fit flex items-center justify-center mx-auto gap-2 px-10 py-2 bg-white/30 backdrop-blur-sm rounded-full  ">
-                  <span className="text-gray-800 font-semibold">
-                  {selectedTour.info}
-                  </span>
-                </div>
-
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{
@@ -291,104 +319,104 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                 className="flex flex-wrap justify-center gap-6 mt-4 lg:mt-8"
               >
                 <motion.div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent1/25 to-accent1/15 backdrop-blur-md rounded-full mb-6 border border-accent1/30">
-                {/* <div className="w-2 h-2 bg-accent1 rounded-full animate-pulse" /> */}
-                <span className="text-accent1 font-bold text-sm uppercase tracking-wider">
-                • {selectedTour.availability} •
-                </span>
-              </motion.div>
+                  {/* <div className="w-2 h-2 bg-accent1 rounded-full animate-pulse" /> */}
+                  <span className="text-accent1 font-bold text-sm uppercase tracking-wider">
+                    • {selectedTour.availability} •
+                  </span>
+                </motion.div>
               </motion.div>
             </motion.div>
           </AnimatePresence>
         </div>
-
       </div>
 
       {/* Main Content Section */}
       <div className="w-full h-full relative flex flex-row items-center justify-center  ">
-        
-        
-            {/* Scroll Indicator */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.8, delay: 1.5 },
-              }}
-              className="absolute top-1/3 -translate-y-4 right-6 z-20 flex flex-col lg:flex-row items-center gap-2
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, delay: 1.5 },
+          }}
+          className="absolute top-1/3 -translate-y-4 right-6 z-20 flex flex-col lg:flex-row items-center gap-2
               text-gray-400"
-            >scroll <br/> down
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="w-6 h-10 border-2 border-black/50 rounded-full flex justify-center"
-              >
-                <motion.div
-                  animate={{ y: [0, 12, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-1 h-3 bg-black/70 rounded-full mt-2"
-                />
-              </motion.div>
-            </motion.div>
-            
-            {/* Enhanced Tour Selection Sidebar */}
-            <div className="-mt-6 lg:-mt-8 xl:-mt-9 ">
-              <div className="sticky top-8">
-                <div className="flex flex-row items-center justify-center w-[75vw] lg:w-[65vw] xl:w-[55vw] mx-auto">
-                  {tours.map((tour, index) => {
-                    return (
-                      <motion.div
-                        key={tour.id}
-                        onClick={() => setSelectedTour(tour)}
-                        className={`cursor-pointer group relative overflow-hidden w-full h-full xl:rounded-3xl drop-shadow-md rounded-2xl transition-all duration-500 ${
-                          selectedTour.id === tour.id
-                                          ? "outline-offset-[6px] aspect-[10/8] drop-shadow-2xl ring-offset-0 ring-2 mx-4 ring-soft-beige outline-[2px] outline-accent1 outline-none border-[2.5px] border-stone-100 z-30 "
-                                          : "border-[2.5px] border-soft-beige/20 drop-shadow-lg aspect-[4/3]  brightness-[1] saturate-[0.8]"
-                        }`}
-                        whileHover={{ y: -4 }}
-                        whileTap={{ scale: 0.97 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                          transition: { delay: index * 0.05 },
-                        }}
-                      >
-                        <div className="w-full h-full relative group transition-all duration-500 ">
-                          <img
-                            src={tour.images.card}
-                            alt={tour.title}
-                            className={`w-full h-full object-cover object-center  ${
-                              selectedTour.id === tour.id
-                                ? "brightness-100 "
-                                : "group-hover:scale-110 group-hover:contrast-100 brightness-[0.7] contrast-[0.7]"
-                            }`}
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
+        >
+          scroll <br /> down
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-6 h-10 border-2 border-black/50 rounded-full flex justify-center"
+          >
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="w-1 h-3 bg-black/70 rounded-full mt-2"
+            />
+          </motion.div>
+        </motion.div>
 
-                          {/* Availability Badge */}
-                          {/* <div className="hidden absolute top-4 right-4">
+        {/* Enhanced Tour Selection Sidebar */}
+        <div className="-mt-6 lg:-mt-8 xl:-mt-9 ">
+          <div className="sticky top-8">
+            <div className="flex flex-row items-center justify-center w-[75vw] lg:w-[65vw] xl:w-[55vw] mx-auto">
+              {tours.slice(1).map((tour, index) => {
+                return (
+                  <motion.div
+                    key={tour.id}
+                    onClick={() => setSelectedTour(tour)}
+                    className={`cursor-pointer group relative overflow-hidden w-full h-full xl:rounded-3xl drop-shadow-md rounded-2xl transition-all duration-500 ${
+                      selectedTour.id === tour.id
+                        ? "outline-offset-[6px] aspect-[10/8] drop-shadow-2xl ring-offset-0 ring-2 mx-4 ring-soft-beige outline-[2px] outline-accent1 outline-none border-[2.5px] border-stone-100 z-30 "
+                        : "border-[2.5px] border-soft-beige/20 drop-shadow-lg aspect-[4/3]  brightness-[1] saturate-[0.8]"
+                    }`}
+                    whileHover={{ y: -4 }}
+                    whileTap={{ scale: 0.97 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      transition: { delay: index * 0.05 },
+                    }}
+                  >
+                    <div className="w-full h-full relative group transition-all duration-500 ">
+                      <img
+                        src={tour.images.card}
+                        alt={tour.title}
+                        className={`w-full h-full object-cover object-center  ${
+                          selectedTour.id === tour.id
+                            ? "brightness-100 "
+                            : "group-hover:scale-110 group-hover:contrast-100 brightness-[0.7] contrast-[0.7]"
+                        }`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
+
+                      {/* Availability Badge */}
+                      {/* <div className="hidden absolute top-4 right-4">
                             <span className="px-3 py-1 bg-white/95 backdrop-blur-sm text-gray-800 text-xs font-bold rounded-full shadow-sm border border-white/20">
                               {tour.availability}
                             </span>
                           </div> */}
 
-                          {/* Tour Title */}
-                          <div className="absolute bottom-4 left-4 right-4 ">
-                            <h4 className="text-white/40 font-bold font-bonanova
-                             text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem] group-hover:text-white leading-tight drop-shadow-lg">
-                              {tour.title}
-                            </h4>
-                          </div>
+                      {/* Tour Title */}
+                      <div className="absolute bottom-4 left-4 right-4 ">
+                        <h4
+                          className="text-white/40 font-bold font-bonanova
+                             text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem] group-hover:text-white leading-tight drop-shadow-lg"
+                        >
+                          {tour.title}
+                        </h4>
+                      </div>
 
-                          {/* Hover Effect Overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 mix-blend-color-burn to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-                {/* Tour Count
+                      {/* Hover Effect Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 mix-blend-color-burn to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+            {/* Tour Count
                   <div className="w-full max-w-sm mt-8 p-4 bg-gradient-to-r from-stone-100 to-stone-50 rounded-2xl border border-stone-200">
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-medium text-gray-600">
@@ -399,12 +427,9 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                       </span>
                     </div>
                   </div> */}
-              </div>
-            </div>
-
-
+          </div>
+        </div>
       </div>
-
 
       {/* Enhanced Tour Details */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
@@ -413,6 +438,15 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
             <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-100">
               {/* Tour Header */}
               <div className="relative bg-stone-100 bg-gradient-to-r from-stone-50 to-amber-50/40 p-8 lg:p-12 border-b border-stone-200">
+                <div className="absolute top-0 right-0 h-full">
+                  <img
+                    src={selectedTour.images.card}
+                    alt={selectedTour.title}
+                    className="w-full h-full object-contain object-right grayscale contrast-150 opacity-20"
+                  />
+                  <div className="w-full h-full absolute top-0 right-0 bg-gradient-to-r from-stone-100 to-amber-50/40" />
+                  <div className="w-full h-full absolute top-0 right-0 bg-gradient-to-r from-amber-50/40 to-transparent" />
+                </div>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={selectedTour.id + "-header"}
@@ -424,72 +458,27 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                     }}
                     exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
                   >
-                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                    <div className="flex flex-row lg:items-center lg:justify-between gap-6 ">
                       <div>
-                        <div className="flex items-center gap-3 mb-4">
+                        <div className="flex items-center gap-3 mb-4 ">
                           <div>
-                            <p className="text-accent1 font-semibold text-sm uppercase tracking-wider">
-                               • {selectedTour.info} •
+                            <p className="text-accent1 font-semibold text-sm uppercase tracking-wider  ">
+                              •{" "}
+                              {selectedTour.id === "welcome"
+                                ? tours[1].info
+                                : selectedTour.info}{" "}
+                              •
                             </p>
-                            <h2 className="md:mr-44 text-3xl lg:text-5xl font-bold font-bonanova text-gray-800">
-                              {selectedTour.title}
+                            <h2 className="w-3/4 text-3xl lg:text-5xl font-bold font-bonanova text-gray-800   ">
+                              {selectedTour.id === "welcome"
+                                ? tours[1].title
+                                : selectedTour.title}
                             </h2>
                           </div>
                         </div>
                         <div className="w-24 h-1 bg-gradient-to-r from-accent1 to-accent1/60 rounded-full" />
-                      </div>
-                      
-                      {/* Booking Button */}
-                      <div className="absolute top-0 right-0 h-full flex flex-col justify-end lg:justify-start border-2 border-red-500">
-                      <div className="mb-8 h-1/2">
-                        <img src={BrigittaHeylPortrait.src} alt="Brigitta Heyl" className="h-full w-auto aspect-square object-cover object-top rounded-full mx-auto border-4 border-accent1 shadow-lg"/>      
-                      </div>
-                        <div className="w-[280px] lg:w-[320px] flex justify-end rounded-full bg-gradient-to-r from-accent1/20 to-accent1/10">
-                          <div className="flex justify-between w-full">
-                            <motion.a
-                              href="https://eveeno.com/de/event-cal/34263?style=grid"
-                              whileHover={{ scale: 1.02 }}
-                              whileTap={{ scale: 0.98 }}
-                              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-accent1 to-accent1/80 text-white font-semibold text-sm lg:text-base rounded-full shadow-lg hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group"
-                            >
-                              Tour buchen
-                              <svg
-                                className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform duration-300"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                />
-                              </svg>
-                            </motion.a>
-                            <motion.a
-                              href="/gruppen"
-                              whileHover={{ scale: 1.02 }}
-                              whileTap={{ scale: 0.98 }}
-                              className="inline-flex items-center justify-end text-accent1 font-semibold text-sm lg:text-base rounded-full pr-3 hover:from-accent1/90 hover:to-accent1/70 transform hover:scale-105 transition-all duration-300 group"
-                            >
-                              <svg
-                                className="w-4 h-4 mr-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                                />
-                              </svg>
-                              Auch für Gruppen
-                            </motion.a>
-                          </div>
-                        </div>
+
+                        {/* Booking Button HERE */}
                       </div>
                     </div>
                   </motion.div>
@@ -515,7 +504,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                       </h3>
                     </div>
 
-                    <div className="relative">
+                    <div className="relative pb-12">
                       <div
                         className="prose prose-lg max-w-none text-gray-700 font-body leading-relaxed
                                  prose-headings:font-bonanova prose-headings:text-gray-800
@@ -536,14 +525,8 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
               </div>
 
               {/* Enhanced Booking Section */}
-              <div className="relative  bg-stone-100 bg-gradient-to-r from-stone-50 to-amber-50/40 p-8 lg:p-12 border-t border-stone-200">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-5 ">
-                  <div className="absolute top-10 left-10 w-20 h-20 bg-accent1 rounded-full" />
-                  <div className="absolute bottom-10 right-10 w-16 h-16 bg-accent1 rounded-full" />
-                  <div className="absolute top-1/2 left-1/4 w-8 h-8 bg-accent1 rounded-full" />
-                </div>
-                <GetInTouch className="max-w-xl lg:max-w-2xl mx-auto my-8" />
+              <div className="relative  bg-stone-200 bg-gradient-to-b from-stone-50 to-amber-50/20 p-8 pb-10 border-t border-stone-200">
+                <GetInTouch className="max-w-xl lg:max-w-2xl mx-auto my-0" />
 
                 <div className="relative z-10">
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -563,9 +546,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
           <div className="absolute top-20 right-20 w-32 h-32 bg-accent1 rounded-full" />
           <div className="absolute bottom-20 left-20 w-24 h-24 bg-accent1 rounded-full" />
         </div>
-        <div className="relative z-10">
-          <GetInTouch className="" />
-        </div>
+        <div className="relative z-10">{/* <GetInTouch className="" /> */}</div>
       </div>
     </section>
   );
