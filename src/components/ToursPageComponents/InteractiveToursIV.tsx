@@ -345,21 +345,23 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
             y: 0,
             transition: { duration: 0.8, delay: 1.5 },
           }}
-          className="absolute top-1/3 -translate-y-4 right-6 z-20 flex flex-col lg:flex-row items-center gap-2
+          className="absolute -top-[65px] lg:top-1/3 -translate-y-4 right-3 lg:right-6 z-20 flex flex-col lg:flex-row items-center gap-2
               text-gray-400"
         >
-          scroll <br /> down
+          {/* <p className="block lg:hidden">scroll down</p> */}
+          <p className="hidden lg:block">scroll <br /> down</p>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-black/50 rounded-full flex justify-center"
+            className="w-4 lg:w-6 h-8 lg:h-10 border-2 border-stone-50/50 lg:border-black/50 rounded-full flex justify-center"
           >
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-1 h-3 bg-black/70 rounded-full mt-2"
+              className="w-1 h-2 lg:h-3 bg-stone-50/70 lg:bg-black/70 rounded-full mt-2"
             />
           </motion.div>
+          <p className="text-[0.5rem] block lg:hidden">scroll down</p>
         </motion.div>
 
         {/* Enhanced Tour Selection Navbar */}
@@ -376,7 +378,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                         ? "outline-offset-[6px] aspect-[10/8] drop-shadow-2xl ring-offset-0 ring-2 mx-4 ring-soft-beige outline-[2px] outline-accent1 outline-none border-[2.5px] border-stone-100 z-30 "
                         : "border-[2.5px] border-soft-beige/20 drop-shadow-lg aspect-[4/3]  brightness-[1] saturate-[0.8]"
                     }`}
-                    whileHover={{ y: -4 }}
+                    whileHover={{ y: -4, transition: { duration: 0.1 } }}
                     whileTap={{ scale: 0.97 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{
@@ -421,17 +423,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                 );
               })}
             </div>
-            {/* Tour Count
-                  <div className="w-full max-w-sm mt-8 p-4 bg-gradient-to-r from-stone-100 to-stone-50 rounded-2xl border border-stone-200">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-600">
-                        Verfügbare Touren
-                      </span>
-                      <span className="text-lg font-bold text-accent1">
-                        {tours.length}
-                      </span>
-                    </div>
-                  </div> */}
+           
           </div>
         </div>
       </div>
