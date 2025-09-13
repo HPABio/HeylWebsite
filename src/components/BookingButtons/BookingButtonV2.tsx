@@ -1,9 +1,9 @@
-import React from "react";
 import BrigittaHeylPortrait from "@images/BrigittaHeylPortrait.png";
 
 interface Props {
   classNames: string;
 }
+import React from "react";
 const BookingButtonV2toRight: React.FC<Props> = ({ classNames }) => {
   return (
     <main>
@@ -11,24 +11,24 @@ const BookingButtonV2toRight: React.FC<Props> = ({ classNames }) => {
       <div className={`flex relative ${classNames}`}>
         <div
           className="w-[62%] h-full flex justify-between rounded-full bg-gradient-to-br from-accent1/25 to-accent1/10 shadow-inner shadow-accent1/10
-          relative hover:w-[100%] hover:bg-stone-50 transition-all duration-500"
+          relative hover:w-[100%] hover:bg-stone-50 transition-all duration-500 group"
         >
-          <div className="flex justify-between group">
+          <div className="flex justify-between">
             <div className="flex justify-between p-3 transition-all duration-300 border-0 border-purple-500 z-10">
               <a
                 href="https://eveeno.com/de/event-cal/34263?style=grid"
                 className="h-full inline-flex items-center px-4 py-2  
               font-semibold text-base lg:text-lg rounded-full lg:leading-tight shadow-md 
-              bg-gradient-to-r from-accent1/80 to-accent1/60 text-gray-800 border-0 border-accent1 
-              group-hover:border-text/10  group-hover:text-text/80 group-hover:shadow-xl group-hover:scale-105 group-hover:mx-1 
+              bg-gradient-to-r from-accent1/80 to-accent1/60 text-text border-0 border-accent1 
+              group-hover:border-text/10  hover:text-gray-800 group-hover:shadow-xl group-hover:scale-105 group-hover:mx-1 
               hover:text-xl
               transform transition-all duration-500 mr-[0vw]"
               >
-                <p className="hover:text-gray-800 transition-all duration-300 uppercase font-inter font-semibold">
+                <p className=" transition-all duration-300 uppercase font-inter font-semibold">
                   Tour buchen
                 </p>
                 <svg
-                  className="w-7 aspect-square ml-2 text-gray-800/40 group-hover:scale-110 transition-transform duration-300"
+                  className="w-7 aspect-square ml-2 group-hover:scale-110 transition-transform duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -42,12 +42,12 @@ const BookingButtonV2toRight: React.FC<Props> = ({ classNames }) => {
                 </svg>
               </a>
             </div>
-            <div className="absolute top-0 right-0 h-full flex justify-end p-3 group-hover:opacity-100 transition-all duration-300 border-0 border-red-500 z-0">
+            <div className="absolute top-0 right-0 h-full flex justify-end p-3 transition-all duration-300 border-0 border-red-500 z-0">
               <div
                 className="h-full inline-flex items-center justify-end opacity-1 border-text/40
                               text-text/60 font-semibold text-xs md:text-base md:leading-tight rounded-full 
                               hover:from-accent1/90 hover:to-accent1/50 transform
-                              group-hover:opacity-100 group-hover:scale-[1.02]
+                              group-hover:scale-[1.02]
                               transition-all group-hover:delay-100 duration-300"
               >
                 <a
@@ -60,7 +60,7 @@ const BookingButtonV2toRight: React.FC<Props> = ({ classNames }) => {
                     Auch für Gruppen
                   </p>
                   <svg
-                    className=" w-4 md:w-7 aspect-square ml-2 text-text/70"
+                    className=" w-4 md:w-7 aspect-square ml-2 text-text/50 group-hover:text-text/70"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -114,7 +114,7 @@ const BookingButtonV2toLeft: React.FC<Props> = ({ classNames }) => {
               font-semibold text-base lg:text-lg rounded-full lg:leading-tight shadow-md 
               bg-gradient-to-r from-accent1/80 to-accent1/60 text-stone-50/90 border-0 border-accent1 
               group-hover:border-text/10  group-hover:shadow-xl group-hover:scale-105 group-hover:mx-1   
-              hover:text-xl 
+              hover:text-xl hover:text-text/80
               transform transition-all duration-500 ml-[0vw]"
               >
                 <svg
@@ -130,7 +130,7 @@ const BookingButtonV2toLeft: React.FC<Props> = ({ classNames }) => {
                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
                 </svg>
-                <p className="hover:text-text/80 transition-all duration-300 uppercase font-inter font-semibold">
+                <p className=" transition-all duration-300 uppercase font-inter font-semibold">
                   Tour buchen
                 </p>
               </a>
