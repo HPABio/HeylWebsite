@@ -175,7 +175,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
 
       {/* Enhanced Header Section */}
-      <div className="relative w-full h-[60vh] min-h-[500px] lg:min-h-[570px] xl:min-h-[590px] max-h-[800px] overflow-hidden -mt-[70px]">
+      <div className="relative w-full h-[60vh] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[570px] xl:min-h-[590px] max-h-[800px] overflow-hidden -mt-[70px]">
         <motion.div
           key={selectedTour.id + "-hero"}
           initial={{ opacity: 0, scale: 1.1 }}
@@ -193,8 +193,8 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/85" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/35" />
-          <div className="hidden md:block absolute top-0 left-0 w-full h-[60%] bg-gradient-to-b from-gray-50 via-gray-50/60 to-black/0 z-10" />
-          <div className="hidden md:block absolute top-0 left-0 w-full h-[20%] bg-gradient-to-b from-gray-50 via-gray-50/60 to-black/0 z-10" />
+          <div className="hidden sm:block absolute top-0 left-0 w-full h-[60%] bg-gradient-to-b from-gray-50 via-gray-50/60 to-black/0 z-10" />
+          <div className="hidden sm:block absolute top-0 left-0 w-full h-[20%] bg-gradient-to-b from-gray-50 via-gray-50/60 to-black/0 z-10" />
         </motion.div>
 
         {/* Navigation Buttons */}
