@@ -232,7 +232,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
                 (tour) => tour.id === selectedTour.id
               );
               const nextIndex =
-                currentIndex === tours.length - 1 ? 0 : currentIndex + 1;
+                currentIndex === tours.length - 1 ? 1 : currentIndex + 1;
               setSelectedTour(tours[nextIndex]);
             }}
             className="mr-6 p-3 lg:p-4 bg-white/20 backdrop-blur-md rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 group"
@@ -357,7 +357,7 @@ const InteractiveTours = ({ images, backgroundImage, className }: Props) => {
           </motion.div>
         </motion.div>
 
-        {/* Enhanced Tour Selection Sidebar */}
+        {/* Enhanced Tour Selection Navbar */}
         <div className="-mt-6 lg:-mt-8 xl:-mt-9 ">
           <div className="sticky top-8">
             <div className="flex flex-row items-center justify-center w-[75vw] lg:w-[65vw] xl:w-[55vw] mx-auto">
