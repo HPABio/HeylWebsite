@@ -1,13 +1,15 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import HeylWeintourenLogoNoBottleLight from "@images/Heyl-Weintouren-Logo-(noBottle)-light.svg";
 import HeylWeintourenLogoNoBottleDark from "@images/Heyl-Weintouren-Logo-(noBottle)-dark.png";
 const { isDarkMode = false } = Astro.props;
 const { isHome = false } = Astro.props;
+const { isTours = false } = Astro.props;
 ---
 
 <header
-  class="w-screen h-[70px] flex items-center justify-center sticky top-0 z-50  backdrop-blur-[5px] shadow-md shadow-stone-400/30">
+  class="w-screen h-[70px] flex items-center justify-center sticky top-0 z-50 backdrop-blur-[5px] shadow-md shadow-stone-400/30"
+>
   <nav class="h-full w-screen flex items-center justify-between py-2 px-6">
     <a href="/#hero" class="text-2xl font-bold text-accent1 z-50">
       <Image
@@ -22,43 +24,68 @@ const { isHome = false } = Astro.props;
       <li>
         <a
           href={isHome ? "/#hero" : "/"}
-          class="hover:text-accent2-wine hover:font-bold transition"
-          >Start</a
+          class="hover:text-accent2-wine hover:font-bold transition">Start</a
         >
       </li>
-      <li>
+      <li class={isTours ? "hidden" : "block"}>
         <a
           href="/tours"
           class="inline-flex items-center px-4 py-2 font-semibold text-xs sm:text-sm rounded-full shadow-lg font-bonanova
-           bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50 hover:scale-105
+          bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50 hover:scale-105
             transform transition-all duration-200 hover:text-base hover:pl-9 group"
-          ><p><span class="hidden group-hover:inline-block absolute top-1 left-3
-            text-lg font-extrabold font-bonanova bg-stone-50 text-transparent bg-clip-text pt-1 ">🍇</span>  TOUREN</p></a
+          ><p>
+            <span
+              class="hidden group-hover:inline-block absolute top-1 left-3
+            text-lg font-extrabold font-bonanova bg-stone-50 text-transparent bg-clip-text pt-1"
+              >🍇</span
+            > TOUREN
+          </p></a
         >
       </li>
       <li>
         <a
           href="/gruppen"
-          class={isHome ? "hover:text-accent2-wine hover:font-bold transition" :
-          "hover:text-accent2-wine hover:font-bold transition -mr-7"}
-          >Gruppen</a
+          class={isTours
+            ? "inline-flex items-center justify-between px-4 py-2 font-semibold text-xs sm:text-sm rounded-full shadow-lg font-bonanova bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50 hover:scale-105 transform transition-all duration-500 hover:text-base hover:pl-9 group"
+            : "hover:text-accent2-wine hover:font-bold transition-all duration-300 group relative"}
         >
+          <p
+            class="flex items-center group-hover:pl-2 transition-all duration-300"
+          >
+            <span
+              class={`${isTours ? "hidden group-hover:inline-block absolute top-1 left-3 text-lg font-extrabold font-bonanova bg-stone-50 text-transparent bg-clip-text pt-1" : "hidden"}`}
+            >
+              <svg
+                class="w-6 h-6 text-stone-50 opacity-100 transition-opacity delay-200 duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </span>
+            {isTours ? "GRUPPEN" : "Gruppen"}
+          </p>
+        </a>
       </li>
-      <li>
+      <li class={isHome ? "hidden" : "inline-block"}>
         <a
-          href="#about-me"
-          class={isHome ? "hover:text-accent2-wine hover:font-bold transition" : "hidden"}
+          href="/#about-me"
+          class="hover:text-accent2-wine hover:font-bold transition"
           >Über mich</a
         >
       </li>
       <li>
         <a
           href="/kontakt"
-          class="hover:text-accent2-wine hover:font-bold transition"
-          >Kontakt</a
+          class="hover:text-accent2-wine hover:font-bold transition">Kontakt</a
         >
       </li>
-      
     </ul>
     <div class="sm:hidden flex items-center">
       <button id="menu-btn" class="hamburger z-50 focus:outline-none">
@@ -72,15 +99,15 @@ const { isHome = false } = Astro.props;
   <!-- Mobile Menu -->
   <div
     id="menu"
-    class="fixed h-fit w-full inset-0 z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none 
+    class="fixed h-fit w-full inset-0 z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none
     transition-all duration-300 ease-in-out transform -translate-y-full bg-gradient-to-t from-transparent via-stone-50 to-stone-50
     pt-12 pb-96"
   >
     <ul class="flex flex-col items-center space-y-8">
       <li>
-        <a href={isHome ? "/#hero" : "/"}
-        class="mobile-nav-link text-3xl font-bonanova"
-          >Start</a
+        <a
+          href={isHome ? "/#hero" : "/"}
+          class="mobile-nav-link text-3xl font-bonanova">Start</a
         >
       </li>
       <li>
@@ -89,20 +116,22 @@ const { isHome = false } = Astro.props;
         >
       </li>
       <li class={isHome ? "hidden" : "block"}>
-        <a href="/#about-me" class="mobile-nav-link text-3xl font-bonanova"
+        <a href={isHome ? "/#about-me" : "/"}
+          class="mobile-nav-link text-3xl font-bonanova"
           >Über mich</a
         >
       </li>
       <li>
-        <a href={isHome ? "#get-in-touch-mobile" : "/kontakt"} class="mobile-nav-link text-3xl font-bonanova"
-          >Kontakt</a
+        <a
+          href={isHome ? "#get-in-touch-mobile" : "/kontakt"}
+          class="mobile-nav-link text-3xl font-bonanova">Kontakt</a
         >
       </li>
       <li>
         <a
           href="/tours"
           class="inline-flex items-center px-8 py-3 font-semibold text-xl rounded-full shadow-lg font-bonanova
-          bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50/90 
+          bg-accent2-plum bg-gradient-to-r from-accent2-wine to-accent2-wine/70 text-stone-50/90
           hover:text-amber-950 hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-200"
           >TOUREN</a
         >
@@ -165,11 +194,23 @@ const { isHome = false } = Astro.props;
     menuBtn.classList.toggle("open");
     const isOpen = menuBtn.classList.contains("open");
     if (isOpen) {
-      menu.classList.remove("opacity-0", "pointer-events-none", "-translate-y-full");
+      menu.classList.remove(
+        "opacity-0",
+        "pointer-events-none",
+        "-translate-y-full"
+      );
       menu.classList.add("opacity-100", "pointer-events-auto", "translate-y-0");
     } else {
-      menu.classList.remove("opacity-100", "pointer-events-auto", "translate-y-0");
-      menu.classList.add("opacity-0", "pointer-events-none", "-translate-y-full");
+      menu.classList.remove(
+        "opacity-100",
+        "pointer-events-auto",
+        "translate-y-0"
+      );
+      menu.classList.add(
+        "opacity-0",
+        "pointer-events-none",
+        "-translate-y-full"
+      );
     }
     document.body.classList.toggle("overflow-hidden");
   };
@@ -188,17 +229,17 @@ const { isHome = false } = Astro.props;
 
   // Handle smooth scrolling with header offset
   const handleAnchorClick = (e) => {
-    const href = e.target.getAttribute('href');
-    if (href && href.includes('#')) {
+    const href = e.target.getAttribute("href");
+    if (href && href.includes("#")) {
       e.preventDefault();
-      const targetId = href.split('#')[1];
+      const targetId = href.split("#")[1];
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         const headerHeight = 70; // Height of the fixed header
         const targetPosition = targetElement.offsetTop - headerHeight;
         window.scrollTo({
           top: targetPosition,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       }
     }
@@ -206,8 +247,7 @@ const { isHome = false } = Astro.props;
 
   // Add click handlers to all anchor links in the header
   const allNavLinks = document.querySelectorAll('header a[href*="#"]');
-  allNavLinks.forEach(link => {
-    link.addEventListener('click', handleAnchorClick);
+  allNavLinks.forEach((link) => {
+    link.addEventListener("click", handleAnchorClick);
   });
 </script>
-
