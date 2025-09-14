@@ -60,7 +60,7 @@ const BookingButtonV2toRight: React.FC<Props> = ({ classNames }) => {
                     Auch für Gruppen
                   </p>
                   <svg
-                    className=" w-4 md:w-7 aspect-square ml-2 text-text/50 group-hover:text-text/70"
+                    className="w-7 aspect-square ml-2 text-text/50 group-hover:text-text/70"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
